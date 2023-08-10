@@ -7,33 +7,25 @@ import json
 from typing import Any, ClassVar, Dict, List, Optional, Type
 
 import pydantic
+from langchain_experimental.cpal.constants import Constant
+from langchain_experimental.cpal.models import (CausalModel, InterventionModel,
+                                                NarrativeModel, QueryModel,
+                                                StoryModel)
+from langchain_experimental.cpal.templates.univariate.causal import \
+    template as causal_template
+from langchain_experimental.cpal.templates.univariate.intervention import \
+    template as intervention_template
+from langchain_experimental.cpal.templates.univariate.narrative import \
+    template as narrative_template
+from langchain_experimental.cpal.templates.univariate.query import \
+    template as query_template
+
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts.prompt import PromptTemplate
-
-from langchain_experimental.cpal.constants import Constant
-from langchain_experimental.cpal.models import (
-    CausalModel,
-    InterventionModel,
-    NarrativeModel,
-    QueryModel,
-    StoryModel,
-)
-from langchain_experimental.cpal.templates.univariate.causal import (
-    template as causal_template,
-)
-from langchain_experimental.cpal.templates.univariate.intervention import (
-    template as intervention_template,
-)
-from langchain_experimental.cpal.templates.univariate.narrative import (
-    template as narrative_template,
-)
-from langchain_experimental.cpal.templates.univariate.query import (
-    template as query_template,
-)
 
 
 class _BaseStoryElementChain(Chain):

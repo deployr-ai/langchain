@@ -9,7 +9,8 @@ from pydantic import Extra
 from langchain import PromptTemplate
 from langchain.callbacks.manager import Callbacks
 from langchain.chains.llm import LLMChain
-from langchain.evaluation.qa.eval_prompt import CONTEXT_PROMPT, COT_PROMPT, PROMPT
+from langchain.evaluation.qa.eval_prompt import (CONTEXT_PROMPT, COT_PROMPT,
+                                                 PROMPT)
 from langchain.evaluation.schema import LLMEvalChain, StringEvaluator
 from langchain.schema import RUN_KEY
 from langchain.schema.language_model import BaseLanguageModel

@@ -5,13 +5,9 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Union
 
 import langchain
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.utils import (
-    BaseMetadataCallbackHandler,
-    flatten_dict,
-    import_pandas,
-    import_spacy,
-    import_textstat,
-)
+from langchain.callbacks.utils import (BaseMetadataCallbackHandler,
+                                       flatten_dict, import_pandas,
+                                       import_spacy, import_textstat)
 from langchain.schema import AgentAction, AgentFinish, Generation, LLMResult
 
 LANGCHAIN_MODEL_NAME = "langchain-model"

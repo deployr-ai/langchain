@@ -3,10 +3,10 @@
 from pathlib import Path
 
 import pytest
+from tests.integration_tests.llms.utils import assert_llm_equality
 
 from langchain.llms.loading import load_llm
 from langchain.llms.octoai_endpoint import OctoAIEndpoint
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 def test_octoai_endpoint_text_generation() -> None:

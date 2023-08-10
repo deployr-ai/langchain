@@ -8,13 +8,11 @@ from urllib.request import HTTPError
 
 import pytest
 
-from langchain.llms.azureml_endpoint import (
-    AzureMLOnlineEndpoint,
-    ContentFormatterBase,
-    DollyContentFormatter,
-    HFContentFormatter,
-    OSSContentFormatter,
-)
+from langchain.llms.azureml_endpoint import (AzureMLOnlineEndpoint,
+                                             ContentFormatterBase,
+                                             DollyContentFormatter,
+                                             HFContentFormatter,
+                                             OSSContentFormatter)
 from langchain.llms.loading import load_llm
 
 

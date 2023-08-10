@@ -4,24 +4,9 @@ import asyncio
 from abc import ABC, abstractmethod
 from concurrent.futures import ThreadPoolExecutor
 from itertools import tee
-from typing import (
-    Any,
-    AsyncIterator,
-    Awaitable,
-    Callable,
-    Dict,
-    Generic,
-    Iterator,
-    List,
-    Mapping,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    TypeVar,
-    Union,
-    cast,
-)
+from typing import (Any, AsyncIterator, Awaitable, Callable, Dict, Generic,
+                    Iterator, List, Mapping, Optional, Sequence, Tuple, Type,
+                    TypeVar, Union, cast)
 
 from pydantic import Field
 
@@ -29,9 +14,7 @@ from langchain.callbacks.base import BaseCallbackManager
 from langchain.load.dump import dumpd
 from langchain.load.serializable import Serializable
 from langchain.schema.runnable.config import RunnableConfig
-from langchain.schema.runnable.utils import (
-    gather_with_concurrency,
-)
+from langchain.schema.runnable.utils import gather_with_concurrency
 from langchain.utils.aiter import atee, py_anext
 
 Input = TypeVar("Input")
@@ -611,9 +594,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
         from langchain.callbacks.manager import (
-            AsyncCallbackManager,
-            AsyncCallbackManagerForChainRun,
-        )
+            AsyncCallbackManager, AsyncCallbackManagerForChainRun)
 
         # setup callbacks
         configs = self._get_config_list(config, len(inputs))
@@ -875,9 +856,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
         from langchain.callbacks.manager import (
-            AsyncCallbackManager,
-            AsyncCallbackManagerForChainRun,
-        )
+            AsyncCallbackManager, AsyncCallbackManagerForChainRun)
 
         # setup callbacks
         configs = self._get_config_list(config, len(inputs))

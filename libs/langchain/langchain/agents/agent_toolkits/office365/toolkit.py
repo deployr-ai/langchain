@@ -6,7 +6,8 @@ from pydantic import Field
 
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.tools import BaseTool
-from langchain.tools.office365.create_draft_message import O365CreateDraftMessage
+from langchain.tools.office365.create_draft_message import \
+    O365CreateDraftMessage
 from langchain.tools.office365.events_search import O365SearchEvents
 from langchain.tools.office365.messages_search import O365SearchEmails
 from langchain.tools.office365.send_event import O365SendEvent

@@ -9,11 +9,8 @@ from typing import TYPE_CHECKING, Optional, Set
 import requests
 from pydantic import Field, root_validator
 
-from langchain.chat_models.openai import (
-    ChatOpenAI,
-    _convert_message_to_dict,
-    _import_tiktoken,
-)
+from langchain.chat_models.openai import (ChatOpenAI, _convert_message_to_dict,
+                                          _import_tiktoken)
 from langchain.schema.messages import BaseMessage
 from langchain.utils import get_from_dict_or_env
 

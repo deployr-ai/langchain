@@ -3,15 +3,9 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.schema import BaseChatMessageHistory
+from langchain.schema.messages import (AIMessage, BaseMessage, HumanMessage,
+                                       SystemMessage)
 
 if TYPE_CHECKING:
     from zep_python import Memory, MemorySearchResult, Message, NotFoundError

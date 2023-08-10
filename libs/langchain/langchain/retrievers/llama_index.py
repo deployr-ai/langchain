@@ -54,10 +54,8 @@ class LlamaIndexGraphRetriever(BaseRetriever):
     ) -> List[Document]:
         """Get documents relevant for a query."""
         try:
-            from llama_index.composability.graph import (
-                QUERY_CONFIG_TYPE,
-                ComposableGraph,
-            )
+            from llama_index.composability.graph import (QUERY_CONFIG_TYPE,
+                                                         ComposableGraph)
             from llama_index.response.schema import Response
         except ImportError:
             raise ImportError(

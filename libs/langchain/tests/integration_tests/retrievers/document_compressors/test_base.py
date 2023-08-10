@@ -2,9 +2,7 @@
 from langchain.document_transformers import EmbeddingsRedundantFilter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.retrievers.document_compressors import (
-    DocumentCompressorPipeline,
-    EmbeddingsFilter,
-)
+    DocumentCompressorPipeline, EmbeddingsFilter)
 from langchain.schema import Document
 from langchain.text_splitter import CharacterTextSplitter
 

@@ -2,9 +2,7 @@
 from typing import Any, List
 
 from langchain.document_loaders.unstructured import (
-    UnstructuredFileLoader,
-    satisfies_min_unstructured_version,
-)
+    UnstructuredFileLoader, satisfies_min_unstructured_version)
 
 
 class UnstructuredRTFLoader(UnstructuredFileLoader):

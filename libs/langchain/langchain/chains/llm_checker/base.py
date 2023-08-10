@@ -9,12 +9,10 @@ from pydantic import Extra, root_validator
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
-from langchain.chains.llm_checker.prompt import (
-    CHECK_ASSERTIONS_PROMPT,
-    CREATE_DRAFT_ANSWER_PROMPT,
-    LIST_ASSERTIONS_PROMPT,
-    REVISED_ANSWER_PROMPT,
-)
+from langchain.chains.llm_checker.prompt import (CHECK_ASSERTIONS_PROMPT,
+                                                 CREATE_DRAFT_ANSWER_PROMPT,
+                                                 LIST_ASSERTIONS_PROMPT,
+                                                 REVISED_ANSWER_PROMPT)
 from langchain.chains.sequential import SequentialChain
 from langchain.prompts import PromptTemplate
 from langchain.schema.language_model import BaseLanguageModel

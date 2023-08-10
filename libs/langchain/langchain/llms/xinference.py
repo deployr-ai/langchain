@@ -1,10 +1,12 @@
-from typing import TYPE_CHECKING, Any, Generator, List, Mapping, Optional, Union
+from typing import (TYPE_CHECKING, Any, Generator, List, Mapping, Optional,
+                    Union)
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.llms.base import LLM
 
 if TYPE_CHECKING:
-    from xinference.client import RESTfulChatModelHandle, RESTfulGenerateModelHandle
+    from xinference.client import (RESTfulChatModelHandle,
+                                   RESTfulGenerateModelHandle)
     from xinference.model.llm.core import LlamaCppGenerateConfig
 
 

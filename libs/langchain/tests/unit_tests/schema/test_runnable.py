@@ -14,26 +14,17 @@ from langchain.chat_models.fake import FakeListChatModel
 from langchain.llms.fake import FakeListLLM, FakeStreamingListLLM
 from langchain.load.dump import dumpd, dumps
 from langchain.output_parsers.list import CommaSeparatedListOutputParser
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    ChatPromptValue,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain.prompts.chat import (ChatPromptTemplate, ChatPromptValue,
+                                    HumanMessagePromptTemplate,
+                                    SystemMessagePromptTemplate)
 from langchain.schema.document import Document
 from langchain.schema.messages import AIMessage, HumanMessage, SystemMessage
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.retriever import BaseRetriever
-from langchain.schema.runnable import (
-    RouterRunnable,
-    Runnable,
-    RunnableConfig,
-    RunnableLambda,
-    RunnableMap,
-    RunnablePassthrough,
-    RunnableSequence,
-    RunnableWithFallbacks,
-)
+from langchain.schema.runnable import (RouterRunnable, Runnable,
+                                       RunnableConfig, RunnableLambda,
+                                       RunnableMap, RunnablePassthrough,
+                                       RunnableSequence, RunnableWithFallbacks)
 
 
 class FakeTracer(BaseTracer):

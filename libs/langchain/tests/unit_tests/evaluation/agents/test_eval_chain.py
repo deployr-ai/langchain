@@ -4,16 +4,13 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import pytest
 from pydantic import Field
+from tests.unit_tests.llms.fake_chat_model import FakeChatModel
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.evaluation.agents.trajectory_eval_chain import (
-    TrajectoryEval,
-    TrajectoryEvalChain,
-    TrajectoryOutputParser,
-)
+    TrajectoryEval, TrajectoryEvalChain, TrajectoryOutputParser)
 from langchain.schema import AgentAction, BaseMessage, OutputParserException
 from langchain.tools.base import tool
-from tests.unit_tests.llms.fake_chat_model import FakeChatModel
 
 
 @pytest.fixture

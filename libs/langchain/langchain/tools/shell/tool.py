@@ -5,10 +5,8 @@ from typing import List, Optional, Type, Union
 
 from pydantic import BaseModel, Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool
 from langchain.utilities.bash import BashProcess
 

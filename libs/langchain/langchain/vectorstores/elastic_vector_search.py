@@ -3,17 +3,8 @@ from __future__ import annotations
 
 import uuid
 from abc import ABC
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    Iterable,
-    List,
-    Mapping,
-    Optional,
-    Tuple,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Dict, Iterable, List, Mapping,
+                    Optional, Tuple, Union)
 
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings

@@ -1,15 +1,9 @@
 import logging
 from typing import List, Optional
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
-from langchain.schema.messages import (
-    BaseMessage,
-    _message_to_dict,
-    messages_from_dict,
-    messages_to_dict,
-)
+from langchain.schema import BaseChatMessageHistory
+from langchain.schema.messages import (BaseMessage, _message_to_dict,
+                                       messages_from_dict, messages_to_dict)
 
 logger = logging.getLogger(__name__)
 

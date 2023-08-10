@@ -9,11 +9,9 @@ from pydantic import Field
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
-from langchain.chains.graph_qa.prompts import (
-    AQL_FIX_PROMPT,
-    AQL_GENERATION_PROMPT,
-    AQL_QA_PROMPT,
-)
+from langchain.chains.graph_qa.prompts import (AQL_FIX_PROMPT,
+                                               AQL_GENERATION_PROMPT,
+                                               AQL_QA_PROMPT)
 from langchain.chains.llm import LLMChain
 from langchain.graphs.arangodb_graph import ArangoGraph
 from langchain.schema import BasePromptTemplate

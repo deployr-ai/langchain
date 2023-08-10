@@ -2,16 +2,13 @@
 from typing import List, Tuple
 
 import pytest
+from tests.unit_tests.callbacks.fake_callback_handler import (
+    BaseFakeCallbackHandler, FakeAsyncCallbackHandler, FakeCallbackHandler)
 
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.callbacks.manager import AsyncCallbackManager, CallbackManager
 from langchain.callbacks.stdout import StdOutCallbackHandler
 from langchain.schema import AgentAction, AgentFinish, LLMResult
-from tests.unit_tests.callbacks.fake_callback_handler import (
-    BaseFakeCallbackHandler,
-    FakeAsyncCallbackHandler,
-    FakeCallbackHandler,
-)
 
 
 def _test_callback_manager(

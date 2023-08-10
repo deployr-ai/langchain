@@ -7,15 +7,10 @@ from typing import Any, Dict, Optional, Union
 import requests
 
 from langchain.callbacks.tracers.base import BaseTracer
-from langchain.callbacks.tracers.schemas import (
-    ChainRun,
-    LLMRun,
-    Run,
-    ToolRun,
-    TracerSession,
-    TracerSessionV1,
-    TracerSessionV1Base,
-)
+from langchain.callbacks.tracers.schemas import (ChainRun, LLMRun, Run,
+                                                 ToolRun, TracerSession,
+                                                 TracerSessionV1,
+                                                 TracerSessionV1Base)
 from langchain.schema.messages import get_buffer_string
 from langchain.utils import raise_for_status_with_text
 

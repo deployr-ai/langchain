@@ -2,12 +2,11 @@ from typing import Optional
 
 import numpy as np
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import \
+    ConsistentFakeEmbeddings
 
 from langchain.schema import Document
 from langchain.vectorstores import Qdrant
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-)
 
 
 @pytest.mark.parametrize("batch_size", [1, 64])

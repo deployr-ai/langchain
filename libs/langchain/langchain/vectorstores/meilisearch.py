@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 import uuid
-from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Tuple, Type
+from typing import (TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Tuple,
+                    Type)
 
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings

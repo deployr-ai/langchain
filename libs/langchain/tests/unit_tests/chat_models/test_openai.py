@@ -5,16 +5,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from langchain.chat_models.openai import (
-    ChatOpenAI,
-    _convert_dict_to_message,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    FunctionMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.chat_models.openai import ChatOpenAI, _convert_dict_to_message
+from langchain.schema.messages import (AIMessage, FunctionMessage,
+                                       HumanMessage, SystemMessage)
 
 
 def test_function_message_dict_to_function_message() -> None:

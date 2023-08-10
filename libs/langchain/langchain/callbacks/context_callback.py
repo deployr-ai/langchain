@@ -4,22 +4,15 @@ from typing import Any, Dict, List
 from uuid import UUID
 
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import (
-    BaseMessage,
-    LLMResult,
-)
+from langchain.schema import BaseMessage, LLMResult
 
 
 def import_context() -> Any:
     """Import the `getcontext` package."""
     try:
         import getcontext  # noqa: F401
-        from getcontext.generated.models import (
-            Conversation,
-            Message,
-            MessageRole,
-            Rating,
-        )
+        from getcontext.generated.models import (Conversation, Message,
+                                                 MessageRole, Rating)
         from getcontext.token import Credential  # noqa: F401
     except ImportError:
         raise ImportError(

@@ -7,7 +7,8 @@ from pydantic import Field
 
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
-from langchain.chains.graph_qa.prompts import CYPHER_QA_PROMPT, NGQL_GENERATION_PROMPT
+from langchain.chains.graph_qa.prompts import (CYPHER_QA_PROMPT,
+                                               NGQL_GENERATION_PROMPT)
 from langchain.chains.llm import LLMChain
 from langchain.graphs.nebula_graph import NebulaGraph
 from langchain.schema import BasePromptTemplate

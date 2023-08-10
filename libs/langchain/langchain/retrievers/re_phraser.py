@@ -1,10 +1,8 @@
 import logging
 from typing import List
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.chains.llm import LLMChain
 from langchain.llms.base import BaseLLM
 from langchain.prompts.prompt import PromptTemplate

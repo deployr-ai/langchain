@@ -7,10 +7,8 @@ from pydantic import Extra, root_validator
 
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.tools.base import BaseTool
-from langchain.tools.playwright.base import (
-    BaseBrowserTool,
-    lazy_import_playwright_browsers,
-)
+from langchain.tools.playwright.base import (BaseBrowserTool,
+                                             lazy_import_playwright_browsers)
 from langchain.tools.playwright.click import ClickTool
 from langchain.tools.playwright.current_page import CurrentWebPageTool
 from langchain.tools.playwright.extract_hyperlinks import ExtractHyperlinksTool

@@ -27,24 +27,9 @@ import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
-from typing import (
-    AbstractSet,
-    Any,
-    Callable,
-    Collection,
-    Dict,
-    Iterable,
-    List,
-    Literal,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    TypedDict,
-    TypeVar,
-    Union,
-    cast,
-)
+from typing import (AbstractSet, Any, Callable, Collection, Dict, Iterable,
+                    List, Literal, Optional, Sequence, Tuple, Type, TypedDict,
+                    TypeVar, Union, cast)
 
 from langchain.docstore.document import Document
 from langchain.schema import BaseDocumentTransformer

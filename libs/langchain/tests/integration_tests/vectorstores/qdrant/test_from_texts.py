@@ -3,14 +3,14 @@ import uuid
 from typing import Optional
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import \
+    ConsistentFakeEmbeddings
+from tests.integration_tests.vectorstores.qdrant.common import \
+    qdrant_is_not_running
 
 from langchain.schema import Document
 from langchain.vectorstores import Qdrant
 from langchain.vectorstores.qdrant import QdrantException
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-)
-from tests.integration_tests.vectorstores.qdrant.common import qdrant_is_not_running
 
 
 def test_qdrant_from_texts_stores_duplicated_texts() -> None:

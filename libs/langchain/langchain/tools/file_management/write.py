@@ -4,11 +4,9 @@ from pydantic import BaseModel, Field
 
 from langchain.callbacks.manager import CallbackManagerForToolRun
 from langchain.tools.base import BaseTool
-from langchain.tools.file_management.utils import (
-    INVALID_PATH_TEMPLATE,
-    BaseFileToolMixin,
-    FileValidationError,
-)
+from langchain.tools.file_management.utils import (INVALID_PATH_TEMPLATE,
+                                                   BaseFileToolMixin,
+                                                   FileValidationError)
 
 
 class WriteFileInput(BaseModel):

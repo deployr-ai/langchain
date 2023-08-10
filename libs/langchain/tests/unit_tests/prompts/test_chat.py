@@ -4,24 +4,15 @@ from typing import Any, List, Union
 import pytest
 
 from langchain.prompts import PromptTemplate
-from langchain.prompts.chat import (
-    AIMessagePromptTemplate,
-    BaseMessagePromptTemplate,
-    ChatMessage,
-    ChatMessagePromptTemplate,
-    ChatPromptTemplate,
-    ChatPromptValue,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-    _convert_to_message,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    HumanMessage,
-    SystemMessage,
-    get_buffer_string,
-)
+from langchain.prompts.chat import (AIMessagePromptTemplate,
+                                    BaseMessagePromptTemplate, ChatMessage,
+                                    ChatMessagePromptTemplate,
+                                    ChatPromptTemplate, ChatPromptValue,
+                                    HumanMessagePromptTemplate,
+                                    SystemMessagePromptTemplate,
+                                    _convert_to_message)
+from langchain.schema.messages import (AIMessage, BaseMessage, HumanMessage,
+                                       SystemMessage, get_buffer_string)
 
 
 def create_messages() -> List[BaseMessagePromptTemplate]:

@@ -23,7 +23,8 @@ from langchain.utilities.portkey import Portkey
 from langchain.utilities.powerbi import PowerBIDataset
 from langchain.utilities.pubmed import PubMedAPIWrapper
 from langchain.utilities.python import PythonREPL
-from langchain.utilities.requests import Requests, RequestsWrapper, TextRequestsWrapper
+from langchain.utilities.requests import (Requests, RequestsWrapper,
+                                          TextRequestsWrapper)
 from langchain.utilities.scenexplain import SceneXplainAPIWrapper
 from langchain.utilities.searx_search import SearxSearchWrapper
 from langchain.utilities.serpapi import SerpAPIWrapper

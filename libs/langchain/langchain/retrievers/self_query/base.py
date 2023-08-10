@@ -6,7 +6,8 @@ from pydantic import BaseModel, Field, root_validator
 
 from langchain import LLMChain
 from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.chains.query_constructor.base import load_query_constructor_chain
+from langchain.chains.query_constructor.base import \
+    load_query_constructor_chain
 from langchain.chains.query_constructor.ir import StructuredQuery, Visitor
 from langchain.chains.query_constructor.schema import AttributeInfo
 from langchain.retrievers.self_query.chroma import ChromaTranslator
@@ -17,15 +18,8 @@ from langchain.retrievers.self_query.qdrant import QdrantTranslator
 from langchain.retrievers.self_query.weaviate import WeaviateTranslator
 from langchain.schema import BaseRetriever, Document
 from langchain.schema.language_model import BaseLanguageModel
-from langchain.vectorstores import (
-    Chroma,
-    DeepLake,
-    MyScale,
-    Pinecone,
-    Qdrant,
-    VectorStore,
-    Weaviate,
-)
+from langchain.vectorstores import (Chroma, DeepLake, MyScale, Pinecone,
+                                    Qdrant, VectorStore, Weaviate)
 
 
 def _get_builtin_translator(vectorstore: VectorStore) -> Visitor:

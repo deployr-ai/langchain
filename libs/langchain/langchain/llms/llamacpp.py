@@ -3,7 +3,8 @@ from typing import Any, Dict, Iterator, List, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM
 from langchain.schema.output import GenerationChunk
 from langchain.utils import get_pydantic_field_names
@@ -27,6 +28,8 @@ class LlamaCpp(LLM):
     """
 
     client: Any  #: :meta private:
+
+    model_instance: Any  #: :meta private:
     model_path: str
     """The path to the Llama model file."""
 
@@ -145,22 +148,25 @@ class LlamaCpp(LLM):
             model_params["n_gpu_layers"] = values["n_gpu_layers"]
 
         model_params.update(values["model_kwargs"])
+        model_instance = values.get("model_instance")
+        if model_instance is None:
+            try:
+                from llama_cpp import Llama
 
-        try:
-            from llama_cpp import Llama
-
-            values["client"] = Llama(model_path, **model_params)
-        except ImportError:
-            raise ImportError(
-                "Could not import llama-cpp-python library. "
-                "Please install the llama-cpp-python library to "
-                "use this embedding model: pip install llama-cpp-python"
-            )
-        except Exception as e:
-            raise ValueError(
-                f"Could not load Llama model from path: {model_path}. "
-                f"Received error {e}"
-            )
+                values["client"] = Llama(model_path, **model_params)
+            except ImportError:
+                raise ImportError(
+                    "Could not import llama-cpp-python library. "
+                    "Please install the llama-cpp-python library to "
+                    "use this embedding model: pip install llama-cpp-python"
+                )
+            except Exception as e:
+                raise ValueError(
+                    f"Could not load Llama model from path: {model_path}. "
+                    f"Received error {e}"
+                )
+        else:
+            values["client"] = model_instance
 
         return values
 
@@ -317,3 +323,96 @@ class LlamaCpp(LLM):
     def get_num_tokens(self, text: str) -> int:
         tokenized_text = self.client.tokenize(text.encode("utf-8"))
         return len(tokenized_text)
+
+    async def _acall(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[AsyncCallbackManagerForLLMRun] = None,
+        **kwargs: Any,
+    ) -> str:
+        """Call the Llama model and return the output.
+
+        Args:
+            prompt: The prompt to use for generation.
+            stop: A list of strings to stop generation when encountered.
+
+        Returns:
+            The generated text.
+
+        Example:
+            .. code-block:: python
+
+                from langchain.llms import LlamaCpp
+                llm = LlamaCpp(model_path="/path/to/local/llama/model.bin")
+                llm("This is a prompt.")
+        """
+        if self.streaming:
+            # If streaming is enabled, we use the stream
+            # method that yields as they are generated
+            # and return the combined strings from the first choices's text:
+            combined_text_output = ""
+            async for chunk in self.astream(
+                prompt=prompt, stop=stop, run_manager=run_manager, **kwargs
+            ):
+                combined_text_output += chunk.text
+            return combined_text_output
+        else:
+            params = self._get_parameters(stop)
+            params = {**params, **kwargs}
+            result = self.client(prompt=prompt, **params)
+            return result["choices"][0]["text"]
+
+    async def astream(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any,
+    ) -> Iterator[GenerationChunk]:
+        """Yields results objects as they are generated in real time.
+
+        BETA: this is a beta feature while we figure out the right abstraction.
+        Once that happens, this interface could change.
+
+        It also calls the callback manager's on_llm_new_token event with
+        similar parameters to the OpenAI LLM class method of the same name.
+
+        Args:
+            prompt: The prompts to pass into the model.
+            stop: Optional list of stop words to use when generating.
+
+        Returns:
+            A generator representing the stream of tokens being generated.
+
+        Yields:
+            A dictionary like objects containing a string token and metadata.
+            See llama-cpp-python docs and below for more.
+
+        Example:
+            .. code-block:: python
+
+                from langchain.llms import LlamaCpp
+                llm = LlamaCpp(
+                    model_path="/path/to/local/model.bin",
+                    temperature = 0.5
+                )
+                for chunk in llm.stream("Ask 'Hi, how are you?' like a pirate:'",
+                        stop=["'","\n"]):
+                    result = chunk["choices"][0]
+                    print(result["text"], end='', flush=True)
+
+        """
+        params = {**self._get_parameters(stop), **kwargs}
+        result = self.client(prompt=prompt, stream=True, **params)
+        for part in result:
+            logprobs = part["choices"][0].get("logprobs", None)
+            chunk = GenerationChunk(
+                text=part["choices"][0]["text"],
+                generation_info={"logprobs": logprobs},
+            )
+            yield chunk
+            if run_manager:
+                await run_manager.on_llm_new_token(
+                    token=chunk.text, verbose=self.verbose, log_probs=logprobs
+                )

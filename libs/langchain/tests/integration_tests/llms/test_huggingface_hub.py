@@ -3,10 +3,10 @@
 from pathlib import Path
 
 import pytest
+from tests.integration_tests.llms.utils import assert_llm_equality
 
 from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.llms.loading import load_llm
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 def test_huggingface_text_generation() -> None:

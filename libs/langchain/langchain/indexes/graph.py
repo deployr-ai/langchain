@@ -6,9 +6,8 @@ from pydantic import BaseModel
 from langchain import BasePromptTemplate
 from langchain.chains.llm import LLMChain
 from langchain.graphs.networkx_graph import NetworkxEntityGraph, parse_triples
-from langchain.indexes.prompts.knowledge_triplet_extraction import (
-    KNOWLEDGE_TRIPLE_EXTRACTION_PROMPT,
-)
+from langchain.indexes.prompts.knowledge_triplet_extraction import \
+    KNOWLEDGE_TRIPLE_EXTRACTION_PROMPT
 from langchain.schema.language_model import BaseLanguageModel
 
 

@@ -1,11 +1,11 @@
 import json
 import logging
+from datetime import datetime
 from typing import List
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
-from langchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from langchain.schema import BaseChatMessageHistory
+from langchain.schema.messages import (BaseMessage, _message_to_dict,
+                                       messages_from_dict)
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,9 @@ class PostgresChatMessageHistory(BaseChatMessageHistory):
         create_table_query = f"""CREATE TABLE IF NOT EXISTS {self.table_name} (
             id SERIAL PRIMARY KEY,
             session_id TEXT NOT NULL,
-            message JSONB NOT NULL
+            message_id TEXT NOT NULL,
+            message JSONB NOT NULL,
+            created_at TIMESTAMP NOT NULL
         );"""
         self.cursor.execute(create_table_query)
         self.connection.commit()
@@ -55,15 +57,21 @@ class PostgresChatMessageHistory(BaseChatMessageHistory):
         messages = messages_from_dict(items)
         return messages
 
-    def add_message(self, message: BaseMessage) -> None:
+    def add_message(self, message: BaseMessage, message_id: str = "0") -> None:
         """Append the message to the record in PostgreSQL"""
         from psycopg import sql
 
-        query = sql.SQL("INSERT INTO {} (session_id, message) VALUES (%s, %s);").format(
-            sql.Identifier(self.table_name)
-        )
+        query = sql.SQL(
+            "INSERT INTO {} (session_id, message_id, message, created_at) VALUES (%s, %s, %s, %s);"
+        ).format(sql.Identifier(self.table_name))
         self.cursor.execute(
-            query, (self.session_id, json.dumps(_message_to_dict(message)))
+            query,
+            (
+                self.session_id,
+                message_id,
+                json.dumps(_message_to_dict(message)),
+                datetime.now(),
+            ),
         )
         self.connection.commit()
 

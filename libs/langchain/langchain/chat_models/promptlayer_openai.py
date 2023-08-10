@@ -2,10 +2,8 @@
 import datetime
 from typing import Any, Dict, List, Optional
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import ChatResult
 from langchain.schema.messages import BaseMessage
@@ -89,7 +87,8 @@ class PromptLayerChatOpenAI(ChatOpenAI):
         **kwargs: Any
     ) -> ChatResult:
         """Call ChatOpenAI agenerate and then call PromptLayer to log."""
-        from promptlayer.utils import get_api_key, promptlayer_api_request_async
+        from promptlayer.utils import (get_api_key,
+                                       promptlayer_api_request_async)
 
         request_start_time = datetime.datetime.now().timestamp()
         generated_responses = await super()._agenerate(

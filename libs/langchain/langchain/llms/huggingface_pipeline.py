@@ -71,11 +71,8 @@ class HuggingFacePipeline(LLM):
     ) -> LLM:
         """Construct the pipeline object from model_id and task."""
         try:
-            from transformers import (
-                AutoModelForCausalLM,
-                AutoModelForSeq2SeqLM,
-                AutoTokenizer,
-            )
+            from transformers import (AutoModelForCausalLM,
+                                      AutoModelForSeq2SeqLM, AutoTokenizer)
             from transformers import pipeline as hf_pipeline
 
         except ImportError:

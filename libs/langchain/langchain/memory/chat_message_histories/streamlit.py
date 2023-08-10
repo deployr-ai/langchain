@@ -1,8 +1,6 @@
 from typing import List
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
+from langchain.schema import BaseChatMessageHistory
 from langchain.schema.messages import BaseMessage
 
 

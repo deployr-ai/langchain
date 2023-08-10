@@ -9,17 +9,9 @@ from typing import Dict, List, Optional, Union
 
 import requests
 import yaml
-from openapi_schema_pydantic import (
-    Components,
-    OpenAPI,
-    Operation,
-    Parameter,
-    PathItem,
-    Paths,
-    Reference,
-    RequestBody,
-    Schema,
-)
+from openapi_schema_pydantic import (Components, OpenAPI, Operation, Parameter,
+                                     PathItem, Paths, Reference, RequestBody,
+                                     Schema)
 from pydantic import ValidationError
 
 logger = logging.getLogger(__name__)

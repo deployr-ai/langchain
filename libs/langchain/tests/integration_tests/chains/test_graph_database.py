@@ -4,11 +4,8 @@ import os
 from langchain.chains.graph_qa.cypher import GraphCypherQAChain
 from langchain.chains.loading import load_chain
 from langchain.graphs import Neo4jGraph
-from langchain.graphs.neo4j_graph import (
-    node_properties_query,
-    rel_properties_query,
-    rel_query,
-)
+from langchain.graphs.neo4j_graph import (node_properties_query,
+                                          rel_properties_query, rel_query)
 from langchain.llms.openai import OpenAI
 
 

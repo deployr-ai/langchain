@@ -1,13 +1,8 @@
 from typing import Dict, Tuple, Union
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    Operation,
-    Operator,
-    StructuredQuery,
-    Visitor,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   Operation, Operator,
+                                                   StructuredQuery, Visitor)
 
 
 class WeaviateTranslator(Visitor):

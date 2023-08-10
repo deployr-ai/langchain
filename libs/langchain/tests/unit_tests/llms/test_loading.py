@@ -2,8 +2,9 @@
 from pathlib import Path
 from unittest.mock import patch
 
-from langchain.llms.loading import load_llm
 from tests.unit_tests.llms.fake_llm import FakeLLM
+
+from langchain.llms.loading import load_llm
 
 
 @patch("langchain.llms.loading.type_to_cls_dict", {"fake": FakeLLM})

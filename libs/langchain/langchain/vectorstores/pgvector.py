@@ -4,17 +4,8 @@ from __future__ import annotations
 import enum
 import logging
 import uuid
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Iterable, List,
+                    Optional, Tuple, Type)
 
 import sqlalchemy
 from sqlalchemy.dialects.postgresql import UUID
@@ -116,9 +107,7 @@ class PGVector(VectorStore):
         self._conn = self.connect()
         # self.create_vector_extension()
         from langchain.vectorstores._pgvector_data_models import (
-            CollectionStore,
-            EmbeddingStore,
-        )
+            CollectionStore, EmbeddingStore)
 
         self.CollectionStore = CollectionStore
         self.EmbeddingStore = EmbeddingStore

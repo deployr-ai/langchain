@@ -8,26 +8,13 @@ import math
 import warnings
 from abc import ABC, abstractmethod
 from functools import partial
-from typing import (
-    Any,
-    Callable,
-    ClassVar,
-    Collection,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-    TypeVar,
-)
+from typing import (Any, Callable, ClassVar, Collection, Dict, Iterable, List,
+                    Optional, Tuple, Type, TypeVar)
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.schema import BaseRetriever

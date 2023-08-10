@@ -7,10 +7,8 @@ from pydantic import BaseModel, Field
 
 from langchain.chains.llm import LLMChain
 from langchain.memory.chat_memory import BaseChatMemory
-from langchain.memory.prompt import (
-    ENTITY_EXTRACTION_PROMPT,
-    ENTITY_SUMMARIZATION_PROMPT,
-)
+from langchain.memory.prompt import (ENTITY_EXTRACTION_PROMPT,
+                                     ENTITY_SUMMARIZATION_PROMPT)
 from langchain.memory.utils import get_prompt_input_key
 from langchain.schema import BasePromptTemplate
 from langchain.schema.language_model import BaseLanguageModel

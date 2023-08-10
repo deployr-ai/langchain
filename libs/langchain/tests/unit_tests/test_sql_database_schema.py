@@ -4,19 +4,8 @@
 Using DuckDB as SQLite does not support schemas.
 """
 import pytest
-
-from sqlalchemy import (
-    Column,
-    Integer,
-    MetaData,
-    Sequence,
-    String,
-    Table,
-    create_engine,
-    event,
-    insert,
-    schema,
-)
+from sqlalchemy import (Column, Integer, MetaData, Sequence, String, Table,
+                        create_engine, event, insert, schema)
 
 from langchain.utilities.sql_database import SQLDatabase
 

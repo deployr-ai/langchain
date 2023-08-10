@@ -1,12 +1,8 @@
 from typing import Dict, Tuple
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    Operation,
-    Operator,
-    StructuredQuery,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   Operation, Operator,
+                                                   StructuredQuery)
 from langchain.retrievers.self_query.pinecone import PineconeTranslator
 
 DEFAULT_TRANSLATOR = PineconeTranslator()

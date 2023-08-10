@@ -2,19 +2,12 @@
 from __future__ import annotations
 
 import logging
-from typing import (
-    Any,
-    Dict,
-    List,
-    Optional,
-)
+from typing import Any, Dict, List, Optional
 
 import requests
 from pydantic import BaseModel, Extra, Field, PrivateAttr, root_validator
 
-from langchain.callbacks.manager import (
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.llms.base import LLM
 from langchain.utils import get_from_dict_or_env
 

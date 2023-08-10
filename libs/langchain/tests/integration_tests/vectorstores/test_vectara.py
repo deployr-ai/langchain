@@ -1,9 +1,10 @@
 import tempfile
 import urllib.request
 
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+
 from langchain.docstore.document import Document
 from langchain.vectorstores.vectara import Vectara
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 # For this test to run properly, please setup as follows
 # 1. Create a corpus in Vectara, with a filter attribute called "test_num".

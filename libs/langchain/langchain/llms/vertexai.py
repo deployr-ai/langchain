@@ -6,16 +6,12 @@ from typing import TYPE_CHECKING, Any, Callable, ClassVar, Dict, List, Optional
 
 from pydantic import BaseModel, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM, create_base_retry_decorator
 from langchain.llms.utils import enforce_stop_tokens
-from langchain.utilities.vertexai import (
-    init_vertexai,
-    raise_vertex_import_error,
-)
+from langchain.utilities.vertexai import (init_vertexai,
+                                          raise_vertex_import_error)
 
 if TYPE_CHECKING:
     from vertexai.language_models._language_models import _LanguageModel
@@ -161,7 +157,8 @@ class VertexAI(_VertexAICommon, LLM):
         model_name = values["model_name"]
         try:
             if tuned_model_name or not is_codey_model(model_name):
-                from vertexai.preview.language_models import TextGenerationModel
+                from vertexai.preview.language_models import \
+                    TextGenerationModel
 
                 if tuned_model_name:
                     values["client"] = TextGenerationModel.get_tuned_model(
@@ -170,7 +167,8 @@ class VertexAI(_VertexAICommon, LLM):
                 else:
                     values["client"] = TextGenerationModel.from_pretrained(model_name)
             else:
-                from vertexai.preview.language_models import CodeGenerationModel
+                from vertexai.preview.language_models import \
+                    CodeGenerationModel
 
                 values["client"] = CodeGenerationModel.from_pretrained(model_name)
         except ImportError:

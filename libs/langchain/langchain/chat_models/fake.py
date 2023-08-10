@@ -1,10 +1,8 @@
 """Fake ChatModel for testing purposes."""
 from typing import Any, AsyncIterator, Dict, Iterator, List, Optional, Union
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chat_models.base import SimpleChatModel
 from langchain.schema.messages import AIMessageChunk, BaseMessage
 from langchain.schema.output import ChatGenerationChunk

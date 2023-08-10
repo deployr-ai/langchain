@@ -2,11 +2,12 @@
 from typing import Generator
 
 import pytest
+from tests.unit_tests.callbacks.fake_callback_handler import \
+    FakeCallbackHandler
 
 from langchain.callbacks.manager import CallbackManager
 from langchain.llms.anthropic import Anthropic
 from langchain.schema import LLMResult
-from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
 
 
 def test_anthropic_call() -> None:

@@ -5,14 +5,9 @@ from pydantic import BaseModel
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
 from langchain.chains.openai_functions.utils import (
-    _convert_schema,
-    _resolve_schema_references,
-    get_llm_kwargs,
-)
+    _convert_schema, _resolve_schema_references, get_llm_kwargs)
 from langchain.output_parsers.openai_functions import (
-    JsonKeyOutputFunctionsParser,
-    PydanticAttrOutputFunctionsParser,
-)
+    JsonKeyOutputFunctionsParser, PydanticAttrOutputFunctionsParser)
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.language_model import BaseLanguageModel
 

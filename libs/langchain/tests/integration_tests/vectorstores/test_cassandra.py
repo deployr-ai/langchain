@@ -2,14 +2,11 @@
 from typing import List, Optional, Type
 
 from cassandra.cluster import Cluster
+from tests.integration_tests.vectorstores.fake_embeddings import (
+    AngularTwoDimensionalEmbeddings, ConsistentFakeEmbeddings, Embeddings)
 
 from langchain.docstore.document import Document
 from langchain.vectorstores import Cassandra
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    AngularTwoDimensionalEmbeddings,
-    ConsistentFakeEmbeddings,
-    Embeddings,
-)
 
 
 def _vectorstore_from_texts(

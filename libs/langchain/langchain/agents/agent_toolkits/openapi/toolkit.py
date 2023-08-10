@@ -12,13 +12,9 @@ from langchain.agents.tools import Tool
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.tools import BaseTool
 from langchain.tools.json.tool import JsonSpec
-from langchain.tools.requests.tool import (
-    RequestsDeleteTool,
-    RequestsGetTool,
-    RequestsPatchTool,
-    RequestsPostTool,
-    RequestsPutTool,
-)
+from langchain.tools.requests.tool import (RequestsDeleteTool, RequestsGetTool,
+                                           RequestsPatchTool, RequestsPostTool,
+                                           RequestsPutTool)
 from langchain.utilities.requests import TextRequestsWrapper
 
 

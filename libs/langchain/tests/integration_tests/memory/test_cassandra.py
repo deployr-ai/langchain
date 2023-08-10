@@ -5,9 +5,8 @@ from typing import Optional
 from cassandra.cluster import Cluster
 
 from langchain.memory import ConversationBufferMemory
-from langchain.memory.chat_message_histories.cassandra import (
-    CassandraChatMessageHistory,
-)
+from langchain.memory.chat_message_histories.cassandra import \
+    CassandraChatMessageHistory
 from langchain.schema.messages import AIMessage, HumanMessage
 
 

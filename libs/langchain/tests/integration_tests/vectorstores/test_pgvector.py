@@ -3,10 +3,10 @@ import os
 from typing import List
 
 from sqlalchemy.orm import Session
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.docstore.document import Document
 from langchain.vectorstores.pgvector import PGVector
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 CONNECTION_STRING = PGVector.connection_string_from_db_params(
     driver=os.environ.get("TEST_PGVECTOR_DRIVER", "psycopg2"),

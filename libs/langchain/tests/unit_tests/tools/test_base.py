@@ -7,19 +7,14 @@ from typing import Any, List, Optional, Type, Union
 
 import pytest
 from pydantic import BaseModel
+from tests.unit_tests.callbacks.fake_callback_handler import \
+    FakeCallbackHandler
 
 from langchain.agents.tools import Tool, tool
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
-from langchain.tools.base import (
-    BaseTool,
-    SchemaAnnotationError,
-    StructuredTool,
-    ToolException,
-)
-from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
+from langchain.tools.base import (BaseTool, SchemaAnnotationError,
+                                  StructuredTool, ToolException)
 
 
 def test_unnamed_decorator() -> None:

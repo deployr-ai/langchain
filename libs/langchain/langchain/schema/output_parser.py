@@ -2,17 +2,8 @@ from __future__ import annotations
 
 import asyncio
 from abc import ABC, abstractmethod
-from typing import (
-    Any,
-    AsyncIterator,
-    Dict,
-    Generic,
-    Iterator,
-    List,
-    Optional,
-    TypeVar,
-    Union,
-)
+from typing import (Any, AsyncIterator, Dict, Generic, Iterator, List,
+                    Optional, TypeVar, Union)
 
 from langchain.load.serializable import Serializable
 from langchain.schema.messages import BaseMessage

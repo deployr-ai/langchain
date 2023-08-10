@@ -5,26 +5,13 @@ import time
 from abc import ABC, abstractmethod
 from asyncio import CancelledError
 from functools import wraps
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    List,
-    NoReturn,
-    Optional,
-    Tuple,
-    Type,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, List, NoReturn,
+                    Optional, Tuple, Type, Union)
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManager,
-    AsyncCallbackManagerForChainRun,
-    CallbackManager,
-    CallbackManagerForChainRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManager,
+                                         AsyncCallbackManagerForChainRun,
+                                         CallbackManager,
+                                         CallbackManagerForChainRun, Callbacks)
 from langchain.load.dump import dumpd
 from langchain.schema import RUN_KEY, AgentAction, AgentFinish, RunInfo
 from langchain.tools import BaseTool

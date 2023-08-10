@@ -3,10 +3,8 @@ from typing import Optional
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool, Field
 from langchain.utilities.searx_search import SearxSearchWrapper
 

@@ -3,23 +3,20 @@ from typing import Any, Dict, List, Optional, Sequence, Type, Union
 
 from langchain.chains.base import Chain
 from langchain.chat_models.openai import ChatOpenAI
-from langchain.evaluation.agents.trajectory_eval_chain import TrajectoryEvalChain
+from langchain.evaluation.agents.trajectory_eval_chain import \
+    TrajectoryEvalChain
 from langchain.evaluation.comparison import PairwiseStringEvalChain
-from langchain.evaluation.comparison.eval_chain import LabeledPairwiseStringEvalChain
-from langchain.evaluation.criteria.eval_chain import (
-    CriteriaEvalChain,
-    LabeledCriteriaEvalChain,
-)
+from langchain.evaluation.comparison.eval_chain import \
+    LabeledPairwiseStringEvalChain
+from langchain.evaluation.criteria.eval_chain import (CriteriaEvalChain,
+                                                      LabeledCriteriaEvalChain)
 from langchain.evaluation.embedding_distance.base import (
-    EmbeddingDistanceEvalChain,
-    PairwiseEmbeddingDistanceEvalChain,
-)
-from langchain.evaluation.qa import ContextQAEvalChain, CotQAEvalChain, QAEvalChain
+    EmbeddingDistanceEvalChain, PairwiseEmbeddingDistanceEvalChain)
+from langchain.evaluation.qa import (ContextQAEvalChain, CotQAEvalChain,
+                                     QAEvalChain)
 from langchain.evaluation.schema import EvaluatorType, LLMEvalChain
 from langchain.evaluation.string_distance.base import (
-    PairwiseStringDistanceEvalChain,
-    StringDistanceEvalChain,
-)
+    PairwiseStringDistanceEvalChain, StringDistanceEvalChain)
 from langchain.schema.language_model import BaseLanguageModel
 
 

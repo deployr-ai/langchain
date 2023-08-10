@@ -9,11 +9,11 @@ exploration.
 from abc import abstractmethod
 from typing import Any, Dict, List, Tuple
 
-from langchain.chains.llm import LLMChain
-from langchain.prompts.base import BasePromptTemplate
+from langchain_experimental.tot.prompts import COT_PROMPT, PROPOSE_PROMPT
 from pydantic import Field
 
-from langchain_experimental.tot.prompts import COT_PROMPT, PROPOSE_PROMPT
+from langchain.chains.llm import LLMChain
+from langchain.prompts.base import BasePromptTemplate
 
 
 class BaseThoughtGenerationStrategy(LLMChain):

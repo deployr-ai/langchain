@@ -2,11 +2,11 @@
 
 from pathlib import Path
 
+from tests.integration_tests.llms.utils import assert_llm_equality
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 from langchain.llms.huggingface_pipeline import HuggingFacePipeline
 from langchain.llms.loading import load_llm
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 def test_huggingface_pipeline_text_generation() -> None:

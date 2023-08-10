@@ -7,47 +7,25 @@ import os
 import uuid
 from contextlib import asynccontextmanager, contextmanager
 from contextvars import ContextVar
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    AsyncGenerator,
-    Dict,
-    Generator,
-    List,
-    Optional,
-    Sequence,
-    Type,
-    TypeVar,
-    Union,
-    cast,
-)
+from typing import (TYPE_CHECKING, Any, AsyncGenerator, Dict, Generator, List,
+                    Optional, Sequence, Type, TypeVar, Union, cast)
 from uuid import UUID
 
 from tenacity import RetryCallState
 
 import langchain
-from langchain.callbacks.base import (
-    BaseCallbackHandler,
-    BaseCallbackManager,
-    Callbacks,
-    ChainManagerMixin,
-    LLMManagerMixin,
-    RetrieverManagerMixin,
-    RunManagerMixin,
-    ToolManagerMixin,
-)
+from langchain.callbacks.base import (BaseCallbackHandler, BaseCallbackManager,
+                                      Callbacks, ChainManagerMixin,
+                                      LLMManagerMixin, RetrieverManagerMixin,
+                                      RunManagerMixin, ToolManagerMixin)
 from langchain.callbacks.openai_info import OpenAICallbackHandler
 from langchain.callbacks.stdout import StdOutCallbackHandler
 from langchain.callbacks.tracers.langchain import LangChainTracer
-from langchain.callbacks.tracers.langchain_v1 import LangChainTracerV1, TracerSessionV1
+from langchain.callbacks.tracers.langchain_v1 import (LangChainTracerV1,
+                                                      TracerSessionV1)
 from langchain.callbacks.tracers.stdout import ConsoleCallbackHandler
 from langchain.callbacks.tracers.wandb import WandbTracer
-from langchain.schema import (
-    AgentAction,
-    AgentFinish,
-    Document,
-    LLMResult,
-)
+from langchain.schema import AgentAction, AgentFinish, Document, LLMResult
 from langchain.schema.messages import BaseMessage, get_buffer_string
 
 if TYPE_CHECKING:

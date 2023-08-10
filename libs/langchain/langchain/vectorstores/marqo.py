@@ -3,18 +3,8 @@ from __future__ import annotations
 
 import json
 import uuid
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Iterable, List,
+                    Optional, Tuple, Type, Union)
 
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings

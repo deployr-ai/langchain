@@ -93,10 +93,7 @@ class ClarifaiEmbeddings(BaseModel, Embeddings):
         """
 
         try:
-            from clarifai_grpc.grpc.api import (
-                resources_pb2,
-                service_pb2,
-            )
+            from clarifai_grpc.grpc.api import resources_pb2, service_pb2
             from clarifai_grpc.grpc.api.status import status_code_pb2
         except ImportError:
             raise ImportError(
@@ -148,10 +145,7 @@ class ClarifaiEmbeddings(BaseModel, Embeddings):
         """
 
         try:
-            from clarifai_grpc.grpc.api import (
-                resources_pb2,
-                service_pb2,
-            )
+            from clarifai_grpc.grpc.api import resources_pb2, service_pb2
             from clarifai_grpc.grpc.api.status import status_code_pb2
         except ImportError:
             raise ImportError(

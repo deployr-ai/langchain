@@ -3,29 +3,14 @@ from __future__ import annotations
 import logging
 import sys
 import warnings
-from typing import (
-    AbstractSet,
-    Any,
-    AsyncIterator,
-    Callable,
-    Collection,
-    Dict,
-    Iterator,
-    List,
-    Literal,
-    Mapping,
-    Optional,
-    Set,
-    Tuple,
-    Union,
-)
+from typing import (AbstractSet, Any, AsyncIterator, Callable, Collection,
+                    Dict, Iterator, List, Literal, Mapping, Optional, Set,
+                    Tuple, Union)
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import BaseLLM, create_base_retry_decorator
 from langchain.schema import Generation, LLMResult
 from langchain.schema.output import GenerationChunk

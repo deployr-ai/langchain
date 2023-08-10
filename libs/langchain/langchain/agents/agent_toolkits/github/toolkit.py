@@ -3,16 +3,13 @@ from typing import Dict, List
 
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.tools import BaseTool
-from langchain.tools.github.prompt import (
-    COMMENT_ON_ISSUE_PROMPT,
-    CREATE_FILE_PROMPT,
-    CREATE_PULL_REQUEST_PROMPT,
-    DELETE_FILE_PROMPT,
-    GET_ISSUE_PROMPT,
-    GET_ISSUES_PROMPT,
-    READ_FILE_PROMPT,
-    UPDATE_FILE_PROMPT,
-)
+from langchain.tools.github.prompt import (COMMENT_ON_ISSUE_PROMPT,
+                                           CREATE_FILE_PROMPT,
+                                           CREATE_PULL_REQUEST_PROMPT,
+                                           DELETE_FILE_PROMPT,
+                                           GET_ISSUE_PROMPT, GET_ISSUES_PROMPT,
+                                           READ_FILE_PROMPT,
+                                           UPDATE_FILE_PROMPT)
 from langchain.tools.github.tool import GitHubAction
 from langchain.utilities.github import GitHubAPIWrapper
 

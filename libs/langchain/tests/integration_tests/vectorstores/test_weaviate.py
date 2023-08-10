@@ -5,11 +5,11 @@ import uuid
 from typing import Generator, Union
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.docstore.document import Document
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores.weaviate import Weaviate
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 logging.basicConfig(level=logging.DEBUG)
 

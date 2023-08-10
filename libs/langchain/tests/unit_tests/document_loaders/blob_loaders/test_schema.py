@@ -6,7 +6,8 @@ from typing import Generator, Iterable, Optional
 
 import pytest
 
-from langchain.document_loaders.blob_loaders.schema import Blob, BlobLoader, PathLike
+from langchain.document_loaders.blob_loaders.schema import (Blob, BlobLoader,
+                                                            PathLike)
 
 
 @contextmanager

@@ -2,14 +2,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Tuple
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    Operation,
-    Operator,
-    StructuredQuery,
-    Visitor,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   Operation, Operator,
+                                                   StructuredQuery, Visitor)
 
 if TYPE_CHECKING:
     from qdrant_client.http import models as rest

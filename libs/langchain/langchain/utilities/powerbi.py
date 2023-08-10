@@ -71,9 +71,8 @@ class PowerBIDataset(BaseModel):
                 "Content-Type": "application/json",
                 "Authorization": "Bearer " + self.token,
             }
-        from azure.core.exceptions import (
-            ClientAuthenticationError,  # pylint: disable=import-outside-toplevel
-        )
+        from azure.core.exceptions import \
+            ClientAuthenticationError  # pylint: disable=import-outside-toplevel
 
         if self.credential:
             try:

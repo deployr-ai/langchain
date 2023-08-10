@@ -10,53 +10,27 @@ import warnings
 from abc import ABC, abstractmethod
 from functools import partial
 from pathlib import Path
-from typing import (
-    Any,
-    AsyncIterator,
-    Callable,
-    Dict,
-    Iterator,
-    List,
-    Mapping,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    Union,
-    cast,
-)
+from typing import (Any, AsyncIterator, Callable, Dict, Iterator, List,
+                    Mapping, Optional, Sequence, Tuple, Type, Union, cast)
 
 import yaml
 from pydantic import Field, root_validator, validator
-from tenacity import (
-    RetryCallState,
-    before_sleep_log,
-    retry,
-    retry_base,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (RetryCallState, before_sleep_log, retry, retry_base,
+                      retry_if_exception_type, stop_after_attempt,
+                      wait_exponential)
 
 import langchain
 from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
-    AsyncCallbackManager,
-    AsyncCallbackManagerForLLMRun,
-    CallbackManager,
-    CallbackManagerForLLMRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManager,
+                                         AsyncCallbackManagerForLLMRun,
+                                         CallbackManager,
+                                         CallbackManagerForLLMRun, Callbacks)
 from langchain.load.dump import dumpd
 from langchain.prompts.base import StringPromptValue
 from langchain.prompts.chat import ChatPromptValue
-from langchain.schema import (
-    Generation,
-    LLMResult,
-    PromptValue,
-    RunInfo,
-)
-from langchain.schema.language_model import BaseLanguageModel, LanguageModelInput
+from langchain.schema import Generation, LLMResult, PromptValue, RunInfo
+from langchain.schema.language_model import (BaseLanguageModel,
+                                             LanguageModelInput)
 from langchain.schema.messages import AIMessage, BaseMessage, get_buffer_string
 from langchain.schema.output import GenerationChunk
 from langchain.schema.runnable import RunnableConfig

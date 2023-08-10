@@ -2,10 +2,8 @@ from typing import Any, AsyncIterator, Dict, Iterator, List, Optional
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM
 from langchain.schema.output import GenerationChunk
 

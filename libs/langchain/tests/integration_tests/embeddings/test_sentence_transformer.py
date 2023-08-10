@@ -1,7 +1,8 @@
 # flake8: noqa
 """Test sentence_transformer embeddings."""
 
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.embeddings.sentence_transformer import \
+    SentenceTransformerEmbeddings
 from langchain.vectorstores import Chroma
 
 

@@ -2,12 +2,11 @@ import uuid
 from typing import Callable, Optional
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import \
+    ConsistentFakeEmbeddings
 
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores import Qdrant
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-)
 
 
 @pytest.mark.parametrize(

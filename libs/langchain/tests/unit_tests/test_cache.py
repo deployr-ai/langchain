@@ -7,18 +7,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 import langchain
-from langchain.cache import (
-    InMemoryCache,
-    SQLAlchemyCache,
-)
+from langchain.cache import InMemoryCache, SQLAlchemyCache
 from langchain.chat_models import FakeListChatModel
 from langchain.chat_models.base import BaseChatModel, dumps
 from langchain.llms import FakeListLLM
 from langchain.llms.base import BaseLLM
-from langchain.schema import (
-    ChatGeneration,
-    Generation,
-)
+from langchain.schema import ChatGeneration, Generation
 from langchain.schema.messages import AIMessage, BaseMessage, HumanMessage
 
 

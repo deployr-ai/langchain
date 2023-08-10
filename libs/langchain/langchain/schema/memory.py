@@ -91,24 +91,24 @@ class BaseChatMessageHistory(ABC):
     messages: List[BaseMessage]
     """A list of Messages stored in-memory."""
 
-    def add_user_message(self, message: str) -> None:
+    def add_user_message(self, message: str, message_id: str = "0") -> None:
         """Convenience method for adding a human message string to the store.
 
         Args:
             message: The string contents of a human message.
         """
-        self.add_message(HumanMessage(content=message))
+        self.add_message(HumanMessage(content=message), message_id)
 
-    def add_ai_message(self, message: str) -> None:
+    def add_ai_message(self, message: str, message_id: str = "0") -> None:
         """Convenience method for adding an AI message string to the store.
 
         Args:
             message: The string contents of an AI message.
         """
-        self.add_message(AIMessage(content=message))
+        self.add_message(AIMessage(content=message), message_id)
 
     @abstractmethod
-    def add_message(self, message: BaseMessage) -> None:
+    def add_message(self, message: BaseMessage, message_id: str = "0") -> None:
         """Add a Message object to the store.
 
         Args:

@@ -11,11 +11,11 @@ from datetime import timedelta
 from typing import Iterator
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 import langchain
 from langchain.cache import MomentoCache
 from langchain.schema import Generation, LLMResult
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 def random_string() -> str:

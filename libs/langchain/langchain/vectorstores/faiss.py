@@ -16,7 +16,8 @@ from langchain.docstore.document import Document
 from langchain.docstore.in_memory import InMemoryDocstore
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import DistanceStrategy, maximal_marginal_relevance
+from langchain.vectorstores.utils import (DistanceStrategy,
+                                          maximal_marginal_relevance)
 
 
 def dependable_faiss_import(no_avx2: Optional[bool] = None) -> Any:

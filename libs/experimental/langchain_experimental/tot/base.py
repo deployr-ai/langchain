@@ -14,22 +14,18 @@ from __future__ import annotations
 from textwrap import indent
 from typing import Any, Dict, List, Optional, Type
 
-from langchain.base_language import BaseLanguageModel
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    CallbackManagerForChainRun,
-)
-from langchain.chains.base import Chain
-from pydantic import Extra
-
 from langchain_experimental.tot.checker import ToTChecker
 from langchain_experimental.tot.controller import ToTController
 from langchain_experimental.tot.memory import ToTDFSMemory
 from langchain_experimental.tot.thought import Thought, ThoughtValidity
 from langchain_experimental.tot.thought_generation import (
-    BaseThoughtGenerationStrategy,
-    ProposePromptStrategy,
-)
+    BaseThoughtGenerationStrategy, ProposePromptStrategy)
+from pydantic import Extra
+
+from langchain.base_language import BaseLanguageModel
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         CallbackManagerForChainRun)
+from langchain.chains.base import Chain
 
 
 class ToTChain(Chain):

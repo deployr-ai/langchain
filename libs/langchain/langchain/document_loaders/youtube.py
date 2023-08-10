@@ -65,7 +65,8 @@ class GoogleApiClient:
             from google.oauth2 import service_account
             from google.oauth2.credentials import Credentials
             from google_auth_oauthlib.flow import InstalledAppFlow
-            from youtube_transcript_api import YouTubeTranscriptApi  # noqa: F401
+            from youtube_transcript_api import \
+                YouTubeTranscriptApi  # noqa: F401
         except ImportError:
             raise ImportError(
                 "You must run"
@@ -180,11 +181,9 @@ class YoutubeLoader(BaseLoader):
     def load(self) -> List[Document]:
         """Load documents."""
         try:
-            from youtube_transcript_api import (
-                NoTranscriptFound,
-                TranscriptsDisabled,
-                YouTubeTranscriptApi,
-            )
+            from youtube_transcript_api import (NoTranscriptFound,
+                                                TranscriptsDisabled,
+                                                YouTubeTranscriptApi)
         except ImportError:
             raise ImportError(
                 "Could not import youtube_transcript_api python package. "
@@ -293,7 +292,8 @@ class GoogleApiYoutubeLoader(BaseLoader):
     def _build_youtube_client(self, creds: Any) -> Any:
         try:
             from googleapiclient.discovery import build
-            from youtube_transcript_api import YouTubeTranscriptApi  # noqa: F401
+            from youtube_transcript_api import \
+                YouTubeTranscriptApi  # noqa: F401
         except ImportError:
             raise ImportError(
                 "You must run"
@@ -316,7 +316,8 @@ class GoogleApiYoutubeLoader(BaseLoader):
         return values
 
     def _get_transcripe_for_video_id(self, video_id: str) -> str:
-        from youtube_transcript_api import NoTranscriptFound, YouTubeTranscriptApi
+        from youtube_transcript_api import (NoTranscriptFound,
+                                            YouTubeTranscriptApi)
 
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
         try:
@@ -357,10 +358,8 @@ class GoogleApiYoutubeLoader(BaseLoader):
 
     def _get_document_for_channel(self, channel: str, **kwargs: Any) -> List[Document]:
         try:
-            from youtube_transcript_api import (
-                NoTranscriptFound,
-                TranscriptsDisabled,
-            )
+            from youtube_transcript_api import (NoTranscriptFound,
+                                                TranscriptsDisabled)
         except ImportError:
             raise ImportError(
                 "You must run"

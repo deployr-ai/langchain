@@ -1,10 +1,10 @@
 """Test Deep Lake functionality."""
 import pytest
 from pytest import FixtureRequest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.docstore.document import Document
 from langchain.vectorstores import DeepLake
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 
 @pytest.fixture

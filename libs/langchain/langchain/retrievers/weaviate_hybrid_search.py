@@ -5,7 +5,8 @@ from uuid import uuid4
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.docstore.document import Document
 from langchain.schema import BaseRetriever
 
@@ -94,6 +95,33 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
         query: str,
         *,
         run_manager: CallbackManagerForRetrieverRun,
+        where_filter: Optional[Dict[str, object]] = None,
+        score: bool = False,
+    ) -> List[Document]:
+        """Look up similar documents in Weaviate."""
+        query_obj = self.client.query.get(self.index_name, self.attributes)
+        if where_filter:
+            query_obj = query_obj.with_where(where_filter)
+
+        if score:
+            query_obj = query_obj.with_additional(["score", "explainScore"])
+
+        result = query_obj.with_hybrid(query, alpha=self.alpha).with_limit(self.k).do()
+        if "errors" in result:
+            raise ValueError(f"Error during query: {result['errors']}")
+
+        docs = []
+
+        for res in result["data"]["Get"][self.index_name]:
+            text = res.pop(self.text_key)
+            docs.append(Document(page_content=text, metadata=res))
+        return docs
+
+    async def _aget_relevant_documents(
+        self,
+        query: str,
+        *,
+        run_manager: AsyncCallbackManagerForRetrieverRun,
         where_filter: Optional[Dict[str, object]] = None,
         score: bool = False,
     ) -> List[Document]:

@@ -16,8 +16,7 @@ from typing import Any
 
 from langchain.embeddings.aleph_alpha import (
     AlephAlphaAsymmetricSemanticEmbedding,
-    AlephAlphaSymmetricSemanticEmbedding,
-)
+    AlephAlphaSymmetricSemanticEmbedding)
 from langchain.embeddings.awa import AwaEmbeddings
 from langchain.embeddings.bedrock import BedrockEmbeddings
 from langchain.embeddings.clarifai import ClarifaiEmbeddings
@@ -27,14 +26,13 @@ from langchain.embeddings.deepinfra import DeepInfraEmbeddings
 from langchain.embeddings.edenai import EdenAiEmbeddings
 from langchain.embeddings.elasticsearch import ElasticsearchEmbeddings
 from langchain.embeddings.embaas import EmbaasEmbeddings
-from langchain.embeddings.fake import DeterministicFakeEmbedding, FakeEmbeddings
+from langchain.embeddings.fake import (DeterministicFakeEmbedding,
+                                       FakeEmbeddings)
 from langchain.embeddings.google_palm import GooglePalmEmbeddings
 from langchain.embeddings.gpt4all import GPT4AllEmbeddings
-from langchain.embeddings.huggingface import (
-    HuggingFaceBgeEmbeddings,
-    HuggingFaceEmbeddings,
-    HuggingFaceInstructEmbeddings,
-)
+from langchain.embeddings.huggingface import (HuggingFaceBgeEmbeddings,
+                                              HuggingFaceEmbeddings,
+                                              HuggingFaceInstructEmbeddings)
 from langchain.embeddings.huggingface_hub import HuggingFaceHubEmbeddings
 from langchain.embeddings.jina import JinaEmbeddings
 from langchain.embeddings.llamacpp import LlamaCppEmbeddings
@@ -49,10 +47,9 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.embeddings.sagemaker_endpoint import SagemakerEndpointEmbeddings
 from langchain.embeddings.self_hosted import SelfHostedEmbeddings
 from langchain.embeddings.self_hosted_hugging_face import (
-    SelfHostedHuggingFaceEmbeddings,
-    SelfHostedHuggingFaceInstructEmbeddings,
-)
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+    SelfHostedHuggingFaceEmbeddings, SelfHostedHuggingFaceInstructEmbeddings)
+from langchain.embeddings.sentence_transformer import \
+    SentenceTransformerEmbeddings
 from langchain.embeddings.spacy_embeddings import SpacyEmbeddings
 from langchain.embeddings.tensorflow_hub import TensorflowHubEmbeddings
 from langchain.embeddings.vertexai import VertexAIEmbeddings
@@ -109,7 +106,8 @@ class HypotheticalDocumentEmbedder:
             "Using a deprecated class. Please use "
             "`from langchain.chains import HypotheticalDocumentEmbedder` instead"
         )
-        from langchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
+        from langchain.chains.hyde.base import \
+            HypotheticalDocumentEmbedder as H
 
         return H(*args, **kwargs)  # type: ignore
 
@@ -119,6 +117,7 @@ class HypotheticalDocumentEmbedder:
             "Using a deprecated class. Please use "
             "`from langchain.chains import HypotheticalDocumentEmbedder` instead"
         )
-        from langchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
+        from langchain.chains.hyde.base import \
+            HypotheticalDocumentEmbedder as H
 
         return H.from_llm(*args, **kwargs)

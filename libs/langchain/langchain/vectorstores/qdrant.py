@@ -7,20 +7,8 @@ import uuid
 import warnings
 from itertools import islice
 from operator import itemgetter
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Generator,
-    Iterable,
-    List,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Generator, Iterable,
+                    List, Optional, Sequence, Tuple, Type, Union)
 
 import numpy as np
 

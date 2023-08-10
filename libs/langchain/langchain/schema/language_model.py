@@ -1,16 +1,8 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    List,
-    Optional,
-    Sequence,
-    Set,
-    TypeVar,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, List, Optional, Sequence, Set, TypeVar,
+                    Union)
 
 from langchain.load.serializable import Serializable
 from langchain.schema.messages import BaseMessage, get_buffer_string

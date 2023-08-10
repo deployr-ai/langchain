@@ -3,10 +3,8 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM
 
 

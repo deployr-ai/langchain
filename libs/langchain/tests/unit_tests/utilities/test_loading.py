@@ -10,7 +10,8 @@ from urllib.parse import urljoin
 import pytest
 import responses
 
-from langchain.utilities.loading import DEFAULT_REF, URL_BASE, try_load_from_hub
+from langchain.utilities.loading import (DEFAULT_REF, URL_BASE,
+                                         try_load_from_hub)
 
 
 @pytest.fixture(autouse=True)

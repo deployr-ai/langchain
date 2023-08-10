@@ -1,18 +1,8 @@
 from __future__ import annotations
 
 import logging
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    Generator,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    TypeVar,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Dict, Generator, Iterable, List,
+                    Optional, Tuple, TypeVar, Union)
 
 import numpy as np
 

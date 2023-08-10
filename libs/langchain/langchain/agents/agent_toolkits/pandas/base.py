@@ -3,16 +3,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from langchain.agents.agent import AgentExecutor, BaseSingleActionAgent
 from langchain.agents.agent_toolkits.pandas.prompt import (
-    FUNCTIONS_WITH_DF,
-    FUNCTIONS_WITH_MULTI_DF,
-    MULTI_DF_PREFIX,
-    MULTI_DF_PREFIX_FUNCTIONS,
-    PREFIX,
-    PREFIX_FUNCTIONS,
-    SUFFIX_NO_DF,
-    SUFFIX_WITH_DF,
-    SUFFIX_WITH_MULTI_DF,
-)
+    FUNCTIONS_WITH_DF, FUNCTIONS_WITH_MULTI_DF, MULTI_DF_PREFIX,
+    MULTI_DF_PREFIX_FUNCTIONS, PREFIX, PREFIX_FUNCTIONS, SUFFIX_NO_DF,
+    SUFFIX_WITH_DF, SUFFIX_WITH_MULTI_DF)
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
 from langchain.agents.types import AgentType

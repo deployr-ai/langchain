@@ -9,15 +9,13 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    CallbackManagerForChainRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         CallbackManagerForChainRun, Callbacks)
 from langchain.chains.base import Chain
 from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_PROMPT
+from langchain.chains.conversational_retrieval.prompts import \
+    CONDENSE_QUESTION_PROMPT
 from langchain.chains.llm import LLMChain
 from langchain.chains.question_answering import load_qa_chain
 from langchain.schema import BasePromptTemplate, BaseRetriever, Document

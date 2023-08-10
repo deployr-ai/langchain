@@ -4,9 +4,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from langchain.tools.file_management.file_search import FileSearchTool
-from langchain.tools.file_management.utils import (
-    INVALID_PATH_TEMPLATE,
-)
+from langchain.tools.file_management.utils import INVALID_PATH_TEMPLATE
 
 
 def test_file_search_with_root_dir() -> None:

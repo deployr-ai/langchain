@@ -4,10 +4,10 @@ import unittest
 from pathlib import Path
 
 import pytest
+from tests.integration_tests.llms.utils import assert_llm_equality
 
 from langchain.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain.llms.loading import load_llm
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 @unittest.skip(

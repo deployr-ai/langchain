@@ -5,25 +5,14 @@ import base64
 import json
 import logging
 import uuid
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Iterable, List,
+                    Optional, Tuple, Type)
 
 import numpy as np
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.schema import BaseRetriever
@@ -34,12 +23,10 @@ logger = logging.getLogger()
 
 if TYPE_CHECKING:
     from azure.search.documents import SearchClient
-    from azure.search.documents.indexes.models import (
-        ScoringProfile,
-        SearchField,
-        SemanticSettings,
-        VectorSearch,
-    )
+    from azure.search.documents.indexes.models import (ScoringProfile,
+                                                       SearchField,
+                                                       SemanticSettings,
+                                                       VectorSearch)
 
 
 # Allow overriding field names for Azure Search
@@ -81,14 +68,8 @@ def _get_search_client(
     from azure.search.documents import SearchClient
     from azure.search.documents.indexes import SearchIndexClient
     from azure.search.documents.indexes.models import (
-        PrioritizedFields,
-        SearchIndex,
-        SemanticConfiguration,
-        SemanticField,
-        SemanticSettings,
-        VectorSearch,
-        VectorSearchAlgorithmConfiguration,
-    )
+        PrioritizedFields, SearchIndex, SemanticConfiguration, SemanticField,
+        SemanticSettings, VectorSearch, VectorSearchAlgorithmConfiguration)
 
     default_fields = default_fields or []
     if key is None:
@@ -195,12 +176,10 @@ class AzureSearch(VectorStore):
         default_scoring_profile: Optional[str] = None,
         **kwargs: Any,
     ):
-        from azure.search.documents.indexes.models import (
-            SearchableField,
-            SearchField,
-            SearchFieldDataType,
-            SimpleField,
-        )
+        from azure.search.documents.indexes.models import (SearchableField,
+                                                           SearchField,
+                                                           SearchFieldDataType,
+                                                           SimpleField)
 
         """Initialize with necessary components."""
         # Initialize base class

@@ -4,13 +4,11 @@ from typing import Iterator
 
 from langchain.document_loaders.base import BaseBlobParser
 from langchain.document_loaders.blob_loaders import Blob
-from langchain.document_loaders.parsers.pdf import (
-    PDFMinerParser,
-    PDFPlumberParser,
-    PyMuPDFParser,
-    PyPDFium2Parser,
-    PyPDFParser,
-)
+from langchain.document_loaders.parsers.pdf import (PDFMinerParser,
+                                                    PDFPlumberParser,
+                                                    PyMuPDFParser,
+                                                    PyPDFium2Parser,
+                                                    PyPDFParser)
 
 # PDFs to test parsers on.
 HELLO_PDF = Path(__file__).parent.parent.parent / "examples" / "hello.pdf"

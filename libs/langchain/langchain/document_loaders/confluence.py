@@ -4,12 +4,8 @@ from enum import Enum
 from io import BytesIO
 from typing import Any, Callable, Dict, List, Optional, Union
 
-from tenacity import (
-    before_sleep_log,
-    retry,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (before_sleep_log, retry, stop_after_attempt,
+                      wait_exponential)
 
 from langchain.docstore.document import Document
 from langchain.document_loaders.base import BaseLoader

@@ -3,43 +3,22 @@ from __future__ import annotations
 
 import logging
 import sys
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    AsyncIterator,
-    Callable,
-    Dict,
-    Iterator,
-    List,
-    Mapping,
-    Optional,
-    Tuple,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, AsyncIterator, Callable, Dict,
+                    Iterator, List, Mapping, Optional, Tuple, Union)
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chat_models.base import BaseChatModel
 from langchain.llms.base import create_base_retry_decorator
 from langchain.schema import ChatGeneration, ChatResult
-from langchain.schema.messages import (
-    AIMessage,
-    AIMessageChunk,
-    BaseMessage,
-    BaseMessageChunk,
-    ChatMessage,
-    ChatMessageChunk,
-    FunctionMessage,
-    FunctionMessageChunk,
-    HumanMessage,
-    HumanMessageChunk,
-    SystemMessage,
-    SystemMessageChunk,
-)
+from langchain.schema.messages import (AIMessage, AIMessageChunk, BaseMessage,
+                                       BaseMessageChunk, ChatMessage,
+                                       ChatMessageChunk, FunctionMessage,
+                                       FunctionMessageChunk, HumanMessage,
+                                       HumanMessageChunk, SystemMessage,
+                                       SystemMessageChunk)
 from langchain.schema.output import ChatGenerationChunk
 from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
 

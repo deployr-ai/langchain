@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Iterator, List, Literal, Optional, Sequence, Union
 
 from langchain.document_loaders.base import BaseBlobParser, BaseLoader
-from langchain.document_loaders.blob_loaders import BlobLoader, FileSystemBlobLoader
+from langchain.document_loaders.blob_loaders import (BlobLoader,
+                                                     FileSystemBlobLoader)
 from langchain.document_loaders.parsers.registry import get_parser
 from langchain.schema import Document
 from langchain.text_splitter import TextSplitter

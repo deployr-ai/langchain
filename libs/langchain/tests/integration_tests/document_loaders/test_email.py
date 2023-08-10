@@ -1,6 +1,7 @@
 from pathlib import Path
 
-from langchain.document_loaders import OutlookMessageLoader, UnstructuredEmailLoader
+from langchain.document_loaders import (OutlookMessageLoader,
+                                        UnstructuredEmailLoader)
 
 
 def test_outlook_message_loader() -> None:

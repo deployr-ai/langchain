@@ -1,5 +1,6 @@
 """Test functionality related to prompt utils."""
-from langchain.prompts.example_selector.semantic_similarity import sorted_values
+from langchain.prompts.example_selector.semantic_similarity import \
+    sorted_values
 
 
 def test_sorted_vals() -> None:

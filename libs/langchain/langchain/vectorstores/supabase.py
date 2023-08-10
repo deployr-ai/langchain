@@ -2,17 +2,8 @@ from __future__ import annotations
 
 import uuid
 from itertools import repeat
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Tuple,
+                    Type, Union)
 
 import numpy as np
 

@@ -14,7 +14,8 @@ from langchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     from google.cloud import storage
-    from google.cloud.aiplatform import MatchingEngineIndex, MatchingEngineIndexEndpoint
+    from google.cloud.aiplatform import (MatchingEngineIndex,
+                                         MatchingEngineIndexEndpoint)
     from google.oauth2.service_account import Credentials
 
 logger = logging.getLogger()

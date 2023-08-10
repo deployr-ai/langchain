@@ -2,10 +2,8 @@
 from typing import Any, Dict, List, Optional
 
 from langchain.agents import AgentExecutor
-from langchain.agents.agent_toolkits.powerbi.prompt import (
-    POWERBI_PREFIX,
-    POWERBI_SUFFIX,
-)
+from langchain.agents.agent_toolkits.powerbi.prompt import (POWERBI_PREFIX,
+                                                            POWERBI_SUFFIX)
 from langchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS

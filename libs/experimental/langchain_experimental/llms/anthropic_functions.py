@@ -3,23 +3,13 @@ from collections import defaultdict
 from html.parser import HTMLParser
 from typing import Any, DefaultDict, Dict, List, Optional
 
-from langchain.callbacks.manager import (
-    CallbackManagerForLLMRun,
-    Callbacks,
-)
+from pydantic import root_validator
+
+from langchain.callbacks.manager import CallbackManagerForLLMRun, Callbacks
 from langchain.chat_models.anthropic import ChatAnthropic
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
-    ChatGeneration,
-    ChatResult,
-    LLMResult,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    SystemMessage,
-)
-from pydantic import root_validator
+from langchain.schema import ChatGeneration, ChatResult, LLMResult
+from langchain.schema.messages import AIMessage, BaseMessage, SystemMessage
 
 prompt = """In addition to responding, you can use tools. \
 You have access to the following tools.

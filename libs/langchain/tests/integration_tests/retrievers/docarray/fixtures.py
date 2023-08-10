@@ -34,9 +34,7 @@ def init_weaviate() -> (
     docker compose -f weaviate.yml up
     """
     from docarray import BaseDoc
-    from docarray.index import (
-        WeaviateDocumentIndex,
-    )
+    from docarray.index import WeaviateDocumentIndex
 
     class WeaviateDoc(BaseDoc):
         # When initializing the Weaviate index, denote the field
@@ -83,9 +81,7 @@ def init_elastic() -> (
     docker-compose -f elasticsearch.yml up
     """
     from docarray import BaseDoc
-    from docarray.index import (
-        ElasticDocIndex,
-    )
+    from docarray.index import ElasticDocIndex
 
     class MyDoc(BaseDoc):
         title: str
@@ -201,9 +197,7 @@ def init_hnsw(
     tmp_path: Path,
 ) -> Tuple[HnswDocumentIndex, Dict[str, Any], FakeEmbeddings]:
     from docarray import BaseDoc
-    from docarray.index import (
-        HnswDocumentIndex,
-    )
+    from docarray.index import HnswDocumentIndex
 
     class MyDoc(BaseDoc):
         title: str

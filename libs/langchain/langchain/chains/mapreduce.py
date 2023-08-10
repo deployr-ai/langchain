@@ -13,7 +13,8 @@ from langchain.callbacks.manager import CallbackManagerForChainRun, Callbacks
 from langchain.chains import ReduceDocumentsChain
 from langchain.chains.base import Chain
 from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from langchain.chains.combine_documents.map_reduce import \
+    MapReduceDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
 from langchain.docstore.document import Document

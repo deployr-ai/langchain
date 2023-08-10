@@ -48,7 +48,8 @@ from langchain.llms.gpt4all import GPT4All
 from langchain.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.llms.huggingface_pipeline import HuggingFacePipeline
-from langchain.llms.huggingface_text_gen_inference import HuggingFaceTextGenInference
+from langchain.llms.huggingface_text_gen_inference import \
+    HuggingFaceTextGenInference
 from langchain.llms.human import HumanInputLLM
 from langchain.llms.koboldai import KoboldApiLLM
 from langchain.llms.llamacpp import LlamaCpp
@@ -67,7 +68,8 @@ from langchain.llms.petals import Petals
 from langchain.llms.pipelineai import PipelineAI
 from langchain.llms.predibase import Predibase
 from langchain.llms.predictionguard import PredictionGuard
-from langchain.llms.promptlayer_openai import PromptLayerOpenAI, PromptLayerOpenAIChat
+from langchain.llms.promptlayer_openai import (PromptLayerOpenAI,
+                                               PromptLayerOpenAIChat)
 from langchain.llms.replicate import Replicate
 from langchain.llms.rwkv import RWKV
 from langchain.llms.sagemaker_endpoint import SagemakerEndpoint

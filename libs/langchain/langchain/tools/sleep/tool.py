@@ -5,10 +5,8 @@ from typing import Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool
 
 

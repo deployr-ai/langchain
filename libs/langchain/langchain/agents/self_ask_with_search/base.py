@@ -5,7 +5,8 @@ from pydantic import Field
 
 from langchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
 from langchain.agents.agent_types import AgentType
-from langchain.agents.self_ask_with_search.output_parser import SelfAskOutputParser
+from langchain.agents.self_ask_with_search.output_parser import \
+    SelfAskOutputParser
 from langchain.agents.self_ask_with_search.prompt import PROMPT
 from langchain.agents.tools import Tool
 from langchain.agents.utils import validate_tools_single_input

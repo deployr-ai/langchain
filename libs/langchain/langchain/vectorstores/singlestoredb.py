@@ -3,24 +3,13 @@
 from __future__ import annotations
 
 import json
-from typing import (
-    Any,
-    Callable,
-    ClassVar,
-    Collection,
-    Iterable,
-    List,
-    Optional,
-    Tuple,
-    Type,
-)
+from typing import (Any, Callable, ClassVar, Collection, Iterable, List,
+                    Optional, Tuple, Type)
 
 from sqlalchemy.pool import QueuePool
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.vectorstores.base import VectorStore, VectorStoreRetriever

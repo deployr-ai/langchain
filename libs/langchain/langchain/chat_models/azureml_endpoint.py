@@ -5,14 +5,10 @@ from pydantic import validator
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.chat_models.base import SimpleChatModel
-from langchain.llms.azureml_endpoint import AzureMLEndpointClient, ContentFormatterBase
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    ChatMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.llms.azureml_endpoint import (AzureMLEndpointClient,
+                                             ContentFormatterBase)
+from langchain.schema.messages import (AIMessage, BaseMessage, ChatMessage,
+                                       HumanMessage, SystemMessage)
 from langchain.utils import get_from_dict_or_env
 
 

@@ -1,7 +1,8 @@
 """Test Azure Cognitive Search wrapper."""
 import pytest
 
-from langchain.retrievers.azure_cognitive_search import AzureCognitiveSearchRetriever
+from langchain.retrievers.azure_cognitive_search import \
+    AzureCognitiveSearchRetriever
 from langchain.schema import Document
 
 

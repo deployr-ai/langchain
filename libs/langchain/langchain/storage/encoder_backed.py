@@ -1,14 +1,5 @@
-from typing import (
-    Any,
-    Callable,
-    Iterator,
-    List,
-    Optional,
-    Sequence,
-    Tuple,
-    TypeVar,
-    Union,
-)
+from typing import (Any, Callable, Iterator, List, Optional, Sequence, Tuple,
+                    TypeVar, Union)
 
 from langchain.schema import BaseStore
 

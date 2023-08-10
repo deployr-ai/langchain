@@ -2,17 +2,8 @@
 from __future__ import annotations
 
 import json
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    Optional,
-    Sequence,
-    Tuple,
-    TypedDict,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Dict, List, Optional, Sequence, Tuple,
+                    TypedDict, Union)
 
 from langchain.callbacks.tracers.base import BaseTracer
 from langchain.callbacks.tracers.schemas import Run

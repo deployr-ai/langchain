@@ -1,14 +1,9 @@
 """Logic for converting internal query language to a valid Chroma query."""
 from typing import Tuple, Union
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    Operation,
-    Operator,
-    StructuredQuery,
-    Visitor,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   Operation, Operator,
+                                                   StructuredQuery, Visitor)
 
 COMPARATOR_TO_TQL = {
     Comparator.EQ: "==",

@@ -1,23 +1,13 @@
 """Wrapper around Fireworks APIs"""
 import json
 import logging
-from typing import (
-    Any,
-    Dict,
-    List,
-    Optional,
-    Set,
-    Tuple,
-    Union,
-)
+from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
 import requests
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import BaseLLM
 from langchain.schema import Generation, LLMResult
 from langchain.utils import get_from_dict_or_env

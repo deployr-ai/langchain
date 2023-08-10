@@ -56,7 +56,8 @@ def _load_transformer(
 
     Accepts a huggingface model_id and returns a pipeline for the task.
     """
-    from transformers import AutoModelForCausalLM, AutoModelForSeq2SeqLM, AutoTokenizer
+    from transformers import (AutoModelForCausalLM, AutoModelForSeq2SeqLM,
+                              AutoTokenizer)
     from transformers import pipeline as hf_pipeline
 
     _model_kwargs = model_kwargs or {}

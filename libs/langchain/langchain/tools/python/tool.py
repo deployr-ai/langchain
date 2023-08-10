@@ -10,10 +10,8 @@ from typing import Any, Dict, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool
 from langchain.utilities import PythonREPL
 

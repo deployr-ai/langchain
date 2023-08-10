@@ -2,9 +2,10 @@
 import os
 from typing import List
 
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+
 from langchain.docstore.document import Document
 from langchain.vectorstores.analyticdb import AnalyticDB
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 CONNECTION_STRING = AnalyticDB.connection_string_from_db_params(
     driver=os.environ.get("PG_DRIVER", "psycopg2cffi"),

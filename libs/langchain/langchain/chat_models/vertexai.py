@@ -7,16 +7,9 @@ from pydantic import root_validator
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.chat_models.base import BaseChatModel
 from langchain.llms.vertexai import _VertexAICommon, is_codey_model
-from langchain.schema import (
-    ChatGeneration,
-    ChatResult,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.schema import ChatGeneration, ChatResult
+from langchain.schema.messages import (AIMessage, BaseMessage, HumanMessage,
+                                       SystemMessage)
 from langchain.utilities.vertexai import raise_vertex_import_error
 
 if TYPE_CHECKING:

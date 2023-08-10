@@ -89,7 +89,8 @@ class UnstructuredWordDocumentLoader(UnstructuredFileLoader):
     """
 
     def _get_elements(self) -> List:
-        from unstructured.__version__ import __version__ as __unstructured_version__
+        from unstructured.__version__ import \
+            __version__ as __unstructured_version__
         from unstructured.file_utils.filetype import FileType, detect_filetype
 
         unstructured_version = tuple(

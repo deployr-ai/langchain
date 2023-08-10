@@ -3,10 +3,8 @@ from typing import Any, List, Optional
 import aiohttp
 import requests
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.schema import BaseRetriever, Document
 
 

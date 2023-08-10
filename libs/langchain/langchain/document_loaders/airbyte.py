@@ -31,9 +31,8 @@ class AirbyteCDKLoader(BaseLoader):
             state: The state to pass to the source connector. Defaults to None.
         """
         from airbyte_cdk.models.airbyte_protocol import AirbyteRecordMessage
-        from airbyte_cdk.sources.embedded.base_integration import (
-            BaseEmbeddedIntegration,
-        )
+        from airbyte_cdk.sources.embedded.base_integration import \
+            BaseEmbeddedIntegration
         from airbyte_cdk.sources.embedded.runner import CDKRunner
 
         class CDKIntegration(BaseEmbeddedIntegration):

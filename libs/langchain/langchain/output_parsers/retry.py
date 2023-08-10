@@ -4,12 +4,8 @@ from typing import TypeVar
 
 from langchain.chains.llm import LLMChain
 from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import (
-    BaseOutputParser,
-    BasePromptTemplate,
-    OutputParserException,
-    PromptValue,
-)
+from langchain.schema import (BaseOutputParser, BasePromptTemplate,
+                              OutputParserException, PromptValue)
 from langchain.schema.language_model import BaseLanguageModel
 
 NAIVE_COMPLETION_RETRY = """Prompt:

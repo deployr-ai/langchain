@@ -4,9 +4,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from langchain.tools.file_management.copy import CopyFileTool
-from langchain.tools.file_management.utils import (
-    INVALID_PATH_TEMPLATE,
-)
+from langchain.tools.file_management.utils import INVALID_PATH_TEMPLATE
 
 
 def test_copy_file_with_root_dir() -> None:

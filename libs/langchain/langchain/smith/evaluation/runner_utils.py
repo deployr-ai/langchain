@@ -9,19 +9,8 @@ import itertools
 import logging
 import uuid
 from enum import Enum
-from typing import (
-    Any,
-    Callable,
-    Coroutine,
-    Dict,
-    Iterator,
-    List,
-    Optional,
-    Sequence,
-    Tuple,
-    Union,
-    cast,
-)
+from typing import (Any, Callable, Coroutine, Dict, Iterator, List, Optional,
+                    Sequence, Tuple, Union, cast)
 from urllib.parse import urlparse, urlunparse
 
 from langsmith import Client, RunEvaluator
@@ -41,7 +30,8 @@ from langchain.schema.language_model import BaseLanguageModel
 from langchain.schema.messages import BaseMessage, messages_from_dict
 from langchain.schema.runnable import Runnable, RunnableConfig, RunnableLambda
 from langchain.smith.evaluation.config import EvalConfig, RunEvalConfig
-from langchain.smith.evaluation.string_run_evaluator import StringRunEvaluatorChain
+from langchain.smith.evaluation.string_run_evaluator import \
+    StringRunEvaluatorChain
 
 logger = logging.getLogger(__name__)
 

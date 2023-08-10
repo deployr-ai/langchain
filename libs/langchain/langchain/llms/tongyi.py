@@ -5,13 +5,8 @@ from typing import Any, Callable, Dict, List, Optional
 
 from pydantic import Field, root_validator
 from requests.exceptions import HTTPError
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (before_sleep_log, retry, retry_if_exception_type,
+                      stop_after_attempt, wait_exponential)
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.llms.base import LLM

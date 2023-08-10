@@ -1,15 +1,12 @@
 import pytest
+from tests.unit_tests.agents.test_agent import _get_agent
+from tests.unit_tests.callbacks.fake_callback_handler import \
+    FakeCallbackHandler
 
-from langchain.agents import (
-    AgentExecutor,
-    AgentExecutorIterator,
-    AgentType,
-    initialize_agent,
-)
+from langchain.agents import (AgentExecutor, AgentExecutorIterator, AgentType,
+                              initialize_agent)
 from langchain.agents.tools import Tool
 from langchain.llms import FakeListLLM
-from tests.unit_tests.agents.test_agent import _get_agent
-from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
 
 
 def test_agent_iterator_bad_action() -> None:

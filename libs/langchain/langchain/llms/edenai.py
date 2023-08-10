@@ -5,10 +5,8 @@ from typing import Any, Dict, List, Literal, Optional
 from aiohttp import ClientSession
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM
 from langchain.llms.utils import enforce_stop_tokens
 from langchain.requests import Requests

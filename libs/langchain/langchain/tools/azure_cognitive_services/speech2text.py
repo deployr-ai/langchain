@@ -8,9 +8,7 @@ from pydantic import root_validator
 
 from langchain.callbacks.manager import CallbackManagerForToolRun
 from langchain.tools.azure_cognitive_services.utils import (
-    detect_file_src_type,
-    download_audio_from_url,
-)
+    detect_file_src_type, download_audio_from_url)
 from langchain.tools.base import BaseTool
 from langchain.utils import get_from_dict_or_env
 

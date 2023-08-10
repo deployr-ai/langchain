@@ -5,12 +5,10 @@ from typing import Any, Dict, List, Optional, Union
 
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.prompts.base import (
-    DEFAULT_FORMATTER_MAPPING,
-    StringPromptTemplate,
-    check_valid_template,
-)
-from langchain.prompts.chat import BaseChatPromptTemplate, BaseMessagePromptTemplate
+from langchain.prompts.base import (DEFAULT_FORMATTER_MAPPING,
+                                    StringPromptTemplate, check_valid_template)
+from langchain.prompts.chat import (BaseChatPromptTemplate,
+                                    BaseMessagePromptTemplate)
 from langchain.prompts.example_selector.base import BaseExampleSelector
 from langchain.prompts.prompt import PromptTemplate
 from langchain.schema.messages import BaseMessage, get_buffer_string

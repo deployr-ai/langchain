@@ -1,11 +1,10 @@
 """Test LLM callbacks."""
+from tests.unit_tests.callbacks.fake_callback_handler import (
+    FakeCallbackHandler, FakeCallbackHandlerWithChatStart)
+
 from langchain.chat_models.fake import FakeListChatModel
 from langchain.llms.fake import FakeListLLM
 from langchain.schema.messages import HumanMessage
-from tests.unit_tests.callbacks.fake_callback_handler import (
-    FakeCallbackHandler,
-    FakeCallbackHandlerWithChatStart,
-)
 
 
 def test_llm_with_callbacks() -> None:

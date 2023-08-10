@@ -5,11 +5,8 @@ from typing import List
 
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.tools.azure_cognitive_services import (
-    AzureCogsFormRecognizerTool,
-    AzureCogsImageAnalysisTool,
-    AzureCogsSpeech2TextTool,
-    AzureCogsText2SpeechTool,
-)
+    AzureCogsFormRecognizerTool, AzureCogsImageAnalysisTool,
+    AzureCogsSpeech2TextTool, AzureCogsText2SpeechTool)
 from langchain.tools.base import BaseTool
 
 

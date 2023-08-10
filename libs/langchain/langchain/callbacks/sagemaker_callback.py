@@ -6,9 +6,7 @@ from copy import deepcopy
 from typing import Any, Dict, List, Optional, Union
 
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.utils import (
-    flatten_dict,
-)
+from langchain.callbacks.utils import flatten_dict
 from langchain.schema import AgentAction, AgentFinish, LLMResult
 
 

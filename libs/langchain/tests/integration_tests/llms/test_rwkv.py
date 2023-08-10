@@ -1,11 +1,12 @@
 # flake8: noqa
 """Test rwkv wrapper."""
 import os
+import warnings
 from urllib.request import urlretrieve
 
-from langchain.llms import RWKV
-import warnings
 import pytest
+
+from langchain.llms import RWKV
 
 
 def _download_model() -> str:

@@ -1,8 +1,10 @@
 """Test Replicate API wrapper."""
 
+from tests.unit_tests.callbacks.fake_callback_handler import \
+    FakeCallbackHandler
+
 from langchain.callbacks.manager import CallbackManager
 from langchain.llms.replicate import Replicate
-from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
 
 TEST_MODEL_NAME = "replicate/hello-world"
 TEST_MODEL_VER = "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa"

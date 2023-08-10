@@ -1,28 +1,13 @@
 import json
 import logging
-from typing import (
-    Any,
-    Dict,
-    List,
-    Mapping,
-    Optional,
-    Tuple,
-)
+from typing import Any, Dict, List, Mapping, Optional, Tuple
 
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
-    ChatGeneration,
-    ChatResult,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    ChatMessage,
-    FunctionMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.schema import ChatGeneration, ChatResult
+from langchain.schema.messages import (AIMessage, BaseMessage, ChatMessage,
+                                       FunctionMessage, HumanMessage,
+                                       SystemMessage)
 
 logger = logging.getLogger(__name__)
 

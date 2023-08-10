@@ -1,7 +1,8 @@
 """Memory used to save agent output AND intermediate steps."""
 from typing import Any, Dict, List
 
-from langchain.agents.openai_functions_agent.base import _format_intermediate_steps
+from langchain.agents.openai_functions_agent.base import \
+    _format_intermediate_steps
 from langchain.memory.chat_memory import BaseChatMemory
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.schema.messages import BaseMessage, get_buffer_string

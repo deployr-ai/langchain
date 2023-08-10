@@ -4,12 +4,12 @@ from typing import Dict, List, Union
 from unittest.mock import patch
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 from langchain.chains.llm import LLMChain
 from langchain.chains.loading import load_chain
 from langchain.prompts.prompt import PromptTemplate
 from langchain.schema import BaseOutputParser
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 class FakeOutputParser(BaseOutputParser):

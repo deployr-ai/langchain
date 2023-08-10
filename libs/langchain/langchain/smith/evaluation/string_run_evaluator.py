@@ -7,10 +7,8 @@ from typing import Any, Dict, List, Optional
 from langsmith import EvaluationResult, RunEvaluator
 from langsmith.schemas import DataType, Example, Run
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    CallbackManagerForChainRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         CallbackManagerForChainRun)
 from langchain.chains.base import Chain
 from langchain.evaluation.schema import StringEvaluator
 from langchain.load.dump import dumpd

@@ -1,10 +1,10 @@
 """Test LLM Math functionality."""
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 from langchain.chains.llm_symbolic_math.base import LLMSymbolicMathChain
 from langchain.chains.llm_symbolic_math.prompt import _PROMPT_TEMPLATE
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 @pytest.fixture

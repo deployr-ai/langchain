@@ -3,11 +3,9 @@ from typing import Any
 
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
-from langchain.embeddings import (
-    SelfHostedEmbeddings,
-    SelfHostedHuggingFaceEmbeddings,
-    SelfHostedHuggingFaceInstructEmbeddings,
-)
+from langchain.embeddings import (SelfHostedEmbeddings,
+                                  SelfHostedHuggingFaceEmbeddings,
+                                  SelfHostedHuggingFaceInstructEmbeddings)
 
 
 def get_remote_instance() -> Any:

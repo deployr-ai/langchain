@@ -2,7 +2,8 @@
 from typing import Any, Dict, List, Optional
 
 from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.json.prompt import JSON_PREFIX, JSON_SUFFIX
+from langchain.agents.agent_toolkits.json.prompt import (JSON_PREFIX,
+                                                         JSON_SUFFIX)
 from langchain.agents.agent_toolkits.json.toolkit import JsonToolkit
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS

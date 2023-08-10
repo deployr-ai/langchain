@@ -2,11 +2,9 @@
 
 import pytest
 
-from langchain.chat_models.google_palm import (
-    ChatGooglePalm,
-    ChatGooglePalmError,
-    _messages_to_prompt_dict,
-)
+from langchain.chat_models.google_palm import (ChatGooglePalm,
+                                               ChatGooglePalmError,
+                                               _messages_to_prompt_dict)
 from langchain.schema.messages import AIMessage, HumanMessage, SystemMessage
 
 

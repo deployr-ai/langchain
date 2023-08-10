@@ -10,10 +10,8 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAIChat
 from langchain.llms.fireworks import Fireworks, FireworksChat
 from langchain.llms.loading import load_llm
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-)
+from langchain.prompts.chat import (ChatPromptTemplate,
+                                    HumanMessagePromptTemplate)
 from langchain.schema import LLMResult
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import DeepLake

@@ -4,7 +4,8 @@ from typing import Iterator, List, Optional
 
 from langchain.document_loaders.blob_loaders import Blob
 from langchain.schema import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
+from langchain.text_splitter import (RecursiveCharacterTextSplitter,
+                                     TextSplitter)
 
 
 class BaseLoader(ABC):

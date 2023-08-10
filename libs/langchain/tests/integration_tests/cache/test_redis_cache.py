@@ -1,12 +1,12 @@
 """Test Redis cache functionality."""
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+from tests.unit_tests.llms.fake_chat_model import FakeChatModel
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 import langchain
 from langchain.cache import RedisCache, RedisSemanticCache
 from langchain.schema import Generation, LLMResult
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
-from tests.unit_tests.llms.fake_chat_model import FakeChatModel
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 REDIS_TEST_URL = "redis://localhost:6379"
 

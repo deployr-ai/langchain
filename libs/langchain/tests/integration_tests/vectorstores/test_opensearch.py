@@ -1,14 +1,11 @@
 """Test OpenSearch functionality."""
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.docstore.document import Document
 from langchain.vectorstores.opensearch_vector_search import (
-    PAINLESS_SCRIPTING_SEARCH,
-    SCRIPT_SCORING_SEARCH,
-    OpenSearchVectorSearch,
-)
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+    PAINLESS_SCRIPTING_SEARCH, SCRIPT_SCORING_SEARCH, OpenSearchVectorSearch)
 
 DEFAULT_OPENSEARCH_URL = "http://localhost:9200"
 texts = ["foo", "bar", "baz"]

@@ -9,7 +9,8 @@ import yaml
 from langchain.output_parsers.regex import RegexParser
 from langchain.prompts.few_shot import FewShotPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import BaseLLMOutputParser, BasePromptTemplate, StrOutputParser
+from langchain.schema import (BaseLLMOutputParser, BasePromptTemplate,
+                              StrOutputParser)
 from langchain.utilities.loading import try_load_from_hub
 
 URL_BASE = "https://raw.githubusercontent.com/hwchase17/langchain-hub/master/prompts/"

@@ -5,22 +5,9 @@ MIT License
 """
 
 from collections import deque
-from typing import (
-    Any,
-    AsyncGenerator,
-    AsyncIterator,
-    Awaitable,
-    Callable,
-    Deque,
-    Generic,
-    Iterator,
-    List,
-    Tuple,
-    TypeVar,
-    Union,
-    cast,
-    overload,
-)
+from typing import (Any, AsyncGenerator, AsyncIterator, Awaitable, Callable,
+                    Deque, Generic, Iterator, List, Tuple, TypeVar, Union,
+                    cast, overload)
 
 T = TypeVar("T")
 

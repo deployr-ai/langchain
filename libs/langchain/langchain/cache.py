@@ -28,18 +28,8 @@ import logging
 import warnings
 from abc import ABC, abstractmethod
 from datetime import timedelta
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    Union,
-    cast,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Optional, Sequence,
+                    Tuple, Type, Union, cast)
 
 from sqlalchemy import Column, Integer, String, create_engine, select
 from sqlalchemy.engine.base import Engine

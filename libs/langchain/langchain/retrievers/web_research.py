@@ -4,10 +4,8 @@ from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.chains import LLMChain
 from langchain.chains.prompt_selector import ConditionalPromptSelector
 from langchain.document_loaders import AsyncHtmlLoader

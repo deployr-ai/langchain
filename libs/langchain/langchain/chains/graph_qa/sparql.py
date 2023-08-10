@@ -9,12 +9,10 @@ from pydantic import Field
 
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
-from langchain.chains.graph_qa.prompts import (
-    SPARQL_GENERATION_SELECT_PROMPT,
-    SPARQL_GENERATION_UPDATE_PROMPT,
-    SPARQL_INTENT_PROMPT,
-    SPARQL_QA_PROMPT,
-)
+from langchain.chains.graph_qa.prompts import (SPARQL_GENERATION_SELECT_PROMPT,
+                                               SPARQL_GENERATION_UPDATE_PROMPT,
+                                               SPARQL_INTENT_PROMPT,
+                                               SPARQL_QA_PROMPT)
 from langchain.chains.llm import LLMChain
 from langchain.graphs.rdf_graph import RdfGraph
 from langchain.prompts.base import BasePromptTemplate

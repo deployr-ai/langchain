@@ -4,11 +4,8 @@ import sys
 import numpy as np
 import pytest
 
-from langchain.tools.python.tool import (
-    PythonAstREPLTool,
-    PythonREPLTool,
-    sanitize_input,
-)
+from langchain.tools.python.tool import (PythonAstREPLTool, PythonREPLTool,
+                                         sanitize_input)
 
 
 def test_python_repl_tool_single_input() -> None:

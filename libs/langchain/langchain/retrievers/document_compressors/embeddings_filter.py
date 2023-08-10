@@ -5,13 +5,10 @@ from pydantic import root_validator
 
 from langchain.callbacks.manager import Callbacks
 from langchain.document_transformers.embeddings_redundant_filter import (
-    _get_embeddings_from_stateful_docs,
-    get_stateful_documents,
-)
+    _get_embeddings_from_stateful_docs, get_stateful_documents)
 from langchain.embeddings.base import Embeddings
-from langchain.retrievers.document_compressors.base import (
-    BaseDocumentCompressor,
-)
+from langchain.retrievers.document_compressors.base import \
+    BaseDocumentCompressor
 from langchain.schema import Document
 from langchain.utils.math import cosine_similarity
 

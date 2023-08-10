@@ -7,12 +7,10 @@ from typing import Any, Dict, List, Optional, Union
 
 from pydantic import root_validator
 
-from langchain.prompts.base import (
-    DEFAULT_FORMATTER_MAPPING,
-    StringPromptTemplate,
-    _get_jinja2_variables_from_template,
-    check_valid_template,
-)
+from langchain.prompts.base import (DEFAULT_FORMATTER_MAPPING,
+                                    StringPromptTemplate,
+                                    _get_jinja2_variables_from_template,
+                                    check_valid_template)
 
 
 class PromptTemplate(StringPromptTemplate):

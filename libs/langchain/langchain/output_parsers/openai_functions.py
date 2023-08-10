@@ -4,11 +4,7 @@ from typing import Any, Dict, List, Type, Union
 
 from pydantic import BaseModel, root_validator
 
-from langchain.schema import (
-    ChatGeneration,
-    Generation,
-    OutputParserException,
-)
+from langchain.schema import ChatGeneration, Generation, OutputParserException
 from langchain.schema.output_parser import BaseGenerationOutputParser
 
 

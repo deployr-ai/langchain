@@ -10,11 +10,9 @@ from langchain.schema import BaseRetriever, Document
 from langchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
-    from google.cloud.discoveryengine_v1beta import (
-        SearchRequest,
-        SearchResult,
-        SearchServiceClient,
-    )
+    from google.cloud.discoveryengine_v1beta import (SearchRequest,
+                                                     SearchResult,
+                                                     SearchServiceClient)
 
 
 class GoogleCloudEnterpriseSearchRetriever(BaseRetriever):

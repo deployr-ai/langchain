@@ -5,27 +5,14 @@ from __future__ import annotations
 import json
 import logging
 import uuid
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    Dict,
-    Iterable,
-    List,
-    Literal,
-    Mapping,
-    Optional,
-    Tuple,
-    Type,
-)
+from typing import (TYPE_CHECKING, Any, Callable, Dict, Iterable, List,
+                    Literal, Mapping, Optional, Tuple, Type)
 
 import numpy as np
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
 from langchain.utilities.redis import get_client
@@ -182,7 +169,8 @@ class Redis(VectorStore):
     def _create_index(self, dim: int = 1536) -> None:
         try:
             from redis.commands.search.field import TextField, VectorField
-            from redis.commands.search.indexDefinition import IndexDefinition, IndexType
+            from redis.commands.search.indexDefinition import (IndexDefinition,
+                                                               IndexType)
         except ImportError:
             raise ValueError(
                 "Could not import redis python package. "

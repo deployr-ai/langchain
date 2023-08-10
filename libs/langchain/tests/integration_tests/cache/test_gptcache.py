@@ -2,11 +2,11 @@ import os
 from typing import Any, Callable, Union
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 import langchain
 from langchain.cache import GPTCache
 from langchain.schema import Generation
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 try:
     from gptcache import Cache  # noqa: F401

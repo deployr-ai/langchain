@@ -1,21 +1,17 @@
 import re
 import warnings
-from typing import Any, AsyncIterator, Callable, Dict, Iterator, List, Mapping, Optional
+from typing import (Any, AsyncIterator, Callable, Dict, Iterator, List,
+                    Mapping, Optional)
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms.base import LLM
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.schema.output import GenerationChunk
-from langchain.utils import (
-    check_package_version,
-    get_from_dict_or_env,
-    get_pydantic_field_names,
-)
+from langchain.utils import (check_package_version, get_from_dict_or_env,
+                             get_pydantic_field_names)
 from langchain.utils.utils import build_extra_kwargs
 
 

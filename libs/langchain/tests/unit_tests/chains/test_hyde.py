@@ -3,10 +3,8 @@ from typing import Any, List, Optional
 
 import numpy as np
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chains.hyde.base import HypotheticalDocumentEmbedder
 from langchain.chains.hyde.prompts import PROMPT_MAP
 from langchain.embeddings.base import Embeddings

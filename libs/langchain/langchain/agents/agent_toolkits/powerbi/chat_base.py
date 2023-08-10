@@ -4,9 +4,7 @@ from typing import Any, Dict, List, Optional
 from langchain.agents import AgentExecutor
 from langchain.agents.agent import AgentOutputParser
 from langchain.agents.agent_toolkits.powerbi.prompt import (
-    POWERBI_CHAT_PREFIX,
-    POWERBI_CHAT_SUFFIX,
-)
+    POWERBI_CHAT_PREFIX, POWERBI_CHAT_SUFFIX)
 from langchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
 from langchain.agents.conversational_chat.base import ConversationalChatAgent
 from langchain.callbacks.base import BaseCallbackManager

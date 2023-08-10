@@ -136,9 +136,8 @@ class PineconeHybridSearchRetriever(BaseRetriever):
         """Validate that api key and python package exists in environment."""
         try:
             from pinecone_text.hybrid import hybrid_convex_scale  # noqa:F401
-            from pinecone_text.sparse.base_sparse_encoder import (
-                BaseSparseEncoder,  # noqa:F401
-            )
+            from pinecone_text.sparse.base_sparse_encoder import \
+                BaseSparseEncoder  # noqa:F401
         except ImportError:
             raise ValueError(
                 "Could not import pinecone_text python package. "

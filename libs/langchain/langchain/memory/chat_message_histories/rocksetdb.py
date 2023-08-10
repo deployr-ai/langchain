@@ -4,7 +4,8 @@ from typing import Any, Callable, List, Union
 from uuid import uuid4
 
 from langchain.schema import BaseChatMessageHistory
-from langchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from langchain.schema.messages import (BaseMessage, _message_to_dict,
+                                       messages_from_dict)
 
 
 class RocksetChatMessageHistory(BaseChatMessageHistory):

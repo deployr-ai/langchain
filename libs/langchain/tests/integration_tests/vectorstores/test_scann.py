@@ -4,15 +4,14 @@ import tempfile
 
 import numpy as np
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import (
+    ConsistentFakeEmbeddings, FakeEmbeddings)
 
 from langchain.docstore.document import Document
 from langchain.docstore.in_memory import InMemoryDocstore
-from langchain.vectorstores.scann import ScaNN, dependable_scann_import, normalize
+from langchain.vectorstores.scann import (ScaNN, dependable_scann_import,
+                                          normalize)
 from langchain.vectorstores.utils import DistanceStrategy
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-    FakeEmbeddings,
-)
 
 
 def test_scann() -> None:

@@ -61,12 +61,8 @@ class ArizeCallbackHandler(BaseCallbackHandler):
 
     def on_llm_end(self, response: LLMResult, **kwargs: Any) -> None:
         pd = import_pandas()
-        from arize.utils.types import (
-            EmbeddingColumnNames,
-            Environments,
-            ModelTypes,
-            Schema,
-        )
+        from arize.utils.types import (EmbeddingColumnNames, Environments,
+                                       ModelTypes, Schema)
 
         # Safe check if 'llm_output' and 'token_usage' exist
         if response.llm_output and "token_usage" in response.llm_output:

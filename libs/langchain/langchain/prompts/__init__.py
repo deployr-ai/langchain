@@ -28,26 +28,20 @@ from multiple components. Prompt classes and functions make constructing
 
 """  # noqa: E501
 from langchain.prompts.base import StringPromptTemplate
-from langchain.prompts.chat import (
-    AIMessagePromptTemplate,
-    BaseChatPromptTemplate,
-    ChatMessagePromptTemplate,
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    MessagesPlaceholder,
-    SystemMessagePromptTemplate,
-)
+from langchain.prompts.chat import (AIMessagePromptTemplate,
+                                    BaseChatPromptTemplate,
+                                    ChatMessagePromptTemplate,
+                                    ChatPromptTemplate,
+                                    HumanMessagePromptTemplate,
+                                    MessagesPlaceholder,
+                                    SystemMessagePromptTemplate)
 from langchain.prompts.example_selector import (
-    LengthBasedExampleSelector,
-    MaxMarginalRelevanceExampleSelector,
-    NGramOverlapExampleSelector,
-    SemanticSimilarityExampleSelector,
-)
-from langchain.prompts.few_shot import (
-    FewShotChatMessagePromptTemplate,
-    FewShotPromptTemplate,
-)
-from langchain.prompts.few_shot_with_templates import FewShotPromptWithTemplates
+    LengthBasedExampleSelector, MaxMarginalRelevanceExampleSelector,
+    NGramOverlapExampleSelector, SemanticSimilarityExampleSelector)
+from langchain.prompts.few_shot import (FewShotChatMessagePromptTemplate,
+                                        FewShotPromptTemplate)
+from langchain.prompts.few_shot_with_templates import \
+    FewShotPromptWithTemplates
 from langchain.prompts.loading import load_prompt
 from langchain.prompts.pipeline import PipelinePromptTemplate
 from langchain.prompts.prompt import Prompt, PromptTemplate

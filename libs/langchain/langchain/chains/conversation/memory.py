@@ -1,9 +1,7 @@
 """Memory modules for conversation prompts."""
 
-from langchain.memory.buffer import (
-    ConversationBufferMemory,
-    ConversationStringBufferMemory,
-)
+from langchain.memory.buffer import (ConversationBufferMemory,
+                                     ConversationStringBufferMemory)
 from langchain.memory.buffer_window import ConversationBufferWindowMemory
 from langchain.memory.combined import CombinedMemory
 from langchain.memory.entity import ConversationEntityMemory

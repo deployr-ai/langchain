@@ -1,10 +1,8 @@
 import datetime
 from typing import Any, List, Optional
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.llms import OpenAI, OpenAIChat
 from langchain.schema import LLMResult
 
@@ -84,7 +82,8 @@ class PromptLayerOpenAI(OpenAI):
         run_manager: Optional[AsyncCallbackManagerForLLMRun] = None,
         **kwargs: Any,
     ) -> LLMResult:
-        from promptlayer.utils import get_api_key, promptlayer_api_request_async
+        from promptlayer.utils import (get_api_key,
+                                       promptlayer_api_request_async)
 
         request_start_time = datetime.datetime.now().timestamp()
         generated_responses = await super()._agenerate(prompts, stop, run_manager)
@@ -193,7 +192,8 @@ class PromptLayerOpenAIChat(OpenAIChat):
         run_manager: Optional[AsyncCallbackManagerForLLMRun] = None,
         **kwargs: Any,
     ) -> LLMResult:
-        from promptlayer.utils import get_api_key, promptlayer_api_request_async
+        from promptlayer.utils import (get_api_key,
+                                       promptlayer_api_request_async)
 
         request_start_time = datetime.datetime.now().timestamp()
         generated_responses = await super()._agenerate(prompts, stop, run_manager)

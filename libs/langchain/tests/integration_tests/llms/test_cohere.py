@@ -2,9 +2,10 @@
 
 from pathlib import Path
 
+from tests.integration_tests.llms.utils import assert_llm_equality
+
 from langchain.llms.cohere import Cohere
 from langchain.llms.loading import load_llm
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 def test_cohere_call() -> None:

@@ -3,6 +3,7 @@
 from typing import Tuple
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.agents.mrkl.output_parser import MRKLOutputParser
@@ -10,7 +11,6 @@ from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
 from langchain.agents.tools import Tool
 from langchain.prompts import PromptTemplate
 from langchain.schema import AgentAction, OutputParserException
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 def get_action_and_input(text: str) -> Tuple[str, str]:

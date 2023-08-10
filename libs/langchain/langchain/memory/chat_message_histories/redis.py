@@ -2,10 +2,9 @@ import json
 import logging
 from typing import List, Optional
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
-from langchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from langchain.schema import BaseChatMessageHistory
+from langchain.schema.messages import (BaseMessage, _message_to_dict,
+                                       messages_from_dict)
 from langchain.utilities.redis import get_client
 
 logger = logging.getLogger(__name__)

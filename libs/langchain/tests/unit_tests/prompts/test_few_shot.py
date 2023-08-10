@@ -3,17 +3,12 @@ from typing import Any, Dict, List, Sequence, Tuple
 
 import pytest
 
-from langchain.prompts import (
-    AIMessagePromptTemplate,
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-)
+from langchain.prompts import (AIMessagePromptTemplate, ChatPromptTemplate,
+                               HumanMessagePromptTemplate)
 from langchain.prompts.chat import SystemMessagePromptTemplate
 from langchain.prompts.example_selector.base import BaseExampleSelector
-from langchain.prompts.few_shot import (
-    FewShotChatMessagePromptTemplate,
-    FewShotPromptTemplate,
-)
+from langchain.prompts.few_shot import (FewShotChatMessagePromptTemplate,
+                                        FewShotPromptTemplate)
 from langchain.prompts.prompt import PromptTemplate
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 

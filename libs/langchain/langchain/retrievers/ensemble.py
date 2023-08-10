@@ -6,10 +6,8 @@ from typing import Any, Dict, List
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForRetrieverRun,
-    CallbackManagerForRetrieverRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
+                                         CallbackManagerForRetrieverRun)
 from langchain.schema import BaseRetriever, Document
 
 

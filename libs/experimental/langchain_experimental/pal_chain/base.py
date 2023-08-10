@@ -10,15 +10,16 @@ from __future__ import annotations
 import ast
 from typing import Any, Dict, List, Optional
 
+from langchain_experimental.pal_chain.colored_object_prompt import \
+    COLORED_OBJECT_PROMPT
+from langchain_experimental.pal_chain.math_prompt import MATH_PROMPT
+from pydantic import Extra, Field
+
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.utilities import PythonREPL
-from pydantic import Extra, Field
-
-from langchain_experimental.pal_chain.colored_object_prompt import COLORED_OBJECT_PROMPT
-from langchain_experimental.pal_chain.math_prompt import MATH_PROMPT
 
 COMMAND_EXECUTION_FUNCTIONS = ["system", "exec", "execfile", "eval"]
 

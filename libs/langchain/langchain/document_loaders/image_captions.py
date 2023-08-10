@@ -42,7 +42,8 @@ class ImageCaptionLoader(BaseLoader):
         Load from a list of image files
         """
         try:
-            from transformers import BlipForConditionalGeneration, BlipProcessor
+            from transformers import (BlipForConditionalGeneration,
+                                      BlipProcessor)
         except ImportError:
             raise ImportError(
                 "`transformers` package not found, please install with "

@@ -1,7 +1,8 @@
 import logging
 from typing import List
 
-from tests.integration_tests.vectorstores.qdrant.common import qdrant_is_not_running
+from tests.integration_tests.vectorstores.qdrant.common import \
+    qdrant_is_not_running
 
 logger = logging.getLogger(__name__)
 

@@ -2,9 +2,10 @@
 import os
 from typing import List
 
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+
 from langchain.docstore.document import Document
 from langchain.vectorstores.hologres import Hologres
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 CONNECTION_STRING = Hologres.connection_string_from_db_params(
     host=os.environ.get("TEST_HOLOGRES_HOST", "localhost"),

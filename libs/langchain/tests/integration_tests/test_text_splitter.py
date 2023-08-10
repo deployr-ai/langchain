@@ -2,11 +2,9 @@
 
 import pytest
 
-from langchain.text_splitter import (
-    CharacterTextSplitter,
-    SentenceTransformersTokenTextSplitter,
-    TokenTextSplitter,
-)
+from langchain.text_splitter import (CharacterTextSplitter,
+                                     SentenceTransformersTokenTextSplitter,
+                                     TokenTextSplitter)
 
 
 def test_huggingface_type_check() -> None:

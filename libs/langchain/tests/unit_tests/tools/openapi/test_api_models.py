@@ -6,20 +6,12 @@ from typing import Iterable, List, Tuple
 
 import pytest
 import yaml
-from openapi_schema_pydantic import (
-    Components,
-    Info,
-    MediaType,
-    Reference,
-    RequestBody,
-    Schema,
-)
+from openapi_schema_pydantic import (Components, Info, MediaType, Reference,
+                                     RequestBody, Schema)
 
-from langchain.tools.openapi.utils.api_models import (
-    APIOperation,
-    APIRequestBody,
-    APIRequestBodyProperty,
-)
+from langchain.tools.openapi.utils.api_models import (APIOperation,
+                                                      APIRequestBody,
+                                                      APIRequestBodyProperty)
 from langchain.tools.openapi.utils.openapi_utils import HTTPVerb, OpenAPISpec
 
 SPECS_DIR = Path(__file__).parents[2] / "examples" / "test_specs"

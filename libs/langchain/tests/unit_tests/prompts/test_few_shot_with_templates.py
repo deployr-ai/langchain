@@ -1,6 +1,7 @@
 """Test few shot prompt template."""
 
-from langchain.prompts.few_shot_with_templates import FewShotPromptWithTemplates
+from langchain.prompts.few_shot_with_templates import \
+    FewShotPromptWithTemplates
 from langchain.prompts.prompt import PromptTemplate
 
 EXAMPLE_PROMPT = PromptTemplate(

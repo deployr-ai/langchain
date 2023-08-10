@@ -3,45 +3,26 @@ import inspect
 import warnings
 from abc import ABC, abstractmethod
 from functools import partial
-from typing import (
-    Any,
-    AsyncIterator,
-    Dict,
-    Iterator,
-    List,
-    Optional,
-    Sequence,
-    cast,
-)
+from typing import (Any, AsyncIterator, Dict, Iterator, List, Optional,
+                    Sequence, cast)
 
 from pydantic import Field, root_validator
 
 import langchain
 from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
-    AsyncCallbackManager,
-    AsyncCallbackManagerForLLMRun,
-    CallbackManager,
-    CallbackManagerForLLMRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManager,
+                                         AsyncCallbackManagerForLLMRun,
+                                         CallbackManager,
+                                         CallbackManagerForLLMRun, Callbacks)
 from langchain.load.dump import dumpd, dumps
 from langchain.prompts.base import StringPromptValue
 from langchain.prompts.chat import ChatPromptValue
-from langchain.schema import (
-    ChatGeneration,
-    ChatResult,
-    LLMResult,
-    PromptValue,
-    RunInfo,
-)
-from langchain.schema.language_model import BaseLanguageModel, LanguageModelInput
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    BaseMessageChunk,
-    HumanMessage,
-)
+from langchain.schema import (ChatGeneration, ChatResult, LLMResult,
+                              PromptValue, RunInfo)
+from langchain.schema.language_model import (BaseLanguageModel,
+                                             LanguageModelInput)
+from langchain.schema.messages import (AIMessage, BaseMessage,
+                                       BaseMessageChunk, HumanMessage)
 from langchain.schema.output import ChatGenerationChunk
 from langchain.schema.runnable import RunnableConfig
 

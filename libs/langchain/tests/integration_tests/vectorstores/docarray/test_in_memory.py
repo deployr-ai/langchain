@@ -3,10 +3,10 @@ from typing import List
 
 import numpy as np
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.schema import Document
 from langchain.vectorstores.docarray import DocArrayInMemorySearch
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 
 @pytest.fixture

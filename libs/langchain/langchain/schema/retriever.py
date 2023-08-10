@@ -12,10 +12,8 @@ from langchain.schema.runnable import Runnable, RunnableConfig
 
 if TYPE_CHECKING:
     from langchain.callbacks.manager import (
-        AsyncCallbackManagerForRetrieverRun,
-        CallbackManagerForRetrieverRun,
-        Callbacks,
-    )
+        AsyncCallbackManagerForRetrieverRun, CallbackManagerForRetrieverRun,
+        Callbacks)
 
 
 class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
@@ -142,6 +140,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
             List of relevant documents
         """
 
+    @abstractmethod
     async def _aget_relevant_documents(
         self, query: str, *, run_manager: AsyncCallbackManagerForRetrieverRun
     ) -> List[Document]:

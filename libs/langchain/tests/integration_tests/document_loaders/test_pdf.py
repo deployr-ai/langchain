@@ -3,16 +3,11 @@ from typing import Sequence, Union
 
 import pytest
 
-from langchain.document_loaders import (
-    AmazonTextractPDFLoader,
-    MathpixPDFLoader,
-    PDFMinerLoader,
-    PDFMinerPDFasHTMLLoader,
-    PyMuPDFLoader,
-    PyPDFium2Loader,
-    PyPDFLoader,
-    UnstructuredPDFLoader,
-)
+from langchain.document_loaders import (AmazonTextractPDFLoader,
+                                        MathpixPDFLoader, PDFMinerLoader,
+                                        PDFMinerPDFasHTMLLoader, PyMuPDFLoader,
+                                        PyPDFium2Loader, PyPDFLoader,
+                                        UnstructuredPDFLoader)
 
 
 def test_unstructured_pdf_loader_elements_mode() -> None:

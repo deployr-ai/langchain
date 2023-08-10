@@ -2,7 +2,8 @@
 from typing import Any, Dict, List, Optional
 
 from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.spark_sql.prompt import SQL_PREFIX, SQL_SUFFIX
+from langchain.agents.agent_toolkits.spark_sql.prompt import (SQL_PREFIX,
+                                                              SQL_SUFFIX)
 from langchain.agents.agent_toolkits.spark_sql.toolkit import SparkSQLToolkit
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS

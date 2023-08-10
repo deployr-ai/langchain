@@ -1,6 +1,7 @@
 import re
 from abc import ABC, abstractmethod
-from typing import Any, Callable, Dict, List, Literal, Optional, Sequence, Union
+from typing import (Any, Callable, Dict, List, Literal, Optional, Sequence,
+                    Union)
 
 from pydantic import BaseModel, Extra, root_validator, validator
 

@@ -5,10 +5,9 @@ import logging
 from types import TracebackType
 from typing import TYPE_CHECKING, Any, List, Optional, Type
 
-from langchain.schema import (
-    BaseChatMessageHistory,
-)
-from langchain.schema.messages import BaseMessage, messages_from_dict, messages_to_dict
+from langchain.schema import BaseChatMessageHistory
+from langchain.schema.messages import (BaseMessage, messages_from_dict,
+                                       messages_to_dict)
 
 logger = logging.getLogger(__name__)
 
@@ -60,9 +59,8 @@ class CosmosDBChatMessageHistory(BaseChatMessageHistory):
 
         self.messages: List[BaseMessage] = []
         try:
-            from azure.cosmos import (  # pylint: disable=import-outside-toplevel # noqa: E501
-                CosmosClient,
-            )
+            from azure.cosmos import \
+                CosmosClient  # pylint: disable=import-outside-toplevel # noqa: E501
         except ImportError as exc:
             raise ImportError(
                 "You must install the azure-cosmos package to use the CosmosDBChatMessageHistory."  # noqa: E501
@@ -89,9 +87,8 @@ class CosmosDBChatMessageHistory(BaseChatMessageHistory):
         Use this function or the context manager to make sure your database is ready.
         """
         try:
-            from azure.cosmos import (  # pylint: disable=import-outside-toplevel # noqa: E501
-                PartitionKey,
-            )
+            from azure.cosmos import \
+                PartitionKey  # pylint: disable=import-outside-toplevel # noqa: E501
         except ImportError as exc:
             raise ImportError(
                 "You must install the azure-cosmos package to use the CosmosDBChatMessageHistory."  # noqa: E501
@@ -126,9 +123,8 @@ class CosmosDBChatMessageHistory(BaseChatMessageHistory):
         if not self._container:
             raise ValueError("Container not initialized")
         try:
-            from azure.cosmos.exceptions import (  # pylint: disable=import-outside-toplevel # noqa: E501
-                CosmosHttpResponseError,
-            )
+            from azure.cosmos.exceptions import \
+                CosmosHttpResponseError  # pylint: disable=import-outside-toplevel # noqa: E501
         except ImportError as exc:
             raise ImportError(
                 "You must install the azure-cosmos package to use the CosmosDBChatMessageHistory."  # noqa: E501

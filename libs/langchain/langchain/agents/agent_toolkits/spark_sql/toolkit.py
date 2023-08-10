@@ -6,12 +6,9 @@ from pydantic import Field
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.tools import BaseTool
-from langchain.tools.spark_sql.tool import (
-    InfoSparkSQLTool,
-    ListSparkSQLTool,
-    QueryCheckerTool,
-    QuerySparkSQLTool,
-)
+from langchain.tools.spark_sql.tool import (InfoSparkSQLTool, ListSparkSQLTool,
+                                            QueryCheckerTool,
+                                            QuerySparkSQLTool)
 from langchain.utilities.spark_sql import SparkSQL
 
 

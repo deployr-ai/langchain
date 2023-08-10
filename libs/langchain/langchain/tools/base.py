@@ -6,26 +6,18 @@ import warnings
 from abc import abstractmethod
 from functools import partial
 from inspect import signature
-from typing import Any, Awaitable, Callable, Dict, List, Optional, Tuple, Type, Union
+from typing import (Any, Awaitable, Callable, Dict, List, Optional, Tuple,
+                    Type, Union)
 
-from pydantic import (
-    BaseModel,
-    Extra,
-    Field,
-    create_model,
-    root_validator,
-    validate_arguments,
-)
+from pydantic import (BaseModel, Extra, Field, create_model, root_validator,
+                      validate_arguments)
 from pydantic.main import ModelMetaclass
 
 from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
-    AsyncCallbackManager,
-    AsyncCallbackManagerForToolRun,
-    CallbackManager,
-    CallbackManagerForToolRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManager,
+                                         AsyncCallbackManagerForToolRun,
+                                         CallbackManager,
+                                         CallbackManagerForToolRun, Callbacks)
 from langchain.schema.runnable import Runnable, RunnableConfig
 
 

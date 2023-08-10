@@ -2,10 +2,10 @@
 from typing import List
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.docstore.document import Document
 from langchain.vectorstores.redis import Redis
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 TEST_INDEX_NAME = "test"
 TEST_REDIS_URL = "redis://localhost:6379"

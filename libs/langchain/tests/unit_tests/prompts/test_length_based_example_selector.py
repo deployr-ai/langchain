@@ -1,7 +1,8 @@
 """Test functionality related to length based selector."""
 import pytest
 
-from langchain.prompts.example_selector.length_based import LengthBasedExampleSelector
+from langchain.prompts.example_selector.length_based import \
+    LengthBasedExampleSelector
 from langchain.prompts.prompt import PromptTemplate
 
 EXAMPLES = [

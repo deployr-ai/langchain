@@ -14,13 +14,10 @@ from pydantic import Field, root_validator, validator
 
 import langchain
 from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
-    AsyncCallbackManager,
-    AsyncCallbackManagerForChainRun,
-    CallbackManager,
-    CallbackManagerForChainRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManager,
+                                         AsyncCallbackManagerForChainRun,
+                                         CallbackManager,
+                                         CallbackManagerForChainRun, Callbacks)
 from langchain.load.dump import dumpd
 from langchain.load.serializable import Serializable
 from langchain.schema import RUN_KEY, BaseMemory, RunInfo

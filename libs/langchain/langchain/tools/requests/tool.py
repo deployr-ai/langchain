@@ -4,13 +4,11 @@ import json
 from typing import Any, Dict, Optional
 
 from pydantic import BaseModel
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
 
-from langchain.utilities.requests import TextRequestsWrapper
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool
+from langchain.utilities.requests import TextRequestsWrapper
 
 
 def _parse_input(text: str) -> Dict[str, Any]:

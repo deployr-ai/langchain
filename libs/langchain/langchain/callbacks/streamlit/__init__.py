@@ -3,12 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Optional
 
 from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.streamlit.streamlit_callback_handler import (
-    LLMThoughtLabeler as LLMThoughtLabeler,
-)
-from langchain.callbacks.streamlit.streamlit_callback_handler import (
-    StreamlitCallbackHandler as _InternalStreamlitCallbackHandler,
-)
+from langchain.callbacks.streamlit.streamlit_callback_handler import \
+    LLMThoughtLabeler as LLMThoughtLabeler
+from langchain.callbacks.streamlit.streamlit_callback_handler import \
+    StreamlitCallbackHandler as _InternalStreamlitCallbackHandler
 
 if TYPE_CHECKING:
     from streamlit.delta_generator import DeltaGenerator
@@ -60,9 +58,9 @@ def StreamlitCallbackHandler(
     # delegate to it instead of using our built-in handler. The official handler is
     # guaranteed to support the same set of kwargs.
     try:
-        from streamlit.external.langchain import (
-            StreamlitCallbackHandler as OfficialStreamlitCallbackHandler,  # type: ignore # noqa: 501
-        )
+        from streamlit.external.langchain import \
+            StreamlitCallbackHandler as \
+            OfficialStreamlitCallbackHandler  # type: ignore # noqa: 501
 
         return OfficialStreamlitCallbackHandler(
             parent_container,

@@ -2,49 +2,22 @@
 from __future__ import annotations
 
 import logging
-from typing import (
-    Any,
-    AsyncIterator,
-    Callable,
-    Dict,
-    Iterator,
-    List,
-    Mapping,
-    Optional,
-    Tuple,
-    Union,
-)
+from typing import (Any, AsyncIterator, Callable, Dict, Iterator, List,
+                    Mapping, Optional, Tuple, Union)
 
 from pydantic import Field, root_validator
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (before_sleep_log, retry, retry_if_exception_type,
+                      stop_after_attempt, wait_exponential)
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
-    AIMessage,
-    BaseMessage,
-    ChatGeneration,
-    ChatMessage,
-    ChatResult,
-    HumanMessage,
-    SystemMessage,
-)
-from langchain.schema.messages import (
-    AIMessageChunk,
-    BaseMessageChunk,
-    ChatMessageChunk,
-    HumanMessageChunk,
-    SystemMessageChunk,
-)
+from langchain.schema import (AIMessage, BaseMessage, ChatGeneration,
+                              ChatMessage, ChatResult, HumanMessage,
+                              SystemMessage)
+from langchain.schema.messages import (AIMessageChunk, BaseMessageChunk,
+                                       ChatMessageChunk, HumanMessageChunk,
+                                       SystemMessageChunk)
 from langchain.schema.output import ChatGenerationChunk
 from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
 

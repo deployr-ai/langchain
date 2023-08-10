@@ -1,15 +1,13 @@
 from typing import Optional
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import \
+    ConsistentFakeEmbeddings
+from tests.integration_tests.vectorstores.qdrant.async_api.fixtures import \
+    qdrant_locations
 
 from langchain.schema import Document
 from langchain.vectorstores import Qdrant
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-)
-from tests.integration_tests.vectorstores.qdrant.async_api.fixtures import (
-    qdrant_locations,
-)
 
 
 @pytest.mark.asyncio

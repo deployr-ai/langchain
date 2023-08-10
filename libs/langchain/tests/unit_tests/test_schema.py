@@ -2,14 +2,9 @@
 
 import unittest
 
-from langchain.schema.messages import (
-    AIMessage,
-    HumanMessage,
-    SystemMessage,
-    get_buffer_string,
-    messages_from_dict,
-    messages_to_dict,
-)
+from langchain.schema.messages import (AIMessage, HumanMessage, SystemMessage,
+                                       get_buffer_string, messages_from_dict,
+                                       messages_to_dict)
 
 
 class TestGetBufferString(unittest.TestCase):

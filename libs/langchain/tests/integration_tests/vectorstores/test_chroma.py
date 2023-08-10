@@ -1,12 +1,10 @@
 """Test Chroma functionality."""
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import (
+    ConsistentFakeEmbeddings, FakeEmbeddings)
 
 from langchain.docstore.document import Document
 from langchain.vectorstores import Chroma
-from tests.integration_tests.vectorstores.fake_embeddings import (
-    ConsistentFakeEmbeddings,
-    FakeEmbeddings,
-)
 
 
 def test_chroma() -> None:

@@ -16,47 +16,42 @@
 """
 
 from langchain.document_loaders.acreom import AcreomLoader
-from langchain.document_loaders.airbyte import (
-    AirbyteCDKLoader,
-    AirbyteGongLoader,
-    AirbyteHubspotLoader,
-    AirbyteSalesforceLoader,
-    AirbyteShopifyLoader,
-    AirbyteStripeLoader,
-    AirbyteTypeformLoader,
-    AirbyteZendeskSupportLoader,
-)
+from langchain.document_loaders.airbyte import (AirbyteCDKLoader,
+                                                AirbyteGongLoader,
+                                                AirbyteHubspotLoader,
+                                                AirbyteSalesforceLoader,
+                                                AirbyteShopifyLoader,
+                                                AirbyteStripeLoader,
+                                                AirbyteTypeformLoader,
+                                                AirbyteZendeskSupportLoader)
 from langchain.document_loaders.airbyte_json import AirbyteJSONLoader
 from langchain.document_loaders.airtable import AirtableLoader
 from langchain.document_loaders.apify_dataset import ApifyDatasetLoader
 from langchain.document_loaders.arxiv import ArxivLoader
 from langchain.document_loaders.async_html import AsyncHtmlLoader
 from langchain.document_loaders.azlyrics import AZLyricsLoader
-from langchain.document_loaders.azure_blob_storage_container import (
-    AzureBlobStorageContainerLoader,
-)
-from langchain.document_loaders.azure_blob_storage_file import (
-    AzureBlobStorageFileLoader,
-)
+from langchain.document_loaders.azure_blob_storage_container import \
+    AzureBlobStorageContainerLoader
+from langchain.document_loaders.azure_blob_storage_file import \
+    AzureBlobStorageFileLoader
 from langchain.document_loaders.bibtex import BibtexLoader
 from langchain.document_loaders.bigquery import BigQueryLoader
 from langchain.document_loaders.bilibili import BiliBiliLoader
 from langchain.document_loaders.blackboard import BlackboardLoader
-from langchain.document_loaders.blob_loaders import (
-    Blob,
-    BlobLoader,
-    FileSystemBlobLoader,
-    YoutubeAudioLoader,
-)
+from langchain.document_loaders.blob_loaders import (Blob, BlobLoader,
+                                                     FileSystemBlobLoader,
+                                                     YoutubeAudioLoader)
 from langchain.document_loaders.blockchain import BlockchainDocumentLoader
 from langchain.document_loaders.brave_search import BraveSearchLoader
 from langchain.document_loaders.browserless import BrowserlessLoader
 from langchain.document_loaders.chatgpt import ChatGPTLoader
-from langchain.document_loaders.college_confidential import CollegeConfidentialLoader
+from langchain.document_loaders.college_confidential import \
+    CollegeConfidentialLoader
 from langchain.document_loaders.concurrent import ConcurrentLoader
 from langchain.document_loaders.confluence import ConfluenceLoader
 from langchain.document_loaders.conllu import CoNLLULoader
-from langchain.document_loaders.csv_loader import CSVLoader, UnstructuredCSVLoader
+from langchain.document_loaders.csv_loader import (CSVLoader,
+                                                   UnstructuredCSVLoader)
 from langchain.document_loaders.cube_semantic import CubeSemanticLoader
 from langchain.document_loaders.datadog_logs import DatadogLogsLoader
 from langchain.document_loaders.dataframe import DataFrameLoader
@@ -66,10 +61,8 @@ from langchain.document_loaders.discord import DiscordChatLoader
 from langchain.document_loaders.docugami import DocugamiLoader
 from langchain.document_loaders.dropbox import DropboxLoader
 from langchain.document_loaders.duckdb_loader import DuckDBLoader
-from langchain.document_loaders.email import (
-    OutlookMessageLoader,
-    UnstructuredEmailLoader,
-)
+from langchain.document_loaders.email import (OutlookMessageLoader,
+                                              UnstructuredEmailLoader)
 from langchain.document_loaders.embaas import EmbaasBlobLoader, EmbaasLoader
 from langchain.document_loaders.epub import UnstructuredEPubLoader
 from langchain.document_loaders.etherscan import EtherscanLoader
@@ -89,7 +82,8 @@ from langchain.document_loaders.gutenberg import GutenbergLoader
 from langchain.document_loaders.hn import HNLoader
 from langchain.document_loaders.html import UnstructuredHTMLLoader
 from langchain.document_loaders.html_bs import BSHTMLLoader
-from langchain.document_loaders.hugging_face_dataset import HuggingFaceDatasetLoader
+from langchain.document_loaders.hugging_face_dataset import \
+    HuggingFaceDatasetLoader
 from langchain.document_loaders.ifixit import IFixitLoader
 from langchain.document_loaders.image import UnstructuredImageLoader
 from langchain.document_loaders.image_captions import ImageCaptionLoader
@@ -117,19 +111,14 @@ from langchain.document_loaders.onedrive import OneDriveLoader
 from langchain.document_loaders.onedrive_file import OneDriveFileLoader
 from langchain.document_loaders.open_city_data import OpenCityDataLoader
 from langchain.document_loaders.org_mode import UnstructuredOrgModeLoader
-from langchain.document_loaders.pdf import (
-    AmazonTextractPDFLoader,
-    MathpixPDFLoader,
-    OnlinePDFLoader,
-    PDFMinerLoader,
-    PDFMinerPDFasHTMLLoader,
-    PDFPlumberLoader,
-    PyMuPDFLoader,
-    PyPDFDirectoryLoader,
-    PyPDFium2Loader,
-    PyPDFLoader,
-    UnstructuredPDFLoader,
-)
+from langchain.document_loaders.pdf import (AmazonTextractPDFLoader,
+                                            MathpixPDFLoader, OnlinePDFLoader,
+                                            PDFMinerLoader,
+                                            PDFMinerPDFasHTMLLoader,
+                                            PDFPlumberLoader, PyMuPDFLoader,
+                                            PyPDFDirectoryLoader,
+                                            PyPDFium2Loader, PyPDFLoader,
+                                            UnstructuredPDFLoader)
 from langchain.document_loaders.powerpoint import UnstructuredPowerPointLoader
 from langchain.document_loaders.psychic import PsychicLoader
 from langchain.document_loaders.pubmed import PubMedLoader
@@ -151,13 +140,13 @@ from langchain.document_loaders.snowflake_loader import SnowflakeLoader
 from langchain.document_loaders.spreedly import SpreedlyLoader
 from langchain.document_loaders.srt import SRTLoader
 from langchain.document_loaders.stripe import StripeLoader
-from langchain.document_loaders.telegram import (
-    TelegramChatApiLoader,
-    TelegramChatFileLoader,
-)
-from langchain.document_loaders.tencent_cos_directory import TencentCOSDirectoryLoader
+from langchain.document_loaders.telegram import (TelegramChatApiLoader,
+                                                 TelegramChatFileLoader)
+from langchain.document_loaders.tencent_cos_directory import \
+    TencentCOSDirectoryLoader
 from langchain.document_loaders.tencent_cos_file import TencentCOSFileLoader
-from langchain.document_loaders.tensorflow_datasets import TensorflowDatasetLoader
+from langchain.document_loaders.tensorflow_datasets import \
+    TensorflowDatasetLoader
 from langchain.document_loaders.text import TextLoader
 from langchain.document_loaders.tomarkdown import ToMarkdownLoader
 from langchain.document_loaders.toml import TomlLoader
@@ -165,11 +154,8 @@ from langchain.document_loaders.trello import TrelloLoader
 from langchain.document_loaders.tsv import UnstructuredTSVLoader
 from langchain.document_loaders.twitter import TwitterTweetLoader
 from langchain.document_loaders.unstructured import (
-    UnstructuredAPIFileIOLoader,
-    UnstructuredAPIFileLoader,
-    UnstructuredFileIOLoader,
-    UnstructuredFileLoader,
-)
+    UnstructuredAPIFileIOLoader, UnstructuredAPIFileLoader,
+    UnstructuredFileIOLoader, UnstructuredFileLoader)
 from langchain.document_loaders.url import UnstructuredURLLoader
 from langchain.document_loaders.url_playwright import PlaywrightURLLoader
 from langchain.document_loaders.url_selenium import SeleniumURLLoader
@@ -178,16 +164,12 @@ from langchain.document_loaders.web_base import WebBaseLoader
 from langchain.document_loaders.whatsapp_chat import WhatsAppChatLoader
 from langchain.document_loaders.wikipedia import WikipediaLoader
 from langchain.document_loaders.word_document import (
-    Docx2txtLoader,
-    UnstructuredWordDocumentLoader,
-)
+    Docx2txtLoader, UnstructuredWordDocumentLoader)
 from langchain.document_loaders.xml import UnstructuredXMLLoader
 from langchain.document_loaders.xorbits import XorbitsLoader
-from langchain.document_loaders.youtube import (
-    GoogleApiClient,
-    GoogleApiYoutubeLoader,
-    YoutubeLoader,
-)
+from langchain.document_loaders.youtube import (GoogleApiClient,
+                                                GoogleApiYoutubeLoader,
+                                                YoutubeLoader)
 
 # Legacy: only for backwards compatibility. Use PyPDFLoader instead
 PagedPDFSplitter = PyPDFLoader

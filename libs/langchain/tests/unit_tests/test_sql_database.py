@@ -1,16 +1,8 @@
 # flake8: noqa=E501
 """Test SQL database wrapper."""
 
-from sqlalchemy import (
-    Column,
-    Integer,
-    MetaData,
-    String,
-    Table,
-    Text,
-    create_engine,
-    insert,
-)
+from sqlalchemy import (Column, Integer, MetaData, String, Table, Text,
+                        create_engine, insert)
 
 from langchain.utilities.sql_database import SQLDatabase, truncate_word
 

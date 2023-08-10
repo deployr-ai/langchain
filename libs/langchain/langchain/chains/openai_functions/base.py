@@ -1,26 +1,15 @@
 """Methods for creating chains that use OpenAI function-calling APIs."""
 import inspect
-from typing import (
-    Any,
-    Callable,
-    Dict,
-    List,
-    Optional,
-    Sequence,
-    Tuple,
-    Type,
-    Union,
-)
+from typing import (Any, Callable, Dict, List, Optional, Sequence, Tuple, Type,
+                    Union)
 
 from pydantic import BaseModel
 
 from langchain.base_language import BaseLanguageModel
 from langchain.chains import LLMChain
 from langchain.output_parsers.openai_functions import (
-    JsonOutputFunctionsParser,
-    PydanticAttrOutputFunctionsParser,
-    PydanticOutputFunctionsParser,
-)
+    JsonOutputFunctionsParser, PydanticAttrOutputFunctionsParser,
+    PydanticOutputFunctionsParser)
 from langchain.prompts import BasePromptTemplate
 from langchain.schema import BaseLLMOutputParser
 

@@ -1,8 +1,9 @@
 """Test Atlas functionality."""
 import time
 
-from langchain.vectorstores import AtlasDB
 from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+
+from langchain.vectorstores import AtlasDB
 
 ATLAS_TEST_API_KEY = "7xDPkYXSYDc1_ErdTPIcoAR9RNd8YDlkS3nVNXcVoIMZ6"
 

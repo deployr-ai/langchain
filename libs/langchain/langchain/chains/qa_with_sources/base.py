@@ -9,22 +9,18 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    CallbackManagerForChainRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         CallbackManagerForChainRun)
 from langchain.chains import ReduceDocumentsChain
 from langchain.chains.base import Chain
 from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from langchain.chains.combine_documents.map_reduce import \
+    MapReduceDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
 from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
 from langchain.chains.qa_with_sources.map_reduce_prompt import (
-    COMBINE_PROMPT,
-    EXAMPLE_PROMPT,
-    QUESTION_PROMPT,
-)
+    COMBINE_PROMPT, EXAMPLE_PROMPT, QUESTION_PROMPT)
 from langchain.docstore.document import Document
 from langchain.schema import BasePromptTemplate
 from langchain.schema.language_model import BaseLanguageModel

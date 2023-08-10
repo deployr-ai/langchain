@@ -20,17 +20,17 @@ The Chain interface makes it easy to create apps that are:
 from langchain.chains.api.base import APIChain
 from langchain.chains.api.openapi.chain import OpenAPIEndpointChain
 from langchain.chains.combine_documents.base import AnalyzeDocumentChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
+from langchain.chains.combine_documents.map_reduce import \
+    MapReduceDocumentsChain
+from langchain.chains.combine_documents.map_rerank import \
+    MapRerankDocumentsChain
 from langchain.chains.combine_documents.reduce import ReduceDocumentsChain
 from langchain.chains.combine_documents.refine import RefineDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.constitutional_ai.base import ConstitutionalChain
 from langchain.chains.conversation.base import ConversationChain
 from langchain.chains.conversational_retrieval.base import (
-    ChatVectorDBChain,
-    ConversationalRetrievalChain,
-)
+    ChatVectorDBChain, ConversationalRetrievalChain)
 from langchain.chains.example_generator import generate_example
 from langchain.chains.flare.base import FlareChain
 from langchain.chains.graph_qa.arangodb import ArangoGraphQAChain
@@ -47,32 +47,27 @@ from langchain.chains.llm_bash.base import LLMBashChain
 from langchain.chains.llm_checker.base import LLMCheckerChain
 from langchain.chains.llm_math.base import LLMMathChain
 from langchain.chains.llm_requests import LLMRequestsChain
-from langchain.chains.llm_summarization_checker.base import LLMSummarizationCheckerChain
+from langchain.chains.llm_summarization_checker.base import \
+    LLMSummarizationCheckerChain
 from langchain.chains.loading import load_chain
 from langchain.chains.mapreduce import MapReduceChain
 from langchain.chains.moderation import OpenAIModerationChain
 from langchain.chains.natbot.base import NatBotChain
 from langchain.chains.openai_functions import (
-    create_citation_fuzzy_match_chain,
-    create_extraction_chain,
-    create_extraction_chain_pydantic,
-    create_qa_with_sources_chain,
-    create_qa_with_structure_chain,
-    create_tagging_chain,
-    create_tagging_chain_pydantic,
-)
+    create_citation_fuzzy_match_chain, create_extraction_chain,
+    create_extraction_chain_pydantic, create_qa_with_sources_chain,
+    create_qa_with_structure_chain, create_tagging_chain,
+    create_tagging_chain_pydantic)
 from langchain.chains.qa_generation.base import QAGenerationChain
 from langchain.chains.qa_with_sources.base import QAWithSourcesChain
-from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
-from langchain.chains.qa_with_sources.vector_db import VectorDBQAWithSourcesChain
+from langchain.chains.qa_with_sources.retrieval import \
+    RetrievalQAWithSourcesChain
+from langchain.chains.qa_with_sources.vector_db import \
+    VectorDBQAWithSourcesChain
 from langchain.chains.retrieval_qa.base import RetrievalQA, VectorDBQA
-from langchain.chains.router import (
-    LLMRouterChain,
-    MultiPromptChain,
-    MultiRetrievalQAChain,
-    MultiRouteChain,
-    RouterChain,
-)
+from langchain.chains.router import (LLMRouterChain, MultiPromptChain,
+                                     MultiRetrievalQAChain, MultiRouteChain,
+                                     RouterChain)
 from langchain.chains.sequential import SequentialChain, SimpleSequentialChain
 from langchain.chains.sql_database.query import create_sql_query_chain
 from langchain.chains.transform import TransformChain

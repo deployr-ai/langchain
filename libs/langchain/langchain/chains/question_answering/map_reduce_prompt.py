@@ -1,10 +1,9 @@
 # flake8: noqa
-from langchain.chains.prompt_selector import ConditionalPromptSelector, is_chat_model
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain.chains.prompt_selector import (ConditionalPromptSelector,
+                                              is_chat_model)
+from langchain.prompts.chat import (ChatPromptTemplate,
+                                    HumanMessagePromptTemplate,
+                                    SystemMessagePromptTemplate)
 from langchain.prompts.prompt import PromptTemplate
 
 question_prompt_template = """Use the following portion of a long document to see if any of the text is relevant to answer the question. 

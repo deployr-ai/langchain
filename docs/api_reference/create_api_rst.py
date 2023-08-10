@@ -2,9 +2,9 @@
 import importlib
 import inspect
 import typing
-from pathlib import Path
-from typing import TypedDict, Sequence, List, Dict, Literal, Union
 from enum import Enum
+from pathlib import Path
+from typing import Dict, List, Literal, Sequence, TypedDict, Union
 
 from pydantic import BaseModel
 
@@ -222,9 +222,9 @@ Classes
 """
 
             for class_ in classes:
-                if not class_['is_public']:
+                if not class_["is_public"]:
                     continue
-                    
+
                 if class_["kind"] == "TypedDict":
                     template = "typeddict.rst"
                 elif class_["kind"] == "enum":

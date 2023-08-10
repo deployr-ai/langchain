@@ -2,9 +2,10 @@
 
 from pathlib import Path
 
+from tests.integration_tests.llms.utils import assert_llm_equality
+
 from langchain.llms.loading import load_llm
 from langchain.llms.nlpcloud import NLPCloud
-from tests.integration_tests.llms.utils import assert_llm_equality
 
 
 def test_nlpcloud_call() -> None:

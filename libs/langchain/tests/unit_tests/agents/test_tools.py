@@ -4,6 +4,8 @@ from typing import Any, Type
 from unittest.mock import MagicMock, Mock
 
 import pytest
+from tests.unit_tests.callbacks.fake_callback_handler import \
+    FakeCallbackHandler
 
 from langchain.agents import load_tools
 from langchain.agents.agent import Agent
@@ -15,7 +17,6 @@ from langchain.agents.react.base import ReActDocstoreAgent, ReActTextWorldAgent
 from langchain.agents.self_ask_with_search.base import SelfAskWithSearchAgent
 from langchain.agents.tools import Tool, tool
 from langchain.tools.base import ToolException
-from tests.unit_tests.callbacks.fake_callback_handler import FakeCallbackHandler
 
 
 @pytest.mark.parametrize(

@@ -3,15 +3,12 @@ import sys
 from typing import Type
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 from langchain.chains.llm import LLMChain
-from langchain.evaluation.qa.eval_chain import (
-    ContextQAEvalChain,
-    CotQAEvalChain,
-    QAEvalChain,
-)
+from langchain.evaluation.qa.eval_chain import (ContextQAEvalChain,
+                                                CotQAEvalChain, QAEvalChain)
 from langchain.evaluation.schema import StringEvaluator
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 @pytest.mark.skipif(

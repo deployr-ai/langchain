@@ -5,30 +5,15 @@ import logging
 from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional
 
 from pydantic import BaseModel, root_validator
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_exponential,
-)
+from tenacity import (before_sleep_log, retry, retry_if_exception_type,
+                      stop_after_attempt, wait_exponential)
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForLLMRun,
-    CallbackManagerForLLMRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
+                                         CallbackManagerForLLMRun)
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
-    ChatGeneration,
-    ChatResult,
-)
-from langchain.schema.messages import (
-    AIMessage,
-    BaseMessage,
-    ChatMessage,
-    HumanMessage,
-    SystemMessage,
-)
+from langchain.schema import ChatGeneration, ChatResult
+from langchain.schema.messages import (AIMessage, BaseMessage, ChatMessage,
+                                       HumanMessage, SystemMessage)
 from langchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:

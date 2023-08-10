@@ -15,13 +15,9 @@ except ImportError:
     Transformer = object  # type: ignore
     Lark = object  # type: ignore
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    FilterDirective,
-    Operation,
-    Operator,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   FilterDirective, Operation,
+                                                   Operator)
 
 GRAMMAR = """
     ?program: func_call

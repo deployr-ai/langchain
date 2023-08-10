@@ -1,15 +1,10 @@
 from typing import Any
 
 import pytest
+from tests.integration_tests.retrievers.docarray.fixtures import (  # noqa: F401
+    init_elastic, init_hnsw, init_in_memory, init_qdrant, init_weaviate)
 
 from langchain.retrievers import DocArrayRetriever
-from tests.integration_tests.retrievers.docarray.fixtures import (  # noqa: F401
-    init_elastic,
-    init_hnsw,
-    init_in_memory,
-    init_qdrant,
-    init_weaviate,
-)
 
 
 @pytest.mark.parametrize(

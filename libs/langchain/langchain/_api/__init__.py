@@ -9,11 +9,8 @@ This module is only relevant for LangChain developers, not for users.
 
 """
 
-from .deprecation import (
-    LangChainDeprecationWarning,
-    deprecated,
-    suppress_langchain_deprecation_warning,
-)
+from .deprecation import (LangChainDeprecationWarning, deprecated,
+                          suppress_langchain_deprecation_warning)
 
 __all__ = [
     "deprecated",

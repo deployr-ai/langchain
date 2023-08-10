@@ -3,9 +3,7 @@
 import pytest
 
 from langchain.prompts.example_selector.ngram_overlap import (
-    NGramOverlapExampleSelector,
-    ngram_overlap_score,
-)
+    NGramOverlapExampleSelector, ngram_overlap_score)
 from langchain.prompts.prompt import PromptTemplate
 
 EXAMPLES = [

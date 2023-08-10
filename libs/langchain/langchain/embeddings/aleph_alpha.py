@@ -116,11 +116,8 @@ class AlephAlphaAsymmetricSemanticEmbedding(BaseModel, Embeddings):
             List of embeddings, one for each text.
         """
         try:
-            from aleph_alpha_client import (
-                Prompt,
-                SemanticEmbeddingRequest,
-                SemanticRepresentation,
-            )
+            from aleph_alpha_client import (Prompt, SemanticEmbeddingRequest,
+                                            SemanticRepresentation)
         except ImportError:
             raise ValueError(
                 "Could not import aleph_alpha_client python package. "
@@ -156,11 +153,8 @@ class AlephAlphaAsymmetricSemanticEmbedding(BaseModel, Embeddings):
             Embeddings for the text.
         """
         try:
-            from aleph_alpha_client import (
-                Prompt,
-                SemanticEmbeddingRequest,
-                SemanticRepresentation,
-            )
+            from aleph_alpha_client import (Prompt, SemanticEmbeddingRequest,
+                                            SemanticRepresentation)
         except ImportError:
             raise ValueError(
                 "Could not import aleph_alpha_client python package. "
@@ -204,11 +198,8 @@ class AlephAlphaSymmetricSemanticEmbedding(AlephAlphaAsymmetricSemanticEmbedding
 
     def _embed(self, text: str) -> List[float]:
         try:
-            from aleph_alpha_client import (
-                Prompt,
-                SemanticEmbeddingRequest,
-                SemanticRepresentation,
-            )
+            from aleph_alpha_client import (Prompt, SemanticEmbeddingRequest,
+                                            SemanticRepresentation)
         except ImportError:
             raise ValueError(
                 "Could not import aleph_alpha_client python package. "

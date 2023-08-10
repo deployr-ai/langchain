@@ -2,11 +2,10 @@
 from typing import Any, Dict, Optional
 
 from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.vectorstore.prompt import PREFIX, ROUTER_PREFIX
+from langchain.agents.agent_toolkits.vectorstore.prompt import (PREFIX,
+                                                                ROUTER_PREFIX)
 from langchain.agents.agent_toolkits.vectorstore.toolkit import (
-    VectorStoreRouterToolkit,
-    VectorStoreToolkit,
-)
+    VectorStoreRouterToolkit, VectorStoreToolkit)
 from langchain.agents.mrkl.base import ZeroShotAgent
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.chains.llm import LLMChain

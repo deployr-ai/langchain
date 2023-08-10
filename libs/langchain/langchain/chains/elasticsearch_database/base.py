@@ -7,7 +7,8 @@ from pydantic import Extra, root_validator
 
 from langchain.callbacks.manager import CallbackManagerForChainRun
 from langchain.chains.base import Chain
-from langchain.chains.elasticsearch_database.prompts import ANSWER_PROMPT, DSL_PROMPT
+from langchain.chains.elasticsearch_database.prompts import (ANSWER_PROMPT,
+                                                             DSL_PROMPT)
 from langchain.chains.llm import LLMChain
 from langchain.output_parsers.json import SimpleJsonOutputParser
 from langchain.schema import BaseLLMOutputParser, BasePromptTemplate

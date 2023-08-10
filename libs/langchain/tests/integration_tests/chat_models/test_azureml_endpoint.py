@@ -1,16 +1,9 @@
 """Test AzureML Chat Endpoint wrapper."""
 
-from langchain.chat_models.azureml_endpoint import (
-    AzureMLChatOnlineEndpoint,
-    LlamaContentFormatter,
-)
-from langchain.schema import (
-    AIMessage,
-    BaseMessage,
-    ChatGeneration,
-    HumanMessage,
-    LLMResult,
-)
+from langchain.chat_models.azureml_endpoint import (AzureMLChatOnlineEndpoint,
+                                                    LlamaContentFormatter)
+from langchain.schema import (AIMessage, BaseMessage, ChatGeneration,
+                              HumanMessage, LLMResult)
 
 
 def test_llama_call() -> None:

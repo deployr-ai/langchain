@@ -5,12 +5,11 @@ from typing import TYPE_CHECKING, List, Optional, Sequence, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.playwright.base import BaseBrowserTool
-from langchain.tools.playwright.utils import aget_current_page, get_current_page
+from langchain.tools.playwright.utils import (aget_current_page,
+                                              get_current_page)
 
 if TYPE_CHECKING:
     from playwright.async_api import Page as AsyncPage

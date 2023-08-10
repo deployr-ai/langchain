@@ -4,12 +4,12 @@ import json
 from typing import Any
 
 import pytest
+from tests.unit_tests.llms.fake_llm import FakeLLM
 
 from langchain import LLMChain
 from langchain.chains.api.base import APIChain
 from langchain.chains.api.prompt import API_RESPONSE_PROMPT, API_URL_PROMPT
 from langchain.utilities.requests import TextRequestsWrapper
-from tests.unit_tests.llms.fake_llm import FakeLLM
 
 
 class FakeRequestsChain(TextRequestsWrapper):

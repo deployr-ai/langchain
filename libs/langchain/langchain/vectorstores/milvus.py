@@ -233,13 +233,8 @@ class Milvus(VectorStore):
     def _create_collection(
         self, embeddings: list, metadatas: Optional[list[dict]] = None
     ) -> None:
-        from pymilvus import (
-            Collection,
-            CollectionSchema,
-            DataType,
-            FieldSchema,
-            MilvusException,
-        )
+        from pymilvus import (Collection, CollectionSchema, DataType,
+                              FieldSchema, MilvusException)
         from pymilvus.orm.types import infer_dtype_bydata
 
         # Determine embedding dim

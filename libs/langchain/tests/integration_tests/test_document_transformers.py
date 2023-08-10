@@ -1,9 +1,6 @@
 """Integration test for embedding-based redundant doc filtering."""
 from langchain.document_transformers.embeddings_redundant_filter import (
-    EmbeddingsClusteringFilter,
-    EmbeddingsRedundantFilter,
-    _DocumentWithState,
-)
+    EmbeddingsClusteringFilter, EmbeddingsRedundantFilter, _DocumentWithState)
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.schema import Document
 

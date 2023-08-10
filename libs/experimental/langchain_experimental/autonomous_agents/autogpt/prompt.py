@@ -1,15 +1,14 @@
 import time
 from typing import Any, Callable, List
 
-from langchain.prompts.chat import (
-    BaseChatPromptTemplate,
-)
+from langchain_experimental.autonomous_agents.autogpt.prompt_generator import \
+    get_prompt
+from pydantic import BaseModel
+
+from langchain.prompts.chat import BaseChatPromptTemplate
 from langchain.schema.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain.tools.base import BaseTool
 from langchain.vectorstores.base import VectorStoreRetriever
-from pydantic import BaseModel
-
-from langchain_experimental.autonomous_agents.autogpt.prompt_generator import get_prompt
 
 
 class AutoGPTPrompt(BaseChatPromptTemplate, BaseModel):

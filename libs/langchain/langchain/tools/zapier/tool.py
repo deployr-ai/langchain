@@ -81,10 +81,8 @@ from typing import Any, Dict, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.tools.base import BaseTool
 from langchain.tools.zapier.prompt import BASE_ZAPIER_TOOL_PROMPT
 from langchain.utilities.zapier import ZapierNLAWrapper

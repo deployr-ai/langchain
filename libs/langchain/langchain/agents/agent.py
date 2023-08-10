@@ -16,24 +16,16 @@ from langchain.agents.agent_iterator import AgentExecutorIterator
 from langchain.agents.agent_types import AgentType
 from langchain.agents.tools import InvalidTool
 from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForChainRun,
-    CallbackManagerForToolRun,
-    Callbacks,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForChainRun,
+                                         CallbackManagerForToolRun, Callbacks)
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
 from langchain.prompts.few_shot import FewShotPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import (
-    AgentAction,
-    AgentFinish,
-    BaseOutputParser,
-    BasePromptTemplate,
-    OutputParserException,
-)
+from langchain.schema import (AgentAction, AgentFinish, BaseOutputParser,
+                              BasePromptTemplate, OutputParserException)
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.schema.messages import BaseMessage
 from langchain.tools.base import BaseTool

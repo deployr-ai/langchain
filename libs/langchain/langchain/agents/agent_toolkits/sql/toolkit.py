@@ -6,12 +6,10 @@ from pydantic import Field
 from langchain.agents.agent_toolkits.base import BaseToolkit
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.tools import BaseTool
-from langchain.tools.sql_database.tool import (
-    InfoSQLDatabaseTool,
-    ListSQLDatabaseTool,
-    QuerySQLCheckerTool,
-    QuerySQLDataBaseTool,
-)
+from langchain.tools.sql_database.tool import (InfoSQLDatabaseTool,
+                                               ListSQLDatabaseTool,
+                                               QuerySQLCheckerTool,
+                                               QuerySQLDataBaseTool)
 from langchain.utilities.sql_database import SQLDatabase
 
 

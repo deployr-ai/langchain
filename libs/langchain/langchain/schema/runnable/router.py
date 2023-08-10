@@ -1,28 +1,13 @@
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
-from typing import (
-    Any,
-    AsyncIterator,
-    Callable,
-    Generic,
-    Iterator,
-    List,
-    Mapping,
-    Optional,
-    TypedDict,
-    Union,
-)
+from typing import (Any, AsyncIterator, Callable, Generic, Iterator, List,
+                    Mapping, Optional, TypedDict, Union)
 
 from langchain.load.serializable import Serializable
-from langchain.schema.runnable.base import (
-    Input,
-    Other,
-    Output,
-    Runnable,
-    RunnableSequence,
-    coerce_to_runnable,
-)
+from langchain.schema.runnable.base import (Input, Other, Output, Runnable,
+                                            RunnableSequence,
+                                            coerce_to_runnable)
 from langchain.schema.runnable.config import RunnableConfig
 from langchain.schema.runnable.utils import gather_with_concurrency
 

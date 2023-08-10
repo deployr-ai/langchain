@@ -20,10 +20,8 @@ def ngram_overlap_score(source: List[str], example: List[str]) -> float:
     https://www.nltk.org/_modules/nltk/translate/bleu_score.html
     https://aclanthology.org/P02-1040.pdf
     """
-    from nltk.translate.bleu_score import (
-        SmoothingFunction,  # type: ignore
-        sentence_bleu,
-    )
+    from nltk.translate.bleu_score import SmoothingFunction  # type: ignore
+    from nltk.translate.bleu_score import sentence_bleu
 
     hypotheses = source[0].split()
     references = [s.split() for s in example]
@@ -68,9 +66,7 @@ class NGramOverlapExampleSelector(BaseExampleSelector, BaseModel):
         """Check that valid dependencies exist."""
         try:
             from nltk.translate.bleu_score import (  # noqa: disable=F401
-                SmoothingFunction,
-                sentence_bleu,
-            )
+                SmoothingFunction, sentence_bleu)
         except ImportError as e:
             raise ImportError(
                 "Not all the correct dependencies for this ExampleSelect exist."

@@ -1,9 +1,7 @@
 """Test huggingface embeddings."""
 
-from langchain.embeddings.huggingface import (
-    HuggingFaceEmbeddings,
-    HuggingFaceInstructEmbeddings,
-)
+from langchain.embeddings.huggingface import (HuggingFaceEmbeddings,
+                                              HuggingFaceInstructEmbeddings)
 
 
 def test_huggingface_embedding_documents() -> None:

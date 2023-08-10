@@ -1,18 +1,8 @@
 # flake8: noqa
 import time
 from sys import platform
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    Iterable,
-    List,
-    Optional,
-    Set,
-    Tuple,
-    TypedDict,
-    Union,
-)
+from typing import (TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Set,
+                    Tuple, TypedDict, Union)
 
 if TYPE_CHECKING:
     from playwright.sync_api import Browser, CDPSession, Page, sync_playwright

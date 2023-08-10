@@ -33,7 +33,8 @@ test_script = """
 @pytest.mark.requires("streamlit")
 def test_memory_with_message_store() -> None:
     try:
-        from streamlit.testing.script_interactions import InteractiveScriptTests
+        from streamlit.testing.script_interactions import \
+            InteractiveScriptTests
     except ModuleNotFoundError:
         pytest.skip("Incorrect version of Streamlit installed")
 

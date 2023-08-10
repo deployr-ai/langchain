@@ -7,10 +7,8 @@ from typing import Any, Dict, List, Optional
 from pydantic import Extra
 
 from langchain.base_language import BaseLanguageModel
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForChainRun,
-    CallbackManagerForChainRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForChainRun,
+                                         CallbackManagerForChainRun)
 from langchain.chains.base import Chain
 from langchain.chains.llm import LLMChain
 from langchain.chains.llm_symbolic_math.prompt import PROMPT

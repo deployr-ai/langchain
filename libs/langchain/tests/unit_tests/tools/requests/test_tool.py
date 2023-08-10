@@ -3,14 +3,9 @@ from typing import Any, Dict
 
 import pytest
 
-from langchain.tools.requests.tool import (
-    RequestsDeleteTool,
-    RequestsGetTool,
-    RequestsPatchTool,
-    RequestsPostTool,
-    RequestsPutTool,
-    _parse_input,
-)
+from langchain.tools.requests.tool import (RequestsDeleteTool, RequestsGetTool,
+                                           RequestsPatchTool, RequestsPostTool,
+                                           RequestsPutTool, _parse_input)
 from langchain.utilities.requests import TextRequestsWrapper
 
 

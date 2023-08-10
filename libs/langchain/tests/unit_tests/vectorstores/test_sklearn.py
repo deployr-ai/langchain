@@ -2,9 +2,9 @@
 from pathlib import Path
 
 import pytest
+from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 from langchain.vectorstores import SKLearnVectorStore
-from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
 
 
 @pytest.mark.requires("numpy", "sklearn")

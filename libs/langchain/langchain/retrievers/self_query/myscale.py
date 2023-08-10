@@ -2,14 +2,9 @@ import datetime
 import re
 from typing import Any, Callable, Dict, Tuple
 
-from langchain.chains.query_constructor.ir import (
-    Comparator,
-    Comparison,
-    Operation,
-    Operator,
-    StructuredQuery,
-    Visitor,
-)
+from langchain.chains.query_constructor.ir import (Comparator, Comparison,
+                                                   Operation, Operator,
+                                                   StructuredQuery, Visitor)
 
 
 def DEFAULT_COMPOSER(op_name: str) -> Callable:

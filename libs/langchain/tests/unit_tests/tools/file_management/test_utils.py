@@ -6,10 +6,8 @@ from tempfile import TemporaryDirectory
 
 import pytest
 
-from langchain.tools.file_management.utils import (
-    FileValidationError,
-    get_validated_relative_path,
-)
+from langchain.tools.file_management.utils import (FileValidationError,
+                                                   get_validated_relative_path)
 
 
 def test_get_validated_relative_path_errs_on_absolute() -> None:

@@ -4,12 +4,10 @@ from typing import Any
 from unittest.mock import MagicMock, patch
 
 import pytest
+from tests.unit_tests.callbacks.fake_callback_handler import (
+    FakeAsyncCallbackHandler, FakeCallbackHandler)
 
 from langchain.llms.openai import OpenAI
-from tests.unit_tests.callbacks.fake_callback_handler import (
-    FakeAsyncCallbackHandler,
-    FakeCallbackHandler,
-)
 
 os.environ["OPENAI_API_KEY"] = "foo"
 

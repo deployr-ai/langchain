@@ -21,7 +21,8 @@ def _validate_spark_df(df: Any) -> bool:
 
 def _validate_spark_connect_df(df: Any) -> bool:
     try:
-        from pyspark.sql.connect.dataframe import DataFrame as SparkConnectDataFrame
+        from pyspark.sql.connect.dataframe import \
+            DataFrame as SparkConnectDataFrame
 
         return isinstance(df, SparkConnectDataFrame)
     except ImportError:

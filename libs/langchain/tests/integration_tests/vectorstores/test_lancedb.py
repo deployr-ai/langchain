@@ -1,5 +1,6 @@
-from langchain.vectorstores import LanceDB
 from tests.integration_tests.vectorstores.fake_embeddings import FakeEmbeddings
+
+from langchain.vectorstores import LanceDB
 
 
 def test_lancedb() -> None:

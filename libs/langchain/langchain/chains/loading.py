@@ -8,8 +8,10 @@ import yaml
 from langchain.chains import ReduceDocumentsChain
 from langchain.chains.api.base import APIChain
 from langchain.chains.base import Chain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
+from langchain.chains.combine_documents.map_reduce import \
+    MapReduceDocumentsChain
+from langchain.chains.combine_documents.map_rerank import \
+    MapRerankDocumentsChain
 from langchain.chains.combine_documents.refine import RefineDocumentsChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.graph_qa.cypher import GraphCypherQAChain
@@ -20,14 +22,12 @@ from langchain.chains.llm_checker.base import LLMCheckerChain
 from langchain.chains.llm_math.base import LLMMathChain
 from langchain.chains.llm_requests import LLMRequestsChain
 from langchain.chains.qa_with_sources.base import QAWithSourcesChain
-from langchain.chains.qa_with_sources.vector_db import VectorDBQAWithSourcesChain
+from langchain.chains.qa_with_sources.vector_db import \
+    VectorDBQAWithSourcesChain
 from langchain.chains.retrieval_qa.base import RetrievalQA, VectorDBQA
 from langchain.llms.loading import load_llm, load_llm_from_config
-from langchain.prompts.loading import (
-    _load_output_parser,
-    load_prompt,
-    load_prompt_from_config,
-)
+from langchain.prompts.loading import (_load_output_parser, load_prompt,
+                                       load_prompt_from_config)
 from langchain.utilities.loading import try_load_from_hub
 
 URL_BASE = "https://raw.githubusercontent.com/hwchase17/langchain-hub/master/chains/"

@@ -72,7 +72,8 @@ class SeleniumURLLoader(BaseLoader):
         """
         if self.browser.lower() == "chrome":
             from selenium.webdriver import Chrome
-            from selenium.webdriver.chrome.options import Options as ChromeOptions
+            from selenium.webdriver.chrome.options import \
+                Options as ChromeOptions
 
             chrome_options = ChromeOptions()
 
@@ -89,7 +90,8 @@ class SeleniumURLLoader(BaseLoader):
             return Chrome(executable_path=self.executable_path, options=chrome_options)
         elif self.browser.lower() == "firefox":
             from selenium.webdriver import Firefox
-            from selenium.webdriver.firefox.options import Options as FirefoxOptions
+            from selenium.webdriver.firefox.options import \
+                Options as FirefoxOptions
 
             firefox_options = FirefoxOptions()
 

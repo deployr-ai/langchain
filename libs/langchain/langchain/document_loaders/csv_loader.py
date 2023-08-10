@@ -4,9 +4,7 @@ from typing import Any, Dict, List, Optional
 from langchain.docstore.document import Document
 from langchain.document_loaders.base import BaseLoader
 from langchain.document_loaders.unstructured import (
-    UnstructuredFileLoader,
-    validate_unstructured_version,
-)
+    UnstructuredFileLoader, validate_unstructured_version)
 
 
 class CSVLoader(BaseLoader):

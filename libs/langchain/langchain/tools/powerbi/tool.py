@@ -5,18 +5,14 @@ from typing import Any, Dict, Optional, Tuple
 
 from pydantic import Field, validator
 
-from langchain.callbacks.manager import (
-    AsyncCallbackManagerForToolRun,
-    CallbackManagerForToolRun,
-)
+from langchain.callbacks.manager import (AsyncCallbackManagerForToolRun,
+                                         CallbackManagerForToolRun)
 from langchain.chains.llm import LLMChain
 from langchain.chat_models.openai import _import_tiktoken
 from langchain.tools.base import BaseTool
-from langchain.tools.powerbi.prompt import (
-    BAD_REQUEST_RESPONSE,
-    DEFAULT_FEWSHOT_EXAMPLES,
-    RETRY_RESPONSE,
-)
+from langchain.tools.powerbi.prompt import (BAD_REQUEST_RESPONSE,
+                                            DEFAULT_FEWSHOT_EXAMPLES,
+                                            RETRY_RESPONSE)
 from langchain.utilities.powerbi import PowerBIDataset, json_to_md
 
 logger = logging.getLogger(__name__)
