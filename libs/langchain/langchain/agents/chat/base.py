@@ -1,7 +1,5 @@
 from typing import Any, List, Optional, Sequence, Tuple
 
-from pydantic import Field
-
 from langchain.agents.agent import Agent, AgentOutputParser
 from langchain.agents.chat.output_parser import ChatOutputParser
 from langchain.agents.chat.prompt import (FORMAT_INSTRUCTIONS, HUMAN_MESSAGE,
@@ -10,9 +8,12 @@ from langchain.agents.chat.prompt import (FORMAT_INSTRUCTIONS, HUMAN_MESSAGE,
 from langchain.agents.utils import validate_tools_single_input
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.chains.llm import LLMChain
-from langchain.prompts.chat import (ChatPromptTemplate,
-                                    HumanMessagePromptTemplate,
-                                    SystemMessagePromptTemplate)
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate,
+)
+from langchain.pydantic_v1 import Field
 from langchain.schema import AgentAction, BasePromptTemplate
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.tools.base import BaseTool

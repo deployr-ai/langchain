@@ -1,4 +1,3 @@
-"""Loads local airbyte json files."""
 from typing import Any, Callable, Iterator, List, Mapping, Optional
 
 from langchain.docstore.document import Document
@@ -9,7 +8,7 @@ RecordHandler = Callable[[Any, Optional[str]], Document]
 
 
 class AirbyteCDKLoader(BaseLoader):
-    """Loads records using an Airbyte source connector implemented using the CDK."""
+    """Load with an `Airbyte` source connector implemented using the `CDK`."""
 
     def __init__(
         self,
@@ -60,9 +59,13 @@ class AirbyteCDKLoader(BaseLoader):
             stream_name=self._stream_name, state=self._state
         )
 
+    @property
+    def last_state(self) -> Any:
+        return self._integration.last_state
+
 
 class AirbyteHubspotLoader(AirbyteCDKLoader):
-    """Loads records from Hubspot using an Airbyte source connector."""
+    """Load from `Hubspot` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -94,7 +97,7 @@ class AirbyteHubspotLoader(AirbyteCDKLoader):
 
 
 class AirbyteStripeLoader(AirbyteCDKLoader):
-    """Loads records from Stripe using an Airbyte source connector."""
+    """Load from `Stripe` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -126,7 +129,7 @@ class AirbyteStripeLoader(AirbyteCDKLoader):
 
 
 class AirbyteTypeformLoader(AirbyteCDKLoader):
-    """Loads records from Typeform using an Airbyte source connector."""
+    """Load from `Typeform` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -158,7 +161,7 @@ class AirbyteTypeformLoader(AirbyteCDKLoader):
 
 
 class AirbyteZendeskSupportLoader(AirbyteCDKLoader):
-    """Loads records from Zendesk Support using an Airbyte source connector."""
+    """Load from `Zendesk Support` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -190,7 +193,7 @@ class AirbyteZendeskSupportLoader(AirbyteCDKLoader):
 
 
 class AirbyteShopifyLoader(AirbyteCDKLoader):
-    """Loads records from Shopify using an Airbyte source connector."""
+    """Load from `Shopify` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -222,7 +225,7 @@ class AirbyteShopifyLoader(AirbyteCDKLoader):
 
 
 class AirbyteSalesforceLoader(AirbyteCDKLoader):
-    """Loads records from Salesforce using an Airbyte source connector."""
+    """Load from `Salesforce` using an `Airbyte` source connector."""
 
     def __init__(
         self,
@@ -254,7 +257,7 @@ class AirbyteSalesforceLoader(AirbyteCDKLoader):
 
 
 class AirbyteGongLoader(AirbyteCDKLoader):
-    """Loads records from Gong using an Airbyte source connector."""
+    """Load from `Gong` using an `Airbyte` source connector."""
 
     def __init__(
         self,

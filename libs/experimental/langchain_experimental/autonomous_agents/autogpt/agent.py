@@ -19,6 +19,16 @@ from langchain.tools.base import BaseTool
 from langchain.tools.human.tool import HumanInputRun
 from langchain.vectorstores.base import VectorStoreRetriever
 
+from langchain_experimental.autonomous_agents.autogpt.output_parser import (
+    AutoGPTOutputParser,
+    BaseAutoGPTOutputParser,
+)
+from langchain_experimental.autonomous_agents.autogpt.prompt import AutoGPTPrompt
+from langchain_experimental.autonomous_agents.autogpt.prompt_generator import (
+    FINISH_NAME,
+)
+from langchain_experimental.pydantic_v1 import ValidationError
+
 
 class AutoGPT:
     """Agent class for interacting with Auto-GPT."""

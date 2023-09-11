@@ -17,8 +17,11 @@ from langchain.output_parsers.combining import CombiningOutputParser
 from langchain.output_parsers.datetime import DatetimeOutputParser
 from langchain.output_parsers.enum import EnumOutputParser
 from langchain.output_parsers.fix import OutputFixingParser
-from langchain.output_parsers.list import (CommaSeparatedListOutputParser,
-                                           ListOutputParser)
+from langchain.output_parsers.list import (
+    CommaSeparatedListOutputParser,
+    ListOutputParser,
+    NumberedListOutputParser,
+)
 from langchain.output_parsers.pydantic import PydanticOutputParser
 from langchain.output_parsers.rail_parser import GuardrailsOutputParser
 from langchain.output_parsers.regex import RegexParser
@@ -36,6 +39,7 @@ __all__ = [
     "EnumOutputParser",
     "GuardrailsOutputParser",
     "ListOutputParser",
+    "NumberedListOutputParser",
     "OutputFixingParser",
     "PydanticOutputParser",
     "RegexDictParser",

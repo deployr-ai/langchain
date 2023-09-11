@@ -6,11 +6,12 @@ import logging
 from typing import (TYPE_CHECKING, Any, Dict, List, Literal, Optional,
                     TypedDict, Union, overload)
 
-from pydantic import PrivateAttr
-
-from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
-                                         CallbackManagerForLLMRun)
+from langchain.callbacks.manager import (
+    AsyncCallbackManagerForLLMRun,
+    CallbackManagerForLLMRun,
+)
 from langchain.llms.base import LLM
+from langchain.pydantic_v1 import PrivateAttr
 
 if TYPE_CHECKING:
     import openllm

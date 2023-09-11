@@ -15,12 +15,14 @@
     Document
 """  # noqa: E501
 
-from langchain.document_transformers.doctran_text_extract import \
-    DoctranPropertyExtractor
-from langchain.document_transformers.doctran_text_qa import \
-    DoctranQATransformer
-from langchain.document_transformers.doctran_text_translate import \
-    DoctranTextTranslator
+from langchain.document_transformers.beautiful_soup_transformer import (
+    BeautifulSoupTransformer,
+)
+from langchain.document_transformers.doctran_text_extract import (
+    DoctranPropertyExtractor,
+)
+from langchain.document_transformers.doctran_text_qa import DoctranQATransformer
+from langchain.document_transformers.doctran_text_translate import DoctranTextTranslator
 from langchain.document_transformers.embeddings_redundant_filter import (
     EmbeddingsClusteringFilter, EmbeddingsRedundantFilter,
     get_stateful_documents)
@@ -33,6 +35,7 @@ from langchain.document_transformers.openai_functions import \
     OpenAIMetadataTagger
 
 __all__ = [
+    "BeautifulSoupTransformer",
     "DoctranQATransformer",
     "DoctranTextTranslator",
     "DoctranPropertyExtractor",

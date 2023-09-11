@@ -6,8 +6,6 @@ from functools import partial
 from typing import (Any, AsyncIterator, Dict, Iterator, List, Optional,
                     Sequence, cast)
 
-from pydantic import Field, root_validator
-
 import langchain
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.callbacks.manager import (AsyncCallbackManager,
@@ -17,12 +15,21 @@ from langchain.callbacks.manager import (AsyncCallbackManager,
 from langchain.load.dump import dumpd, dumps
 from langchain.prompts.base import StringPromptValue
 from langchain.prompts.chat import ChatPromptValue
-from langchain.schema import (ChatGeneration, ChatResult, LLMResult,
-                              PromptValue, RunInfo)
-from langchain.schema.language_model import (BaseLanguageModel,
-                                             LanguageModelInput)
-from langchain.schema.messages import (AIMessage, BaseMessage,
-                                       BaseMessageChunk, HumanMessage)
+from langchain.pydantic_v1 import Field, root_validator
+from langchain.schema import (
+    ChatGeneration,
+    ChatResult,
+    LLMResult,
+    PromptValue,
+    RunInfo,
+)
+from langchain.schema.language_model import BaseLanguageModel, LanguageModelInput
+from langchain.schema.messages import (
+    AIMessage,
+    BaseMessage,
+    BaseMessageChunk,
+    HumanMessage,
+)
 from langchain.schema.output import ChatGenerationChunk
 from langchain.schema.runnable import RunnableConfig
 
@@ -32,7 +39,7 @@ def _get_verbosity() -> bool:
 
 
 class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
-    """Base class for chat models."""
+    """Base class for Chat models."""
 
     cache: Optional[bool] = None
     """Whether to cache the response."""
@@ -158,22 +165,22 @@ class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
                 dumpd(self), [messages], invocation_params=params, options=options
             )
             try:
-                message: Optional[BaseMessageChunk] = None
+                generation: Optional[ChatGenerationChunk] = None
                 for chunk in self._stream(
                     messages, stop=stop, run_manager=run_manager, **kwargs
                 ):
                     yield chunk.message
-                    if message is None:
-                        message = chunk.message
+                    if generation is None:
+                        generation = chunk
                     else:
-                        message += chunk.message
-                assert message is not None
+                        generation += chunk
+                assert generation is not None
             except (KeyboardInterrupt, Exception) as e:
                 run_manager.on_llm_error(e)
                 raise e
             else:
                 run_manager.on_llm_end(
-                    LLMResult(generations=[[ChatGeneration(message=message)]]),
+                    LLMResult(generations=[[generation]]),
                 )
 
     async def astream(
@@ -205,22 +212,22 @@ class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
                 dumpd(self), [messages], invocation_params=params, options=options
             )
             try:
-                message: Optional[BaseMessageChunk] = None
+                generation: Optional[ChatGenerationChunk] = None
                 async for chunk in self._astream(
                     messages, stop=stop, run_manager=run_manager, **kwargs
                 ):
                     yield chunk.message
-                    if message is None:
-                        message = chunk.message
+                    if generation is None:
+                        generation = chunk
                     else:
-                        message += chunk.message
-                assert message is not None
+                        generation += chunk
+                assert generation is not None
             except (KeyboardInterrupt, Exception) as e:
                 await run_manager.on_llm_error(e)
                 raise e
             else:
                 await run_manager.on_llm_end(
-                    LLMResult(generations=[[ChatGeneration(message=message)]]),
+                    LLMResult(generations=[[generation]]),
                 )
 
     # --- Custom methods ---

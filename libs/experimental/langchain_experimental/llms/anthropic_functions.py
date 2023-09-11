@@ -8,8 +8,18 @@ from pydantic import root_validator
 from langchain.callbacks.manager import CallbackManagerForLLMRun, Callbacks
 from langchain.chat_models.anthropic import ChatAnthropic
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import ChatGeneration, ChatResult, LLMResult
-from langchain.schema.messages import AIMessage, BaseMessage, SystemMessage
+from langchain.schema import (
+    ChatGeneration,
+    ChatResult,
+    LLMResult,
+)
+from langchain.schema.messages import (
+    AIMessage,
+    BaseMessage,
+    SystemMessage,
+)
+
+from langchain_experimental.pydantic_v1 import root_validator
 
 prompt = """In addition to responding, you can use tools. \
 You have access to the following tools.

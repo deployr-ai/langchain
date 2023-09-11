@@ -5,7 +5,7 @@ from langchain.document_loaders.parsers.language.code_segmenter import \
 
 
 class JavaScriptSegmenter(CodeSegmenter):
-    """The code segmenter for JavaScript."""
+    """Code segmenter for JavaScript."""
 
     def __init__(self, code: str):
         super().__init__(code)

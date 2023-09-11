@@ -5,10 +5,16 @@ from typing import Any, Optional, Union
 
 import duckdb
 import pandas as pd
-from langchain_experimental.cpal.constants import Constant
-from pydantic import BaseModel, Field, PrivateAttr, root_validator, validator
-
 from langchain.graphs.networkx_graph import NetworkxEntityGraph
+
+from langchain_experimental.cpal.constants import Constant
+from langchain_experimental.pydantic_v1 import (
+    BaseModel,
+    Field,
+    PrivateAttr,
+    root_validator,
+    validator,
+)
 
 
 class NarrativeModel(BaseModel):

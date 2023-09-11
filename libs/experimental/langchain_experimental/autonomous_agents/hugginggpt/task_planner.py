@@ -14,6 +14,8 @@ from langchain.prompts.chat import (AIMessagePromptTemplate,
                                     SystemMessagePromptTemplate)
 from langchain.tools.base import BaseTool
 
+from langchain_experimental.pydantic_v1 import BaseModel
+
 DEMONSTRATIONS = [
     {
         "role": "user",

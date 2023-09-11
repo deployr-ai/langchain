@@ -1,3 +1,5 @@
+import asyncio
+import time
 from typing import Any, AsyncIterator, Iterator, List, Mapping, Optional
 
 from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
@@ -11,6 +13,7 @@ class FakeListLLM(LLM):
     """Fake LLM for testing purposes."""
 
     responses: List
+    sleep: Optional[float] = None
     i: int = 0
 
     @property
@@ -66,6 +69,8 @@ class FakeStreamingListLLM(FakeListLLM):
     ) -> Iterator[str]:
         result = self.invoke(input, config)
         for c in result:
+            if self.sleep is not None:
+                time.sleep(self.sleep)
             yield c
 
     async def astream(
@@ -78,4 +83,6 @@ class FakeStreamingListLLM(FakeListLLM):
     ) -> AsyncIterator[str]:
         result = await self.ainvoke(input, config)
         for c in result:
+            if self.sleep is not None:
+                await asyncio.sleep(self.sleep)
             yield c

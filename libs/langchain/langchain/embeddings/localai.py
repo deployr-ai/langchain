@@ -5,12 +5,17 @@ import warnings
 from typing import (Any, Callable, Dict, List, Literal, Optional, Sequence,
                     Set, Tuple, Union)
 
-from pydantic import BaseModel, Extra, Field, root_validator
-from tenacity import (AsyncRetrying, before_sleep_log, retry,
-                      retry_if_exception_type, stop_after_attempt,
-                      wait_exponential)
+from tenacity import (
+    AsyncRetrying,
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from langchain.embeddings.base import Embeddings
+from langchain.pydantic_v1 import BaseModel, Extra, Field, root_validator
 from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
 logger = logging.getLogger(__name__)

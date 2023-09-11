@@ -3,8 +3,6 @@ from __future__ import annotations
 
 from typing import Any, List, Optional, Sequence, Tuple
 
-from pydantic import Field
-
 from langchain.agents.agent import Agent, AgentOutputParser
 from langchain.agents.conversational_chat.output_parser import \
     ConvoOutputParser
@@ -13,10 +11,13 @@ from langchain.agents.conversational_chat.prompt import (
 from langchain.agents.utils import validate_tools_single_input
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.chains import LLMChain
-from langchain.prompts.chat import (ChatPromptTemplate,
-                                    HumanMessagePromptTemplate,
-                                    MessagesPlaceholder,
-                                    SystemMessagePromptTemplate)
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    MessagesPlaceholder,
+    SystemMessagePromptTemplate,
+)
+from langchain.pydantic_v1 import Field
 from langchain.schema import AgentAction, BaseOutputParser, BasePromptTemplate
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.schema.messages import AIMessage, BaseMessage, HumanMessage

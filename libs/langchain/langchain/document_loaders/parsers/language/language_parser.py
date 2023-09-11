@@ -20,8 +20,7 @@ LANGUAGE_SEGMENTERS: Dict[str, Any] = {
 
 
 class LanguageParser(BaseBlobParser):
-    """
-    Language parser that split code using the respective language syntax.
+    """Parse using the respective programming language syntax.
 
     Each top-level function and class in the code is loaded into separate documents.
     Furthermore, an extra document is generated, containing the remaining top-level code
@@ -36,7 +35,7 @@ class LanguageParser(BaseBlobParser):
 
     Examples:
 
-        .. code-block:: python
+       .. code-block:: python
 
             from langchain.text_splitter.Language
             from langchain.document_loaders.generic import GenericLoader
@@ -52,7 +51,7 @@ class LanguageParser(BaseBlobParser):
 
         Example instantiations to manually select the language:
 
-        ... code-block:: python
+        .. code-block:: python
 
             from langchain.text_splitter import Language
 
@@ -65,7 +64,7 @@ class LanguageParser(BaseBlobParser):
 
         Example instantiations to set number of lines threshold:
 
-        ... code-block:: python
+        .. code-block:: python
 
             loader = GenericLoader.from_filesystem(
                 "./code",

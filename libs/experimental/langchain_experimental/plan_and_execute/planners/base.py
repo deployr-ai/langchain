@@ -1,12 +1,11 @@
 from abc import abstractmethod
 from typing import Any, List, Optional
 
-from langchain_experimental.plan_and_execute.schema import (Plan,
-                                                            PlanOutputParser)
-from pydantic import BaseModel
-
 from langchain.callbacks.manager import Callbacks
 from langchain.chains.llm import LLMChain
+
+from langchain_experimental.plan_and_execute.schema import Plan, PlanOutputParser
+from langchain_experimental.pydantic_v1 import BaseModel
 
 
 class BasePlanner(BaseModel):

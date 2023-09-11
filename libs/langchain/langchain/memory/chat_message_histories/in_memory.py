@@ -1,8 +1,9 @@
 from typing import List
 
-from pydantic import BaseModel
-
-from langchain.schema import BaseChatMessageHistory
+from langchain.pydantic_v1 import BaseModel, Field
+from langchain.schema import (
+    BaseChatMessageHistory,
+)
 from langchain.schema.messages import BaseMessage
 
 
@@ -12,7 +13,7 @@ class ChatMessageHistory(BaseChatMessageHistory, BaseModel):
     Stores messages in an in memory list.
     """
 
-    messages: List[BaseMessage] = []
+    messages: List[BaseMessage] = Field(default_factory=list)
 
     def add_message(self, message: BaseMessage, message_id: str = "0") -> None:
         """Add a self-created message to the store"""

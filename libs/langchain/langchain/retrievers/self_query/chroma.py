@@ -6,12 +6,13 @@ from langchain.chains.query_constructor.ir import (Comparator, Comparison,
 
 
 class ChromaTranslator(Visitor):
-    """Translate internal query language elements to valid filters."""
+    """Translate `Chroma` internal query language elements to valid filters."""
 
     allowed_operators = [Operator.AND, Operator.OR]
     """Subset of allowed logical operators."""
     allowed_comparators = [
         Comparator.EQ,
+        Comparator.NE,
         Comparator.GT,
         Comparator.GTE,
         Comparator.LT,

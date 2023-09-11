@@ -15,6 +15,17 @@ from langchain.chains.base import Chain
 from langchain.schema.language_model import BaseLanguageModel
 from langchain.vectorstores.base import VectorStore
 
+from langchain_experimental.autonomous_agents.baby_agi.task_creation import (
+    TaskCreationChain,
+)
+from langchain_experimental.autonomous_agents.baby_agi.task_execution import (
+    TaskExecutionChain,
+)
+from langchain_experimental.autonomous_agents.baby_agi.task_prioritization import (
+    TaskPrioritizationChain,
+)
+from langchain_experimental.pydantic_v1 import BaseModel, Field
+
 
 class BabyAGI(Chain, BaseModel):
     """Controller model for the BabyAGI agent."""
@@ -142,7 +153,7 @@ class BabyAGI(Chain, BaseModel):
                 self.print_task_result(result)
 
                 # Step 3: Store the result in Pinecone
-                result_id = f"result_{task['task_id']}"
+                result_id = f"result_{task['task_id']}_{num_iters}"
                 self.vectorstore.add_texts(
                     texts=[result],
                     metadatas=[{"task": task["task_name"]}],

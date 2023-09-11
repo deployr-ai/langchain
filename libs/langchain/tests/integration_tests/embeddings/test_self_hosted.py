@@ -1,11 +1,11 @@
 """Test self-hosted embeddings."""
 from typing import Any
 
-from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
-
-from langchain.embeddings import (SelfHostedEmbeddings,
-                                  SelfHostedHuggingFaceEmbeddings,
-                                  SelfHostedHuggingFaceInstructEmbeddings)
+from langchain.embeddings import (
+    SelfHostedEmbeddings,
+    SelfHostedHuggingFaceEmbeddings,
+    SelfHostedHuggingFaceInstructEmbeddings,
+)
 
 
 def get_remote_instance() -> Any:
@@ -57,6 +57,8 @@ def test_self_hosted_huggingface_instructor_embedding_query() -> None:
 
 def get_pipeline() -> Any:
     """Get pipeline for testing."""
+    from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+
     model_id = "facebook/bart-base"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(model_id)

@@ -9,7 +9,7 @@ from langchain.text_splitter import (RecursiveCharacterTextSplitter,
 
 
 class BaseLoader(ABC):
-    """Interface for loading Documents.
+    """Interface for Document Loader.
 
     Implementations should implement the lazy-loading method using generators
     to avoid loading all Documents into memory at once.

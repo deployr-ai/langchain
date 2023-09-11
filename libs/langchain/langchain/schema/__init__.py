@@ -1,19 +1,36 @@
 """**Schemas** are the LangChain Base Classes and Interfaces."""
 from langchain.schema.agent import AgentAction, AgentFinish
+from langchain.schema.cache import BaseCache
+from langchain.schema.chat_history import BaseChatMessageHistory
 from langchain.schema.document import BaseDocumentTransformer, Document
 from langchain.schema.exceptions import LangChainException
-from langchain.schema.memory import BaseChatMessageHistory, BaseMemory
-from langchain.schema.messages import (AIMessage, BaseMessage, ChatMessage,
-                                       FunctionMessage, HumanMessage,
-                                       SystemMessage, _message_from_dict,
-                                       _message_to_dict, get_buffer_string,
-                                       messages_from_dict, messages_to_dict)
-from langchain.schema.output import (ChatGeneration, ChatResult, Generation,
-                                     LLMResult, RunInfo)
-from langchain.schema.output_parser import (BaseLLMOutputParser,
-                                            BaseOutputParser,
-                                            OutputParserException,
-                                            StrOutputParser)
+from langchain.schema.memory import BaseMemory
+from langchain.schema.messages import (
+    AIMessage,
+    BaseMessage,
+    ChatMessage,
+    FunctionMessage,
+    HumanMessage,
+    SystemMessage,
+    _message_from_dict,
+    _message_to_dict,
+    get_buffer_string,
+    messages_from_dict,
+    messages_to_dict,
+)
+from langchain.schema.output import (
+    ChatGeneration,
+    ChatResult,
+    Generation,
+    LLMResult,
+    RunInfo,
+)
+from langchain.schema.output_parser import (
+    BaseLLMOutputParser,
+    BaseOutputParser,
+    OutputParserException,
+    StrOutputParser,
+)
 from langchain.schema.prompt import PromptValue
 from langchain.schema.prompt_template import (BasePromptTemplate,
                                               format_document)
@@ -24,12 +41,13 @@ RUN_KEY = "__run"
 Memory = BaseMemory
 
 __all__ = [
+    "BaseCache",
     "BaseMemory",
     "BaseStore",
-    "BaseChatMessageHistory",
     "AgentFinish",
     "AgentAction",
     "Document",
+    "BaseChatMessageHistory",
     "BaseDocumentTransformer",
     "BaseMessage",
     "ChatMessage",

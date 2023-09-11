@@ -6,6 +6,8 @@ from pydantic import validator
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.llms.base import LLM
 
+from langchain_experimental.pydantic_v1 import validator
+
 
 class FakeLLM(LLM):
     """Fake LLM wrapper for testing purposes."""
