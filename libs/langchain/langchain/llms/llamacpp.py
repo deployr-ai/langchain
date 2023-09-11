@@ -176,11 +176,6 @@ class LlamaCpp(LLM):
             model_params["n_gpu_layers"] = values["n_gpu_layers"]
 
         model_params.update(values["model_kwargs"])
-        model_instance = values.get("model_instance")
-        if model_instance is None:
-            try:
-                from llama_cpp import Llama
-
         try:
             values["client"] = Llama(model_path, **model_params)
         except Exception as e:
