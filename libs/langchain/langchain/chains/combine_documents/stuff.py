@@ -165,6 +165,7 @@ class StuffDocumentsChain(BaseCombineDocumentsChain):
             element returned is a dictionary of other keys to return.
         """
         inputs = self._get_inputs(docs, **kwargs)
+        print(f"{inputs = }")
         # Call predict on the LLM.
         return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
 
