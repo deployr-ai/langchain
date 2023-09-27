@@ -160,6 +160,7 @@ class StuffDocumentsChain(BaseCombineDocumentsChain):
         """
         inputs = self._get_inputs(docs, **kwargs)
         # Call predict on the LLM.
+        print(f"{inputs = }")
         return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
 
     async def acombine_docs(
