@@ -147,7 +147,7 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
         sources = defaultdict(list)
         
         for doc in docs:
-            sources[doc.metadata["url"]].append((doc.metadata["chunkid"], doc))
+            sources[doc.metadata["url"]].append((int(doc.metadata["chunkid"]), doc))
 
         return_docs = []
         for s in sources:
@@ -159,7 +159,7 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
             for cid, doc in source_list[1:]:
                 if (cid - 1) != base_cid:
                     bl = base_cid - length + 1
-                    base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else base_cid
+                    base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
                     return_docs.append(base_doc)
                     length = 1
                     base_doc = doc
@@ -174,7 +174,7 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
                     base_doc.page_content += doc.page_content[i:]
                 base_cid = cid
             bl = base_cid - length + 1
-            base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else base_cid
+            base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
             return_docs.append(base_doc)
         # --
         return return_docs
