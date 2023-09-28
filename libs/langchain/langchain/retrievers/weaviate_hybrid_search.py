@@ -115,7 +115,6 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
         for res in result["data"]["Get"][self.index_name]:
             text = res.pop(self.text_key)
             docs.append(Document(page_content=text, metadata=res))
-        print(f"sync {docs = }")
         return docs
 
     async def _aget_relevant_documents(
@@ -143,5 +142,4 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
         for res in result["data"]["Get"][self.index_name]:
             text = res.pop(self.text_key)
             docs.append(Document(page_content=text, metadata=res))
-        print(f"async {docs = }")
         return docs
