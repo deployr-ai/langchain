@@ -565,7 +565,7 @@ class BaseOpenAI(BaseLLM):
         if "ft-" in modelname:
             modelname = modelname.split(":")[0]
 
-        context_size = model_token_mapping.get(modelname, None)
+        context_size = model_token_mapping.get(modelname, 4096)
 
         if context_size is None:
             raise ValueError(
