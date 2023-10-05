@@ -169,7 +169,6 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
                     # match strings
                     for i in range(len(doc.page_content)):
                         if base_doc.page_content[-i:] == doc.page_content[:i]:
-                            print(f"found: {i}")
                             break
                     base_doc.page_content += doc.page_content[i:]
                 base_cid = cid
