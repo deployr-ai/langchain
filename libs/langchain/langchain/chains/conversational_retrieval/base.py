@@ -173,6 +173,7 @@ class BaseConversationalRetrievalChain(Chain):
             )
         else:
             new_question = question
+        new_question = new_question.split("<s>")[-1]
         accepts_run_manager = (
             "run_manager" in inspect.signature(self._aget_docs).parameters
         )
