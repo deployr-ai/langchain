@@ -510,7 +510,7 @@ class ChatOpenAI(BaseChatModel):
         try:
             encoding = tiktoken_.encoding_for_model(model)
         except KeyError:
-            logger.warning("Warning: model not found. Using cl100k_base encoding.")
+            # logger.warning("Warning: model not found. Using cl100k_base encoding.")
             model = "cl100k_base"
             encoding = tiktoken_.get_encoding(model)
         return model, encoding
