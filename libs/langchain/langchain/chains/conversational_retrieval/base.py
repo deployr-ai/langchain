@@ -174,6 +174,7 @@ class BaseConversationalRetrievalChain(Chain):
         else:
             new_question = question
         new_question = new_question.split("<s>")[-1]
+        print("1")
         accepts_run_manager = (
             "run_manager" in inspect.signature(self._aget_docs).parameters
         )
@@ -181,7 +182,7 @@ class BaseConversationalRetrievalChain(Chain):
             docs = await self._aget_docs(new_question, inputs, run_manager=_run_manager)
         else:
             docs = await self._aget_docs(new_question, inputs)  # type: ignore[call-arg]
-
+        print("2")
         new_inputs = inputs.copy()
         if self.rephrase_question:
             new_inputs["question"] = new_question
@@ -189,6 +190,7 @@ class BaseConversationalRetrievalChain(Chain):
         answer = await self.combine_docs_chain.arun(
             input_documents=docs, callbacks=_run_manager.get_child(), **new_inputs
         )
+        print("3")
         output: Dict[str, Any] = {self.output_key: answer}
         if self.return_source_documents:
             output["source_documents"] = docs
