@@ -160,7 +160,7 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
                 if (cid - 1) != base_cid:
                     bl = base_cid - length + 1
                     base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
-                    base_doc.page_content = f"[DATE: {base_doc.metadata["date"][:10]}] " + base_doc.page_content
+                    base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
                     return_docs.append(base_doc)
                     length = 1
                     base_doc = doc
@@ -175,7 +175,7 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
                 base_cid = cid
             bl = base_cid - length + 1
             base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
-            base_doc.page_content = f"[DATE: {base_doc.metadata["date"][:10]}] " + base_doc.page_content
+            base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
             return_docs.append(base_doc)
         # --
         return return_docs
