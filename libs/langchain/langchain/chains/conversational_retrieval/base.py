@@ -170,7 +170,7 @@ class BaseConversationalRetrievalChain(Chain):
         if chat_history_str:
             callbacks = _run_manager.get_child()
             new_question = await self.question_generator.arun(
-                question=question, chat_history=chat_history_str, callbacks=callbacks, current_date=str(date.today())
+                question=question, chat_history=chat_history_str, callbacks=callbacks
             )
         else:
             new_question = question
