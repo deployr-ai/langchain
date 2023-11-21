@@ -48,7 +48,7 @@ def _create_retry_decorator(embeddings: OpenAIEmbeddings) -> Callable[[Any], Any
             | retry_if_exception_type(openai.APIError)
             | retry_if_exception_type(openai.APIConnectionError)
             | retry_if_exception_type(openai.RateLimitError)
-            | retry_if_exception_type(openai.ServiceUnavailableError)
+            # | retry_if_exception_type(openai.ServiceUnavailableError)
         ),
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )
@@ -70,7 +70,7 @@ def _async_retry_decorator(embeddings: OpenAIEmbeddings) -> Any:
             | retry_if_exception_type(openai.APIError)
             | retry_if_exception_type(openai.APIConnectionError)
             | retry_if_exception_type(openai.RateLimitError)
-            | retry_if_exception_type(openai.ServiceUnavailableError)
+            # | retry_if_exception_type(openai.ServiceUnavailableError)
         ),
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )

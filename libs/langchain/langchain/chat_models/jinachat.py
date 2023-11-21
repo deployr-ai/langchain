@@ -67,7 +67,7 @@ def _create_retry_decorator(llm: JinaChat) -> Callable[[Any], Any]:
             | retry_if_exception_type(openai.APIError)
             | retry_if_exception_type(openai.APIConnectionError)
             | retry_if_exception_type(openai.RateLimitError)
-            | retry_if_exception_type(openai.ServiceUnavailableError)
+            # | retry_if_exception_type(openai.ServiceUnavailableError)
         ),
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )
@@ -257,7 +257,7 @@ class JinaChat(BaseChatModel):
                 | retry_if_exception_type(openai.APIError)
                 | retry_if_exception_type(openai.APIConnectionError)
                 | retry_if_exception_type(openai.RateLimitError)
-                | retry_if_exception_type(openai.ServiceUnavailableError)
+                # | retry_if_exception_type(openai.ServiceUnavailableError)
             ),
             before_sleep=before_sleep_log(logger, logging.WARNING),
         )
