@@ -2,22 +2,49 @@
 from __future__ import annotations
 
 import logging
-from typing import (Any, AsyncIterator, Callable, Dict, Iterator, List,
-                    Mapping, Optional, Tuple, Union)
+from typing import (
+    Any,
+    AsyncIterator,
+    Callable,
+    Dict,
+    Iterator,
+    List,
+    Mapping,
+    Optional,
+    Tuple,
+    Union,
+)
 
 from pydantic import Field, root_validator
-from tenacity import (before_sleep_log, retry, retry_if_exception_type,
-                      stop_after_attempt, wait_exponential)
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
-from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
-                                         CallbackManagerForLLMRun)
+from langchain.callbacks.manager import (
+    AsyncCallbackManagerForLLMRun,
+    CallbackManagerForLLMRun,
+)
 from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (AIMessage, BaseMessage, ChatGeneration,
-                              ChatMessage, ChatResult, HumanMessage,
-                              SystemMessage)
-from langchain.schema.messages import (AIMessageChunk, BaseMessageChunk,
-                                       ChatMessageChunk, HumanMessageChunk,
-                                       SystemMessageChunk)
+from langchain.schema import (
+    AIMessage,
+    BaseMessage,
+    ChatGeneration,
+    ChatMessage,
+    ChatResult,
+    HumanMessage,
+    SystemMessage,
+)
+from langchain.schema.messages import (
+    AIMessageChunk,
+    BaseMessageChunk,
+    ChatMessageChunk,
+    HumanMessageChunk,
+    SystemMessageChunk,
+)
 from langchain.schema.output import ChatGenerationChunk
 from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
@@ -36,11 +63,11 @@ def _create_retry_decorator(llm: JinaChat) -> Callable[[Any], Any]:
         stop=stop_after_attempt(llm.max_retries),
         wait=wait_exponential(multiplier=1, min=min_seconds, max=max_seconds),
         retry=(
-            retry_if_exception_type(openai.error.Timeout)
-            | retry_if_exception_type(openai.error.APIError)
-            | retry_if_exception_type(openai.error.APIConnectionError)
-            | retry_if_exception_type(openai.error.RateLimitError)
-            | retry_if_exception_type(openai.error.ServiceUnavailableError)
+            retry_if_exception_type(openai.Timeout)
+            | retry_if_exception_type(openai.APIError)
+            | retry_if_exception_type(openai.APIConnectionError)
+            | retry_if_exception_type(openai.RateLimitError)
+            | retry_if_exception_type(openai.ServiceUnavailableError)
         ),
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )
@@ -226,11 +253,11 @@ class JinaChat(BaseChatModel):
             stop=stop_after_attempt(self.max_retries),
             wait=wait_exponential(multiplier=1, min=min_seconds, max=max_seconds),
             retry=(
-                retry_if_exception_type(openai.error.Timeout)
-                | retry_if_exception_type(openai.error.APIError)
-                | retry_if_exception_type(openai.error.APIConnectionError)
-                | retry_if_exception_type(openai.error.RateLimitError)
-                | retry_if_exception_type(openai.error.ServiceUnavailableError)
+                retry_if_exception_type(openai.Timeout)
+                | retry_if_exception_type(openai.APIError)
+                | retry_if_exception_type(openai.APIConnectionError)
+                | retry_if_exception_type(openai.RateLimitError)
+                | retry_if_exception_type(openai.ServiceUnavailableError)
             ),
             before_sleep=before_sleep_log(logger, logging.WARNING),
         )

@@ -5,7 +5,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 from tests.unit_tests.callbacks.fake_callback_handler import (
-    FakeAsyncCallbackHandler, FakeCallbackHandler)
+    FakeAsyncCallbackHandler,
+    FakeCallbackHandler,
+)
 
 from langchain.llms.openai import OpenAI
 
@@ -65,7 +67,7 @@ def test_openai_retries(mock_completion: dict) -> None:
         nonlocal completed, raised
         if not raised:
             raised = True
-            raise openai.error.APIError
+            raise openai.APIError
         completed = True
         return mock_completion
 
@@ -96,7 +98,7 @@ async def test_openai_async_retries(mock_completion: dict) -> None:
         nonlocal completed, raised
         if not raised:
             raised = True
-            raise openai.error.APIError
+            raise openai.APIError
         await asyncio.sleep(0)
         completed = True
         return mock_completion

@@ -3,14 +3,29 @@ from __future__ import annotations
 import logging
 import sys
 import warnings
-from typing import (AbstractSet, Any, AsyncIterator, Callable, Collection,
-                    Dict, Iterator, List, Literal, Mapping, Optional, Set,
-                    Tuple, Union)
+from typing import (
+    AbstractSet,
+    Any,
+    AsyncIterator,
+    Callable,
+    Collection,
+    Dict,
+    Iterator,
+    List,
+    Literal,
+    Mapping,
+    Optional,
+    Set,
+    Tuple,
+    Union,
+)
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (AsyncCallbackManagerForLLMRun,
-                                         CallbackManagerForLLMRun)
+from langchain.callbacks.manager import (
+    AsyncCallbackManagerForLLMRun,
+    CallbackManagerForLLMRun,
+)
 from langchain.llms.base import BaseLLM, create_base_retry_decorator
 from langchain.schema import Generation, LLMResult
 from langchain.schema.output import GenerationChunk
@@ -75,11 +90,11 @@ def _create_retry_decorator(
     import openai
 
     errors = [
-        openai.error.Timeout,
-        openai.error.APIError,
-        openai.error.APIConnectionError,
-        openai.error.RateLimitError,
-        openai.error.ServiceUnavailableError,
+        openai.Timeout,
+        openai.APIError,
+        openai.APIConnectionError,
+        openai.RateLimitError,
+        openai.ServiceUnavailableError,
     ]
     return create_base_retry_decorator(
         error_types=errors, max_retries=llm.max_retries, run_manager=run_manager
