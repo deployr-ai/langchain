@@ -6,8 +6,10 @@ from collections import defaultdict
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (AsyncCallbackManagerForRetrieverRun,
-                                         CallbackManagerForRetrieverRun)
+from langchain.callbacks.manager import (
+    AsyncCallbackManagerForRetrieverRun,
+    CallbackManagerForRetrieverRun,
+)
 from langchain.docstore.document import Document
 from langchain.schema import BaseRetriever
 
@@ -143,39 +145,40 @@ class WeaviateHybridSearchRetriever(BaseRetriever):
         for res in result["data"]["Get"][self.index_name]:
             text = res.pop(self.text_key)
             docs.append(Document(page_content=text, metadata=res))
-        # -- Post processing
-        sources = defaultdict(list)
-        
-        for doc in docs:
-            sources[doc.metadata["url"]].append((int(doc.metadata["chunkid"]), doc))
+        # # -- Post processing
+        # sources = defaultdict(list)
 
-        return_docs = []
-        for s in sources:
-            source_list = sorted(sources[s], key=lambda x: x[0])
-            base_cid, base_doc = source_list[0]
-            length = 1
-            if (base_cid != 0):
-                base_doc.page_content = "..." + base_doc.page_content
-            for cid, doc in source_list[1:]:
-                if (cid - 1) != base_cid:
-                    bl = base_cid - length + 1
-                    base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
-                    base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
-                    return_docs.append(base_doc)
-                    length = 1
-                    base_doc = doc
-                    base_doc.page_content = "..." + base_doc.page_content
-                else:
-                    length += 1
-                    # match strings
-                    for i in range(len(doc.page_content)):
-                        if base_doc.page_content[-i:] == doc.page_content[:i]:
-                            break
-                    base_doc.page_content += doc.page_content[i:]
-                base_cid = cid
-            bl = base_cid - length + 1
-            base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
-            base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
-            return_docs.append(base_doc)
-        # --
-        return return_docs
+        # for doc in docs:
+        #     sources[doc.metadata["url"]].append((int(doc.metadata["chunkid"]), doc))
+
+        # return_docs = []
+        # for s in sources:
+        #     source_list = sorted(sources[s], key=lambda x: x[0])
+        #     base_cid, base_doc = source_list[0]
+        #     length = 1
+        #     if (base_cid != 0):
+        #         base_doc.page_content = "..." + base_doc.page_content
+        #     for cid, doc in source_list[1:]:
+        #         if (cid - 1) != base_cid:
+        #             bl = base_cid - length + 1
+        #             base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
+        #             base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
+        #             return_docs.append(base_doc)
+        #             length = 1
+        #             base_doc = doc
+        #             base_doc.page_content = "..." + base_doc.page_content
+        #         else:
+        #             length += 1
+        #             # match strings
+        #             for i in range(len(doc.page_content)):
+        #                 if base_doc.page_content[-i:] == doc.page_content[:i]:
+        #                     break
+        #             base_doc.page_content += doc.page_content[i:]
+        #         base_cid = cid
+        #     bl = base_cid - length + 1
+        #     base_doc.metadata["chunkid"] = f"{bl}-{base_cid}" if bl != base_cid else str(base_cid)
+        #     base_doc.page_content = f"[DATE: {base_doc.metadata['date'][:10]}] " + base_doc.page_content
+        #     return_docs.append(base_doc)
+        # # --
+        # return return_docs
+        return docs
